@@ -1,0 +1,82 @@
+/* Застосується до всіх тегів з класом title */
+.title {
+  font-weight: 500;
+}
+
+/* Застосується до всіх тегів з класом text */
+.text {
+  color: brown;
+  font-size: 18px;
+}
+
+/* Застосується до всіх тегів з класом link */
+.link {
+  text-decoration: none;
+}
+
+/* Загальні стилі для всіх типів повідомлень */
+.alert {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* Специфічні стилі для кожного типу */
+.success {
+  color: green;
+}
+
+.warning {
+  color: orange;
+}
+
+.error {
+  color: red;
+}
+
+/* ❌ Застосується до всіх посилань у документі */
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* ✅ Застосується тільки до посилань, які лежать всередині тегу з класом social-links */
+.social-links a {
+  color: red;
+  text-decoration: none;
+}
+
+/* ❌ Не вирішує завдання */
+/* .menu li {
+  border: 1px solid tomato;
+} */
+
+/* ✅ Те, що потрібно */
+.menu > li {
+  border: 1px solid tomato;
+}
+
+.link {
+  color: teal;
+}
+
+.link:hover {
+  color: tomato;
+}
+
+.social-links .link {
+  color: teal;
+}
+
+.social-links .link:hover,
+.social-links .link:focus {
+  color: orange;
+}
+
+.social-links .link:active {
+  color: red;
+}
+
+.text {
+  background-color: tomato;
+  color: white;
+}
