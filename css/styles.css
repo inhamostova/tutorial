@@ -111,13 +111,13 @@ a {
 }
 
 pre {
-  font-family: 'Tangerine';
-  color: #2a2a2a;
+  font-family: 'Montserrat', sans-serif;
+  color: #2727d6;
   font-size: 16px;
 }
 
 pre::first-letter {
-  font-family: 'Tahoma', serif;
+  /* font-family: 'Tahoma', serif; */
   font-size: 32px;
   color: #f44336;
 }
