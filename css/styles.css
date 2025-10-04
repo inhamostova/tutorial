@@ -104,15 +104,24 @@ a {
   text-align: justify;
 }
 
+:root {
+  /* Colors variables */
+  --white-cl: #fff;
+  --red-cl: #f00;
+  --black-cl: #000;
+  --teal-cl: teal;
+}
+
 .title {
-  color: #ffffff;
-  text-shadow: 2px 2px 20px #ff0000, 5px 5px 5px #000000;
+  color: var(--white-cl);
+  text-shadow: 2px 2px 20px var(--red-cl), 5px 5px 5px var(--black-cl);
   font-style: italic;
+  background-color: var(--teal-cl);
 }
 
 pre {
-  font-family: 'Montserrat', sans-serif;
-  color: #2727d6;
+  font-family: 'Roboto', sans-serif;
+  color: #04592d;
   font-size: 16px;
 }
 
@@ -124,5 +133,5 @@ pre::first-letter {
 
 pre::selection {
   color: #ffffff;
-  background-color: #3f51b5;
+  background-color: #2e40b1;
 }
