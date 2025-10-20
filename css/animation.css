@@ -54,6 +54,7 @@
 
 .thumb {
   position: relative;
+  opacity: 0.7;
   margin-bottom: 50px;
   width: 700px;
   height: 400px;
@@ -73,4 +74,62 @@
   font-size: 60px;
   width: 100px;
   height: 200px;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: turquoise;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 500ms ease-in;
+}
+
+.button::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 5px;
+  background-color: #212121;
+  border-radius: 20px;
+  transform: scaleX(0);
+  transition: transform 500ms linear;
+  transform-origin: bottom right;
+}
+
+.button:hover {
+  background-color: bisque;
+}
+
+.button:hover .button-icon.visible {
+  transform: translateY(-50px);
+}
+
+.button:hover .button-icon.hidden {
+  transform: translateY(-50%);
+}
+
+.button:hover::after {
+  transform: scale(0.55);
+}
+
+.button-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 500ms ease-in;
+}
+
+.button-icon.hidden {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(calc(-50% + 50px));
 }
