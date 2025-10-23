@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/form.css" />
+  </head>
+  <body>
+    <form name="form-tutorial" class="js-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="user-name" id="name" minlength="3" maxlength="10" />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label> <input type="tel" name="user-phone" id="phone" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label> <input type="email" name="user-email" id="email" />
+      </div>
+      <div>
+        <label for="topics">HTML</label>
+        <input type="checkbox" id="topics" name="topic" value="html" />
+        <label for="topics">CSS</label>
+        <input type="checkbox" id="topics" name="topic" value="css" />
+        <label for="topics">JavaScript</label>
+        <input type="checkbox" id="topics" name="topic" value="js" />
+      </div>
+      <div>
+        <label for="comment"></label>
+        <textarea
+          name="comment"
+          id="comment"
+          placeholder="Leave few wordws here..."
+          rows="7"
+        ></textarea>
+      </div>
+      <input type="datetime-local" name="date" min="2019-05-08T12:00" max="2020-02-01T12:00" />
+      <label for="size">Size</label>
+      <select name="size" id="size">
+        <option value="xs">Extra small</option>
+        <option value="s">Small</option>
+        <option value="m">Medium</option>
+        <option value="l">Large</option>
+      </select>
+
+      <label for="time">Time of year</label>
+      <select name="time" id="time">
+        <optgroup label="Summer">
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+        </optgroup>
+        <optgroup label="Winter">
+          <option value="january">january</option>
+          <option value="february">february</option>
+          <option disabled value="December">December</option>
+        </optgroup>
+      </select>
+
+      <label for="state">Choose your state</label>
+      <input type="text" name="state" id="state" list="states" />
+      <datalist id="states">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+      </datalist>
+
+      <button class="form-btn" type="submit">Submit</button>
+    </form>
+
+    <script>
+      (() => {
+        document.querySelector('.js-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+        });
+      })();
+    </script>
+  </body>
+</html>
