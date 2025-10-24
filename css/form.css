@@ -3,17 +3,56 @@
   width: 500px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 50px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.form-group input {
+.form-input {
   padding: 5px 10px;
+  padding-left: 35px;
+}
+
+.form-input:focus {
+  border-color: teal;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-40px);
+}
+
+/* .form-group:focus-within {
+  color: tomato;
+} */
+
+.form-label {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 300ms linear;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  display: block;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  /* fill: currentColor; */
+}
+
+.form-input:focus ~ .form-icon {
+  fill: teal;
 }
 
 .form-btn {
