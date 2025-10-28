@@ -1,0 +1,68 @@
+$color: red;
+
+body {
+  $color: rgb(0, 213, 255);
+  background-color: $color;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: yellowgreen;
+}
+
+.button {
+  width: 50px;
+  height: 20px;
+  background-color: red;
+
+  &:hover,
+  &:focus {
+    background-color: teal;
+  }
+
+  .box:hover & {
+    background-color: white;
+  }
+}
+
+%notification {
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+@mixin borderStyled($width, $type, $color) {
+  border: $width $type $color;
+}
+
+.notification--success {
+  @extend %notification;
+  @include borderStyled(2px, dashed, black);
+  background-color: greenyellow;
+}
+
+.notification--error {
+  @extend %notification;
+  background-color: red;
+}
+
+%list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list {
+  @extend %list;
+  background-color: aquamarine;
+}
+
+$colors: 'red', 'green', 'yellow', 'blue';
+
+@each $color in $colors {
+  .list__item--#{$color} {
+    background-color: #{$color};
+  }
+}
