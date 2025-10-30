@@ -1,68 +1,52 @@
-$color: red;
+@import './mixins';
 
-body {
-  $color: rgb(0, 213, 255);
-  background-color: $color;
+.container {
+  width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  margin: 0 auto;
 }
 
-.box {
-  width: 200px;
-  height: 200px;
-  background-color: yellowgreen;
-}
-
-.button {
-  width: 50px;
-  height: 20px;
-  background-color: red;
+.main-page {
+  display: inline-block;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  background-color: aquamarine;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  color: #212121;
+  transition: background-color 300ms ease-in, transform 300ms ease-in;
 
   &:hover,
   &:focus {
-    background-color: teal;
+    background-color: aqua;
+    transform: scale(1.2);
   }
-
-  .box:hover & {
-    background-color: white;
-  }
-}
-
-%notification {
-  color: white;
-  padding: 20px;
-  font-size: 20px;
-  text-transform: uppercase;
-}
-
-@mixin borderStyled($width, $type, $color) {
-  border: $width $type $color;
-}
-
-.notification--success {
-  @extend %notification;
-  @include borderStyled(2px, dashed, black);
-  background-color: greenyellow;
-}
-
-.notification--error {
-  @extend %notification;
-  background-color: red;
-}
-
-%list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
 
 .list {
-  @extend %list;
-  background-color: aquamarine;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-$colors: 'red', 'green', 'yellow', 'blue';
-
-@each $color in $colors {
-  .list__item--#{$color} {
-    background-color: #{$color};
-  }
+.item {
+  @include flexBasis(3);
+  @include flexBasis(4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // flex-basis: calc((100% - 4 * 30px) / 5);
+  // width: 300px;
+  height: 400px;
+  background-color: tomato;
+  font-size: 25px;
+  color: #fff;
 }
