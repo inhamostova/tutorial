@@ -6,7 +6,37 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
-  <body>
+  <body id="body">
+    <header class="header">
+      <div class="container header__container">
+        <a href="" class="logo"></a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="">Studio</a></li>
+            <li class="nav__item"><a class="nav__link" href="">Portfolio</a></li>
+            <li class="nav__item"><a class="nav__link" href="">Contacts</a></li>
+          </ul>
+        </nav>
+        <ul class="contacts">
+          <li class="contacts__item"><a class="contacts__link" href="">+38 063 12 34 567</a></li>
+          <li class="contacts__item"><a class="contacts__link" href="">info@mail.com</a></li>
+        </ul>
+        <button class="menu-btn" type="button" data-menu-open>
+          <svg width="40" height="40">
+            <use href="./images/icons-3.svg#menu"></use>
+          </svg>
+        </button>
+        <div class="menu-overlay" data-menu>
+          <div class="content">
+            <button class="menu-btn" type="button" data-menu-close>
+              <svg width="40" height="40">
+                <use href="./images/icons-3.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="container">
       <a href="./index.html" class="main-page">Main Page</a>
       <ul class="list">
@@ -21,5 +51,6 @@
         <li class="item">Item9</li>
       </ul>
     </div>
+    <script src="./menu.js"></script>
   </body>
 </html>

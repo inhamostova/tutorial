@@ -1,12 +1,13 @@
+@import './modern-normalize';
 @import './mixins';
-
-.container {
-  width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  margin: 0 auto;
-}
+@import './placeholders';
+@import './container';
+@import './logo';
+@import './header';
+@import './nav';
+@import './contacts';
+@import './menu-btn';
+@import './menu';
 
 .main-page {
   display: inline-block;
@@ -26,6 +27,10 @@
     background-color: aqua;
     transform: scale(1.2);
   }
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .list {
