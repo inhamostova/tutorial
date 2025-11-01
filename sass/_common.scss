@@ -1,0 +1,32 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  @include flexBasis(3);
+  @include flexBasis(4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // flex-basis: calc((100% - 4 * 30px) / 5);
+  // width: 300px;
+  height: 400px;
+  background-color: tomato;
+  font-size: 25px;
+  color: #fff;
+}
+
+img {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}

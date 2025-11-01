@@ -1,0 +1,19 @@
+.main-page {
+  display: inline-block;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  background-color: aquamarine;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  color: #212121;
+  transition: background-color 300ms ease-in, transform 300ms ease-in;
+
+  &:hover,
+  &:focus {
+    background-color: aqua;
+    transform: scale(1.2);
+  }
+}

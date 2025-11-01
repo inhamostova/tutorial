@@ -1,57 +1,43 @@
 @import './modern-normalize';
 @import './mixins';
 @import './placeholders';
+@import './common';
 @import './container';
 @import './logo';
 @import './header';
 @import './nav';
 @import './contacts';
+@import './main-page-btn';
 @import './menu-btn';
 @import './menu';
 
-.main-page {
-  display: inline-block;
-  margin-bottom: 50px;
-  padding: 10px 20px;
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-  text-decoration: none;
-  background-color: aquamarine;
-  border: 1px solid blueviolet;
-  border-radius: 5px;
-  color: #212121;
-  transition: background-color 300ms ease-in, transform 300ms ease-in;
+// .thumb {
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-bottom: 30px;
+// width: 400px;
+// }
 
-  &:hover,
-  &:focus {
-    background-color: aqua;
-    transform: scale(1.2);
+.img-set {
+  @extend %list;
+
+  @media screen and (min-width: 570px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
   }
 }
 
-.no-scroll {
-  overflow: hidden;
-}
+.img-set__item {
+  outline: 1px solid blueviolet;
+  outline-offset: -1px;
 
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  @media screen and (min-width: 570px) {
+    flex-basis: calc((100% - 30px) / 2);
+  }
 
-.item {
-  @include flexBasis(3);
-  @include flexBasis(4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // flex-basis: calc((100% - 4 * 30px) / 5);
-  // width: 300px;
-  height: 400px;
-  background-color: tomato;
-  font-size: 25px;
-  color: #fff;
+  @media screen and (min-width: 570px) {
+    flex-basis: calc((100% - 60px) / 3);
+  }
 }

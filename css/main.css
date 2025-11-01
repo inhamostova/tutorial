@@ -187,7 +187,7 @@ summary {
   display: list-item;
 }
 
-.contacts, .nav__list {
+.img-set, .contacts, .nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -195,6 +195,48 @@ summary {
 
 .contacts__link, .nav__link {
   text-decoration: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  -ms-flex-preferred-size: calc((100% - 60px) / 3);
+      flex-basis: calc((100% - 60px) / 3);
+  -ms-flex-preferred-size: calc((100% - 90px) / 4);
+      flex-basis: calc((100% - 90px) / 4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 400px;
+  background-color: tomato;
+  font-size: 25px;
+  color: #fff;
+}
+
+img {
+  display: block;
+  min-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -282,6 +324,28 @@ summary {
   color: rgba(33, 33, 33, 0.7);
 }
 
+.main-page {
+  display: inline-block;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  background-color: aquamarine;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  color: #212121;
+  -webkit-transition: background-color 300ms ease-in, -webkit-transform 300ms ease-in;
+  transition: background-color 300ms ease-in, -webkit-transform 300ms ease-in;
+  transition: background-color 300ms ease-in, transform 300ms ease-in;
+  transition: background-color 300ms ease-in, transform 300ms ease-in, -webkit-transform 300ms ease-in;
+}
+.main-page:hover, .main-page:focus {
+  background-color: aqua;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 .menu-btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -338,60 +402,34 @@ summary {
           transform: translateX(0);
 }
 
-.main-page {
-  display: inline-block;
-  margin-bottom: 50px;
-  padding: 10px 20px;
-  font-size: 25px;
-  font-family: "Raleway", sans-serif;
-  text-decoration: none;
-  background-color: aquamarine;
-  border: 1px solid blueviolet;
-  border-radius: 5px;
-  color: #212121;
-  -webkit-transition: background-color 300ms ease-in, -webkit-transform 300ms ease-in;
-  transition: background-color 300ms ease-in, -webkit-transform 300ms ease-in;
-  transition: background-color 300ms ease-in, transform 300ms ease-in;
-  transition: background-color 300ms ease-in, transform 300ms ease-in, -webkit-transform 300ms ease-in;
-}
-.main-page:hover, .main-page:focus {
-  background-color: aqua;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+@media screen and (min-width: 570px) {
+  .img-set {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+  }
 }
 
-.no-scroll {
-  overflow: hidden;
+.img-set__item {
+  outline: 1px solid blueviolet;
+  outline-offset: -1px;
 }
-
-.list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+@media screen and (min-width: 570px) {
+  .img-set__item {
+    -ms-flex-preferred-size: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
+  }
 }
-
-.item {
-  -ms-flex-preferred-size: calc((100% - 60px) / 3);
-      flex-basis: calc((100% - 60px) / 3);
-  -ms-flex-preferred-size: calc((100% - 90px) / 4);
-      flex-basis: calc((100% - 90px) / 4);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 400px;
-  background-color: tomato;
-  font-size: 25px;
-  color: #fff;
+@media screen and (min-width: 570px) {
+  .img-set__item {
+    -ms-flex-preferred-size: calc((100% - 60px) / 3);
+        flex-basis: calc((100% - 60px) / 3);
+  }
 }/*# sourceMappingURL=main.css.map */
