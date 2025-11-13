@@ -1,4 +1,3 @@
-
 // const x1 = 10;
 // const x2 = 30;
 
@@ -9,12 +8,10 @@
 // від х1 до х2
 // до х1 або після х2
 
-
 // console.log(`Число ${number} потрапляє у відрізок до ${x1}`, number < x1);
 // console.log(`Число ${number} потрапляє у відрізок після ${x2}`, number > x2);
 // console.log(`Число ${number} потрапляє у відрізок від ${x1} і до ${x2}`, number > x1 && number < x2);
 // console.log(`Число ${number} потрапляє у відрізок до ${x1} або після ${x2}`, number < x1 || number > x2);
-
 
 // const isOnline = true;
 // const isFriend = true;
@@ -23,11 +20,9 @@
 // const canOpenChat = isOnline && isFriend && !isDnd;
 // console.log(`Можна відкрити чат з користуваем?`, canOpenChat);
 
-
 // const subscription = 'pro';
 // const haveAccess = subscription === 'vip' || subscription === 'pro';
 // console.log(`Є доступ?`, haveAccess)
-
 
 // const balance = -1000;
 // let message;
@@ -42,7 +37,6 @@
 // Тернарний оператор використовується тільки тоді, коли потрібно записати значення в змінну по певній умові
 
 // console.log(message);
-
 
 // console.log(Number.parseInt("50px"));
 // console.log(Number.parseInt("75px"));
@@ -80,7 +74,7 @@
 // while (clientCounter < maxClients) {
 //     clientCounter += 1;
 //     console.log(clientCounter);
-    
+
 // }
 
 // let password = '';
@@ -94,7 +88,7 @@
 
 // for (let i = 0; i <= 20; i += 5) {
 //     console.log(i);
-    
+
 // }
 
 // const target = 3;
@@ -115,7 +109,7 @@
 //         console.log('found number 3');
 //         break
 //     }
-    
+
 // }
 
 // console.log("log after cycle");
@@ -126,8 +120,34 @@
 //     if (i % 2 !== 0) {
 //         odd = i;
 //     console.log(odd);
-//     } 
+//     }
 // }
 
+// 1 - 20$, 2 - 30$, 3 - 50$, 4 - 70$, 5 - 100$
 
+const stars = 3;
+let price;
 
+switch (stars) {
+  case 1:
+    price = '20$';
+
+    break;
+  case 2:
+    price = '40$';
+    break;
+  case 3:
+    price = '50$';
+    break;
+  case 4:
+    price = '70$';
+    break;
+  case 5:
+    price = '100$';
+    break;
+
+  default:
+    console.log('There is not that amount of stars');
+}
+
+console.log(price);
