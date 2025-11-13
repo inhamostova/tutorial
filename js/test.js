@@ -125,29 +125,91 @@
 
 // 1 - 20$, 2 - 30$, 3 - 50$, 4 - 70$, 5 - 100$
 
-const stars = 3;
-let price;
+// const stars = 3;
+// let price;
 
-switch (stars) {
-  case 1:
-    price = '20$';
+// switch (stars) {
+//   case 1:
+//     price = '20$';
 
-    break;
-  case 2:
-    price = '40$';
-    break;
-  case 3:
-    price = '50$';
-    break;
-  case 4:
-    price = '70$';
-    break;
-  case 5:
-    price = '100$';
-    break;
+//     break;
+//   case 2:
+//     price = '40$';
+//     break;
+//   case 3:
+//     price = '50$';
+//     break;
+//   case 4:
+//     price = '70$';
+//     break;
+//   case 5:
+//     price = '100$';
+//     break;
 
-  default:
-    console.log('There is not that amount of stars');
-}
+//   default:
+//     console.log('There is not that amount of stars');
+// }
 
-console.log(price);
+// console.log(price);
+
+// const option = 4;
+
+// switch (option) {
+//   case 1:
+//     console.log('Samovyviz');
+//     break;
+//   case 2:
+//     console.log('kurier');
+//     break;
+//   case 3:
+//     console.log('post');
+//     break;
+//   default:
+//     console.log('manager will cll you soon');
+// }
+
+// const employees = 5;
+// let totalSalary = 0;
+// const max = 5000;
+// const min = 500;
+
+// console.log(Math.round(Math.random() * (max - min) + min));
+
+// for (let i = 1; i <= employees; i += 1) {
+//   const salary = Math.round(Math.random() * (max - min) + min);
+//   console.log(`salary ${salary}`);
+
+//   totalSalary += salary;
+//   console.log(`total salary ${totalSalary}`);
+// }
+
+// console.log(totalSalary);
+
+// const min = 6;
+// const max = 13;
+
+// let total = 0;
+
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 2 === 0) {
+//     total += i;
+
+//   }
+// }
+// console.log(total);
+
+// let balance = 10000;
+// const payment = 20000;
+
+// console.log(
+//   `Загальна сума замовлення ${payment} кредитів. Провіряємо доступну кількість кредитів на рахунку`
+// );
+
+// if (payment <= balance) {
+//   balance -= payment;
+//   console.log(`На рахунку залишилось ${balance} кредитів`);
+// } else {
+//   console.log('На рахунку недостатньо коштів для проведення операції');
+// }
+
+// console.log('Операція завершена');
