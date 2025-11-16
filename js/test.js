@@ -213,3 +213,69 @@
 // }
 
 // console.log('Операція завершена');
+
+// const answ = prompt('Яка офіційна назва JS?');
+// const ecma = 'ECMAScript'.toLowerCase();
+
+// if (answ.toLowerCase() === ecma) {
+//   alert('Вірно');
+// } else {
+//   alert('Не вірно');
+// }
+
+// const value = Number(prompt('Введіть число'));
+// console.log(typeof value);
+
+// if (value > 0) {
+//   console.log('Це позитивне число');
+// } else if (value === 0) {
+//   console.log('Це нуль');
+// } else if (Number.isNaN(value)) {
+//   console.log('Введено не коректне число');
+// } else {
+//   console.log('Це відємне число');
+// }
+
+// let link = 'https://somesite.com/about';
+
+// if (link.endsWith('/')) {
+//   console.log('everything ok');
+// } else {
+//   link += '/';
+//   console.log(link);
+// }
+
+// const daysLeft = 0;
+
+// if (daysLeft === 0) {
+//   console.log('Today');
+// } else if (daysLeft === 1) {
+//   console.log('Tomorrow');
+// } else if (daysLeft === 2) {
+//   console.log('Tomorrow 222');
+// } else {
+//   console.log('Date in the future');
+// }
+
+// switch (daysLeft) {
+//   case 0:
+//     console.log('Today');
+//     break;
+//   case 1:
+//     console.log('Tomorrow');
+//     break;
+//   case 2:
+//     console.log('Tomorrow 222');
+//     break;
+//   default:
+//     console.log('Date in the future');
+// }
+
+const max = 100;
+const min = 20;
+
+for (let i = min; i <= max; i += 1) {
+  if (i % 5 === 0) {
+    console.log(i);
+  }
+}
