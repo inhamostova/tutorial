@@ -275,7 +275,57 @@ const max = 100;
 const min = 20;
 
 for (let i = min; i <= max; i += 1) {
-  if (i % 5 === 0) {
+  if (!(i % 5)) {
     console.log(i);
   }
 }
+
+// const hours = 14;
+// const minutes = 1;
+// let str;
+
+// if (minutes) {
+//   console.log(`${hours} год ${minutes} хв`);
+// } else {
+//   console.log(`${hours} год`);
+// }
+
+// const a = 210;
+// const b = 180;
+
+// if (a > 100 && b > 100) {
+//   if (a > b) {
+//     console.log(a);
+//   } else {
+//     console.log(b);
+//   }
+// } else {
+//   console.log(b + 512);
+// }
+
+// let link = 'https://smesite.com/about';
+
+// if (!link.endsWith('/') && link.includes('somesite')) {
+//   link += '/';
+// }
+
+// link = !link.endsWith('/') && link.includes('somesite') ? `${link}/` : `${link}`;
+
+// console.log(link);
+
+// const login = prompt('Enter your login');
+
+// if (login === 'admin') {
+//   const password = prompt('Enter password');
+
+// if (password === 'admin') {
+//   console.log('Hello admin');
+// } else {
+//   console.log('Wrong password');
+// }
+//   console.log(password === 'admin' ? 'Hello admin' : 'Wrong password');
+// } else if (!login) {
+//   console.log('Canceled');
+// } else {
+//   console.log("I don't know you");
+// }
