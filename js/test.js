@@ -271,11 +271,77 @@
 //     console.log('Date in the future');
 // }
 
-const max = 100;
-const min = 20;
+// const max = 100;
+// const min = 20;
 
-for (let i = min; i <= max; i += 1) {
-  if (i % 5 === 0) {
-    console.log(i);
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// function sayHi() {
+//   console.log('Hello, this is my first function!');
+// }
+
+// sayHi();
+
+// function add(a, b, c) {
+//   console.log(`Addition result equals ${a + b + c}`);
+//   // Change code above this line
+// }
+
+// add(15, 27, 10);
+// add(10, 20, 30);
+// add(5, 10, 15);
+
+// function makeMessage(name, price) {
+//   // Change code below this line
+//   const message = `You picked ${name}, price per item is ${price} credits`;
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(makeMessage('Scanner', 3500));
+
+// function checkStorage(available, ordered) {
+//   let message;
+//   // Change code below this line
+//   if (!ordered) {
+//     message = 'There are no products in the order!';
+//   } else if (ordered > available) {
+//     message = 'Your order is too large, there are not enough items in stock!';
+//   } else {
+//     message = 'The order is accepted, our manager will contact you';
+//   }
+//   // Change code above this line
+//   return message;
+// }
+
+// console.log(checkStorage(100, 50));
+
+function getShippingCost(country) {
+  let message;
+  // Change code below this line
+  switch (country) {
+    case 'China':
+      message = `Shipping to ${country} will cost 100 credits`;
+      break;
+
+    case 'Chile':
+      message = `Shipping to ${country} will cost 250 credits`;
+      break;
+
+    case 'Australia':
+      message = `Shipping to ${country} will cost 170 credits`;
+      break;
+
+    case 'Jamaica':
+      message = `Shipping to ${country} will cost 120 credits`;
+      break;
+    default:
+      message = 'Sorry, there is no delivery to your country';
   }
+  // Change code above this line
+  return message;
 }
