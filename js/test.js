@@ -453,13 +453,24 @@
 
 // console.log(total);
 
-const cards = ['Card-1', 'Card-2', 'Card-3', 'Card-4', 'Card-5'];
+// const cards = ['Card-1', 'Card-2', 'Card-3', 'Card-4', 'Card-5'];
 
-const cardToRemove = 'Card-3';
-const cardToInsert = 'Card-6';
+// const cardToRemove = 'Card-3';
+// const cardToInsert = 'Card-6';
 
-console.log(cards.splice(cards.indexOf(cardToRemove), 1));
-console.log(cards);
+// console.log(cards.splice(cards.indexOf(cardToRemove), 1));
+// console.log(cards);
 
-console.log(cards.splice(3, 0, cardToInsert));
-console.log(cards);
+// console.log(cards.splice(3, 0, cardToInsert));
+// console.log(cards);
+
+const genres = ['Jazz', 'Blues'];
+
+console.log(genres.push("Rock'n'roll"));
+genres.unshift('Country', 'Reggae');
+console.log(genres);
+
+genres.splice(1, 0, 'Inga');
+genres.splice(1, 1, 'Tanya', 'Bonya', 'Bilyash');
+
+console.log(genres);
