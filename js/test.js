@@ -320,28 +320,146 @@
 
 // console.log(checkStorage(100, 50));
 
-function getShippingCost(country) {
-  let message;
-  // Change code below this line
-  switch (country) {
-    case 'China':
-      message = `Shipping to ${country} will cost 100 credits`;
-      break;
+// function getShippingCost(country) {
+//   let message;
+//   // Change code below this line
+//   switch (country) {
+//     case 'China':
+//       message = `Shipping to ${country} will cost 100 credits`;
+//       break;
 
-    case 'Chile':
-      message = `Shipping to ${country} will cost 250 credits`;
-      break;
+//     case 'Chile':
+//       message = `Shipping to ${country} will cost 250 credits`;
+//       break;
 
-    case 'Australia':
-      message = `Shipping to ${country} will cost 170 credits`;
-      break;
+//     case 'Australia':
+//       message = `Shipping to ${country} will cost 170 credits`;
+//       break;
 
-    case 'Jamaica':
-      message = `Shipping to ${country} will cost 120 credits`;
-      break;
-    default:
-      message = 'Sorry, there is no delivery to your country';
-  }
-  // Change code above this line
-  return message;
-}
+//     case 'Jamaica':
+//       message = `Shipping to ${country} will cost 120 credits`;
+//       break;
+//     default:
+//       message = 'Sorry, there is no delivery to your country';
+//   }
+//   // Change code above this line
+//   return message;
+// }
+// const friends = ['Mango', 'Kiwi', 'Poly'];
+
+// for (let i = 0; i < friends.length; i += 1) {
+//   console.log(friends[i]);
+// }
+
+// for (const friend of friends) {
+//   console.log(friend);
+// }
+
+// const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+
+// let total = 0;
+
+// for (const purchase of cart) {
+//   total += purchase;
+//   console.log(total);
+// }
+
+// console.log(total);
+
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// let totalEven = 0;
+
+// for (const number of numbers) {
+//   if (!(number % 2)) {
+//     totalEven += number;
+//   }
+// }
+
+// console.log(totalEven);
+
+// const logins = ['m4ngoDoge', 'kiwidab3st', 'poly1scute', 'ajaxth3m4n'];
+// const loginToFind = 'm4ngoDoge1';
+
+// for (let i = 0; i < logins.length; i += 1) {
+//   if (logins[i] === loginToFind) {
+//     console.log(`User ${logins[i]} found`);
+//     break;
+//   }
+//   console.log(logins[i]);
+// }
+
+// for (const login of logins) {
+//   if (login === loginToFind) {
+//     console.log(`User ${login} found`);
+//     break;
+//   }
+//   console.log(login);
+// }
+
+// console.log(logins.includes(loginToFind) ? `User ${loginToFind} found` : 'User not found');
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallesrNumber;
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   if (numbers[i] < numbers[i + 1]) {
+//     smallesrNumber = numbers[i];
+//   }
+// }
+
+// console.log(smallesrNumber);
+
+// const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax'];
+// let str = '';
+
+// for (const friend of friends) {
+//   str += friend;
+//   console.log(str);
+// }
+
+// console.log(friends.join());
+
+// const str = 'JavaScript';
+
+// let str2 = '';
+
+// const arr = str.split('');
+
+// for (const value of arr) {
+//   // if (value === value.toLowerCase()) {
+//   //   str2 += value.toUpperCase();
+//   //   console.log(str2);
+//   // } else {
+//   //   str2 += value.toLowerCase();
+//   // }
+//   str2 += value === value.toLowerCase() ? value.toUpperCase() : value.toLowerCase();
+// }
+// console.log(str2);
+
+// const title = 'Top 5 benefits of React framework';
+// const slug = title.toLowerCase().split(' ').join('-');
+
+// console.log(slug);
+
+// const arr1 = [5, 10, 15, 20];
+// const arr2 = [10, 20, 30];
+
+// let total = 0;
+
+// for (const number of arr1.concat(arr2)) {
+//   total += number;
+//   console.log(number);
+// }
+
+// console.log(total);
+
+const cards = ['Card-1', 'Card-2', 'Card-3', 'Card-4', 'Card-5'];
+
+const cardToRemove = 'Card-3';
+const cardToInsert = 'Card-6';
+
+console.log(cards.splice(cards.indexOf(cardToRemove), 1));
+console.log(cards);
+
+console.log(cards.splice(3, 0, cardToInsert));
+console.log(cards);
