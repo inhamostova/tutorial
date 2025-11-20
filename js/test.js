@@ -515,7 +515,7 @@
 //   console.log(number);
 // }
 
-const langs = ['dpython', 'cjavascript', 'bc++', 'ahaskel', 'mphp', 'zruby'];
+// const langs = ['dpython', 'cjavascript', 'bc++', 'ahaskel', 'mphp', 'zruby'];
 
 // for (let i = 0; i < langs.length; i += 1) {
 //   if (!arr.includes(langs[i])) {
@@ -529,10 +529,137 @@ const langs = ['dpython', 'cjavascript', 'bc++', 'ahaskel', 'mphp', 'zruby'];
 // }
 // console.log(arr);
 // const remove = langs.splice(3, 1);
-for (let i = 0; i < langs.length; i += 1) {
-  if (langs[0] > langs[i]) {
-    const result = langs.splice(i, 1)[0];
-    langs.unshift(result);
+// for (let i = 0; i < langs.length; i += 1) {
+//   if (langs[0] > langs[i]) {
+//     const result = langs.splice(i, 1)[0];
+//     langs.unshift(result);
+//   }
+// }
+// console.log(langs);
+
+// function multiply(x, y, z) {
+//   console.log('Код до return виконується звичайним чином');
+
+//   // Повертаємо результат виразу множення
+//   return x * y * z;
+
+//   console.log('Цей лог ніколи не виконається, він стоїть після return');
+// }
+
+// // Результат роботи функції можна зберегти у змінну
+// let result = multiply(2, 3, 5);
+// console.log(result); // 30
+
+// result = multiply(4, 8, 12);
+// console.log(result); // 384
+
+// result = multiply(17, 6, 25);
+// console.log(result); // 2550
+
+// function multiply() {
+//   let total = 1;
+//   console.log(arguments);
+
+//   for (const argument of arguments) {
+//     total *= argument;
+//   }
+
+//   return total;
+// }
+
+// console.log(multiply(1, 2, 3)); //  6
+// console.log(multiply(1, 2, 3, 4)); //  24
+// console.log(multiply(1, 2, 3, 4, 5)); //  120
+
+// function fn(...args) {
+//   // Змінна args буде містити повноцінний масив
+//   return args;
+// }
+
+// console.log(fn(1, 5, 22, 44));
+
+// function bar() {
+//   console.log('bar');
+// }
+
+// function baz() {
+//   console.log('baz');
+// }
+
+// function foo() {
+//   console.log('foo');
+//   bar();
+//   baz();
+// }
+
+// foo();
+
+// function calculateTotalPrice(arr) {
+//   let total = 0;
+//   for (const value of arr) {
+//     total += value;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([1, 2, 3]));
+
+// const logItems = function (items) {
+//   for (const item of items) {
+//     console.log(`${item}`);
+//   }
+// };
+
+// logItems([1, 5, 10]);
+// logItems(['Mango', 'Poly', 'Kiwi']);
+
+// const logins = ['m4ngoDoge', 'kiwidab3st', 'poly1scute', 'ajaxth3m4n'];
+// const loginToFind = 'm4ngoDoge2';
+
+// function findLogin(allLogins, login) {
+//   return allLogins.includes(login) ? `User ${login} found` : `User ${login} NO!!!`;
+// }
+
+// console.log(findLogin(logins, loginToFind));
+
+// function findSmallestNumber(numbers) {
+//   let smallest = numbers[0];
+//   for (const number of numbers) {
+//     if (number < smallest) {
+//       smallest = number;
+//     }
+//   }
+//   return smallest;
+// }
+
+// console.log(findSmallestNumber([120, 64, 43, 12, 7, 99]));
+// function changeCaseStr(string) {
+//   const items = string.split('');
+//   let strUpdated = '';
+//   for (const item of items) {
+//     // if (item === item.toLowerCase()) {
+//     //   strUpdated += item.toUpperCase();
+//     // } else {
+//     //   strUpdated += item.toLowerCase();
+//     // }
+//     strUpdated += item === item.toLowerCase() ? item.toUpperCase() : item.toLowerCase();
+//   }
+//   return strUpdated;
+// }
+
+// console.log(changeCaseStr('TANYA vyshnia'));
+
+function filterNumbers(numbers, ...args) {
+  console.log(numbers);
+  console.log(args);
+  const arr = [];
+
+  for (const arg of args) {
+    if (numbers.includes(arg)) {
+      arr.push(arg);
+    }
   }
+  return arr;
 }
-console.log(langs);
+
+console.log(filterNumbers([1, 5, 9, 12], 5, 25, 43, 12));
