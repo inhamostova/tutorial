@@ -512,13 +512,53 @@
 // console.log(cards.splice(3, 0, cardToInsert));
 // console.log(cards);
 
-const genres = ['Jazz', 'Blues'];
+// const genres = ['Jazz', 'Blues'];
 
-console.log(genres.push("Rock'n'roll"));
-genres.unshift('Country', 'Reggae');
-console.log(genres);
+// console.log(genres.push("Rock'n'roll"));
+// genres.unshift('Country', 'Reggae');
+// console.log(genres);
 
-genres.splice(1, 0, 'Inga');
-genres.splice(1, 1, 'Tanya', 'Bonya', 'Bilyash');
+// genres.splice(1, 0, 'Inga');
+// genres.splice(1, 1, 'Tanya', 'Bonya', 'Bilyash');
 
-console.log(genres);
+// console.log(genres);
+
+// const values = '8 11';
+// console.log(values.split(' '));
+// const square = values.split(' ')[0] * values.split(' ')[1];
+// console.log(square);
+
+// const fruits = ['apple', 'strawberry', 'orange', 'lemon'];
+
+// for (let i = 0, k = 1; i < fruits.length; i += 1, k += 1) {
+//   console.log(`${k} - ${fruits[i]}`);
+// }
+
+// const names = 'Jacob,William,Solomon,Kate';
+// const phones = '0631234567,0969876543,0501287312,0677125512';
+
+// for (let i = 0; i < names.split(',').length; i += 1) {
+//   console.log(`${names.split(',')[i]} - phone ${phones.split(',')[i]}`);
+// }
+
+// const str = 'Welcome to the future';
+
+// const arr = str.split('');
+// console.log(arr);
+// console.log(arr.reverse().join(''));
+
+// arr.splice(0, 1);
+// arr.splice(arr.length - 1, 1);
+// console.log(arr);
+
+// console.log(arr.join(' '));
+
+const numbers = [101, 78, 12, 76, 5, 11, 9];
+let smallestNum = numbers[0];
+for (const number of numbers) {
+  if (number < smallestNum) {
+    smallestNum = number;
+    console.log(smallestNum);
+  }
+  console.log(number);
+}
