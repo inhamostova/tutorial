@@ -553,12 +553,34 @@
 
 // console.log(arr.join(' '));
 
-const numbers = [101, 78, 12, 76, 5, 11, 9];
-let smallestNum = numbers[0];
-for (const number of numbers) {
-  if (number < smallestNum) {
-    smallestNum = number;
-    console.log(smallestNum);
+// const numbers = [101, 78, 12, 76, 5, 11, 9];
+// let smallestNum = numbers[0];
+// for (const number of numbers) {
+//   if (number < smallestNum) {
+//     smallestNum = number;
+//     console.log(smallestNum);
+//   }
+//   console.log(number);
+// }
+
+const langs = ['dpython', 'cjavascript', 'bc++', 'ahaskel', 'mphp', 'zruby'];
+
+// for (let i = 0; i < langs.length; i += 1) {
+//   if (!arr.includes(langs[i])) {
+//     // console.log(true);
+//     if (arr[0][0] > langs[i][0]) {
+//       arr.unshift(langs[i]);
+//     } else {
+//       arr.push(langs[i]);
+//     }
+//   }
+// }
+// console.log(arr);
+// const remove = langs.splice(3, 1);
+for (let i = 0; i < langs.length; i += 1) {
+  if (langs[0] > langs[i]) {
+    const result = langs.splice(i, 1)[0];
+    langs.unshift(result);
   }
-  console.log(number);
 }
+console.log(langs);
