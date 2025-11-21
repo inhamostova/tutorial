@@ -649,17 +649,76 @@
 
 // console.log(changeCaseStr('TANYA vyshnia'));
 
-function filterNumbers(numbers, ...args) {
-  console.log(numbers);
-  console.log(args);
-  const arr = [];
+// function filterNumbers(numbers, ...args) {
+//   console.log(numbers);
+//   console.log(args);
+//   const arr = [];
 
-  for (const arg of args) {
-    if (numbers.includes(arg)) {
-      arr.push(arg);
-    }
+//   for (const arg of args) {
+//     if (numbers.includes(arg)) {
+//       arr.push(arg);
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(filterNumbers([1, 5, 9, 12], 5, 25, 43, 12));
+
+// function getSum() {
+//   console.log(arguments);
+//   let total = 0;
+//   for (const arg of arguments) {
+//     total += arg;
+//   }
+//   return total;
+// }
+
+// console.log(getSum(1, 2, 3, 4, 5, 6, 7));
+
+// console.log(getSum(44, 12, 22, 25));
+
+// function foo() {
+//   console.log('start foo');
+// }
+
+// function boo() {
+//   console.log('start boo');
+//   foo();
+//   console.log('end boo');
+// }
+
+// boo();
+
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+
+function addCourse(names, name) {
+  if (!names.includes(name)) {
+    names.push(name);
+    return names;
   }
-  return arr;
+  return 'Youa already have this course';
 }
 
-console.log(filterNumbers([1, 5, 9, 12], 5, 25, 43, 12));
+console.log(addCourse(courses, 'C++'));
+console.log(addCourse(courses, 'CSS'));
+
+function removeCourse(names, name) {
+  if (names.includes(name)) {
+    names.splice(names.indexOf(name), 1);
+    return names;
+  }
+  return "You don't have that course";
+}
+
+console.log(removeCourse(courses, 'C++'));
+console.log(removeCourse(courses, 'C++'));
+
+function updateCourse(names, oldName, newName) {
+  if (names.includes(oldName)) {
+    names.splice(names.indexOf(oldName), 1, newName);
+  }
+  return names;
+}
+
+// console.log(removeCourse(courses, 'C++'));
+console.log(updateCourse(courses, 'CSS', 'Python'));
