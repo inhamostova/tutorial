@@ -829,12 +829,126 @@
 // }
 // console.log(getEvenNumbers(6, 12));
 
-function includes(array, value) {
-  for (const item of array) {
-    if (item === value) {
-      return true;
-    }
-  }
-  return false;
-}
-console.log(includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Jupiter'));
+// function includes(array, value) {
+//   for (const item of array) {
+//     if (item === value) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Jupiter'));
+
+// function calcBMI(weight, height) {
+//   const weightArr = weight.split('');
+//   const heightArr = height.split('');
+
+//   if (weightArr.includes(',')) {
+//     weightArr.splice(weightArr.indexOf(','), 1, '.');
+//   }
+
+//   if (heightArr.includes(',')) {
+//     heightArr.splice(heightArr.indexOf(','), 1, '.');
+//   }
+
+//   return (Number(weightArr.join('')) / Number(heightArr.join('')) ** 2).toFixed(2);
+// }
+// function calcBMI(weight, height) {
+//   weight = weight.replace(',', '.');
+//   height = height.replace(',', '.');
+
+//   const BMI = (Number(weight) / Math.pow(Number(height), 2)).toFixed(2);
+//   return Number(BMI);
+// }
+
+// console.log(calcBMI('88,3', '1.75'));
+
+// const str = 'Inga Mostova';
+// console.log(str.includes('g'));
+
+// function findLargestNumber(array) {
+//   let largestNumber = setFirstNumber(array);
+//   // console.log(largestNumber);
+
+//   for (const number of array) {
+//     if (Array.isArray(number)) {
+//       for (const item of number) {
+//         array.push(item);
+//         // console.log(array);
+//       }
+//     }
+
+//     if (typeof number === 'number') {
+//       largestNumber = number > largestNumber ? number : largestNumber;
+//     }
+//   }
+
+//   return largestNumber;
+// }
+
+// function setFirstNumber(array) {
+//   for (let i = 0; i < array.length; i += 1) {
+//     if (Array.isArray(array[i])) {
+//       continue;
+//     }
+//     if (typeof array[i] === 'number') {
+//       return array[i];
+//     }
+//   }
+// }
+
+// console.log(findLargestNumber([2, 3, 86, 97, 123, 44, 5, 34, 12, 32])); //123
+// console.log(findLargestNumber([565, 333, 12, 48, 1245, 54])); //1245
+
+// console.log(findLargestNumber([[15, 245, 33], [2, 3, 4], 2, 3, 86, 97, 123, 44, 5, 34, 12, 32]));
+// console.log(findLargestNumber([[15, 245, 33], [2, 666, 4], 2, 3, 86, 97, 123, 44, 5, 34, 12, 32]));
+// console.log(
+//   findLargestNumber([
+//     [15, 245, 5000, 33],
+//     [2, 3, 4, [1500, 66]],
+//     2,
+//     3,
+//     86,
+//     97,
+//     123,
+//     44,
+//     5,
+//     [1024],
+//     34,
+//     12,
+//     32,
+//   ])
+// );
+
+// console.log(setFirstNumber([[15, 245, 33], [2, 3, 4], 55, 3, 86, 97, 123, 44, 5, 34, 12, 32]));
+
+// function callAverage() {
+//   let total = 0;
+//   for (const number of arguments) {
+//     total += number;
+//   }
+
+//   return total / arguments.length;
+// }
+
+// console.log(callAverage(14, 8, 2));
+
+// function format(minutes) {
+//   const hours = Math.floor(minutes / 60);
+//   const mins = minutes % 60;
+//   const mesHours = hours < 10 ? `0${hours}` : `${hours}`;
+//   const mesMins = mins < 10 ? `0${mins}` : `${mins}`;
+//   return `${mesHours}:${mesMins}`;
+// }
+
+// console.log(format(1441));
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+// const idx = arr.indexOf(11);
+// if (!!~idx) {
+//   console.log('YES');
+// } else {
+//   console.log('NO');
+// }
+
+// !!~ = Boolean-(x+1)
