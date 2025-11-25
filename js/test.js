@@ -1004,56 +1004,56 @@
 
 // console.log(getOnlineFriends(friends));
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    this.items.push(product);
-    product.quantity = 1;
-  },
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice() {
-    let total = 0;
-    for (const item of this.items) {
-      total += item.price;
-    }
-    return total;
-  },
-  remove(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        this.items.splice(this.items.indexOf(item), 1);
-      }
-    }
-  },
-  increaseQuantity(productName) {
-    for (const item of this.items) {
-      if (item.name === productName) {
-        item.quantity += 1;
-      }
-    }
-  },
-};
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     this.items.push(product);
+//     product.quantity = 1;
+//   },
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice() {
+//     let total = 0;
+//     for (const item of this.items) {
+//       total += item.price;
+//     }
+//     return total;
+//   },
+//   remove(productName) {
+//     for (const item of this.items) {
+//       if (item.name === productName) {
+//         this.items.splice(this.items.indexOf(item), 1);
+//       }
+//     }
+//   },
+//   increaseQuantity(productName) {
+//     for (const item of this.items) {
+//       if (item.name === productName) {
+//         item.quantity += 1;
+//       }
+//     }
+//   },
+// };
 
-cart.add({ name: 'apple', price: 50 });
-cart.add({ name: 'pear', price: 60 });
-cart.add({ name: 'orange', price: 100 });
-cart.add({ name: 'grape', price: 200 });
+// cart.add({ name: 'apple', price: 50 });
+// cart.add({ name: 'pear', price: 60 });
+// cart.add({ name: 'orange', price: 100 });
+// cart.add({ name: 'grape', price: 200 });
 
-console.log(cart);
+// console.log(cart);
 
-cart.remove('apple');
+// cart.remove('apple');
 
-console.log(cart);
+// console.log(cart);
 
-console.log(cart.countTotalPrice());
+// console.log(cart.countTotalPrice());
 
-cart.increaseQuantity('grape');
-cart.increaseQuantity('grape');
-cart.increaseQuantity('grape');
+// cart.increaseQuantity('grape');
+// cart.increaseQuantity('grape');
+// cart.increaseQuantity('grape');
 
-console.log(cart);
+// console.log(cart);
