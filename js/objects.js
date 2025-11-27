@@ -395,18 +395,23 @@
 // Change code above this line
 // }
 // console.log(makeTask({ category: 'Homemade', priority: 'Low', text: 'Take out the trash' }));
+/**
+ *
+ * @param {Array} arr
+ * @param  {...any} args
+ * @returns {Array} matches
+ */
+function findMatches(arr, ...args) {
+  const matches = []; // Don't change this line
 
-// function findMatches(arr, ...args) {
-//   const matches = []; // Don't change this line
-
-//   for (const arg of args) {
-//     if (arr.includes(arg)) {
-//       matches.push(arg);
-//     }
-//   }
-//   // Change code above this line
-//   return matches;
-// }
+  for (const arg of args) {
+    if (arr.includes(arg)) {
+      matches.push(arg);
+    }
+  }
+  // Change code above this line
+  return matches;
+}
 
 // console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
 
@@ -509,4 +514,20 @@ const atTheOldToad = {
 // atTheOldToad.updatePotionName('Dragon breath', 'Polymorth');
 atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion');
 
-console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.getPotions());
+
+function transformUserName({ firstName, lastName, ...props }) {
+  // console.log(props);
+
+  return { fullName: `${firstName} ${lastName}`, ...props };
+}
+
+console.log(
+  transformUserName({
+    firstName: 'Inga',
+    lastName: 'Mostova',
+    age: 28,
+    sports: ['soccer', 'volleyball', 'tennis'],
+    id: Date.now(),
+  })
+);
