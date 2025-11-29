@@ -595,23 +595,97 @@
 // console.log(filterArr([1, 2, 3, 4, 5, 6, 7], first));
 // console.log(filterArr([1, 2, 3, 4, 5, 6, 7, -2, -23, -101], second));
 
-const fruits = [
-  { name: '🍓', qty: 100, isFresh: true },
-  { name: '🍇', qty: 170, isFresh: false },
-  { name: '🍋', qty: 200, isFresh: true },
-];
+// const fruits = [
+//   { name: '🍓', qty: 100, isFresh: true },
+//   { name: '🍇', qty: 170, isFresh: false },
+//   { name: '🍋', qty: 200, isFresh: true },
+// ];
 
-function filterArr(array, callback) {
-  const filteredArr = [];
+// function filterArr(array, callback) {
+//   const filteredArr = [];
 
-  for (const el of array) {
-    if (callback(el.qty)) {
-      filteredArr.push(el);
-    }
-  }
-  return filteredArr;
+//   for (const el of array) {
+//     if (callback(el.qty)) {
+//       filteredArr.push(el);
+//     }
+//   }
+//   return filteredArr;
+// }
+
+// const fn = el => el > 150;
+
+// console.log(filterArr(fruits, fn));
+
+// function fnA(par) {
+//   const a = 'Inner variable in fnA';
+
+//   function fnB() {
+//     console.log('Call from fnB');
+//     console.log(a);
+//     console.log(par);
+//   }
+
+//   return fnB;
+// }
+
+// const fnC = fnA(555);
+// fnC();
+// console.log(fnC);
+
+// function makeShef(name) {
+//   function makeDish(dish) {
+//     console.log(`${name} makes ${dish}`);
+//   }
+
+//   return makeDish;
+// }
+
+// const inga = makeShef('Inga');
+
+// console.dir(inga);
+// inga('pizza');
+// inga('cake');
+
+// const floatPoint = 3.456789;
+// const someInt = Math.round(floatPoint);
+// const withDec = Number(floatPoint.toFixed(2));
+
+// function decimals(round) {
+//   function fix(number) {
+//     console.log(Number(number.toFixed(round)));
+//   }
+
+//   return fix;
+// }
+
+// round2 = decimals(4);
+// console.dir(round2);
+// round2(floatPoint);
+
+function countSalary(employer, baseSalary = 0) {
+  let salary = baseSalary;
+
+  return {
+    add(amount) {
+      salary += amount;
+      return;
+    },
+    remove(amount) {
+      salary -= amount;
+      return;
+    },
+    getCurrentSalary() {
+      return `${employer} your current salary is ${salary}`;
+    },
+  };
 }
 
-const fn = el => el > 150;
+const salaryManager = countSalary('Inga', 20000);
 
-console.log(filterArr(fruits, fn));
+console.dir(salaryManager);
+
+console.log(salaryManager.getCurrentSalary());
+salaryManager.add(5000);
+console.log(salaryManager.getCurrentSalary());
+salaryManager.remove(3000);
+console.log(salaryManager.getCurrentSalary());
