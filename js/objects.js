@@ -397,21 +397,21 @@
 // console.log(makeTask({ category: 'Homemade', priority: 'Low', text: 'Take out the trash' }));
 /**
  *
- * @param {Array} arr
- * @param  {...any} args
- * @returns {Array} matches
- */
-function findMatches(arr, ...args) {
-  const matches = []; // Don't change this line
+//  * @param {Array} arr
+//  * @param  {...any} args
+//  * @returns {Array} matches
+//  */
+// function findMatches(arr, ...args) {
+//   const matches = []; // Don't change this line
 
-  for (const arg of args) {
-    if (arr.includes(arg)) {
-      matches.push(arg);
-    }
-  }
-  // Change code above this line
-  return matches;
-}
+//   for (const arg of args) {
+//     if (arr.includes(arg)) {
+//       matches.push(arg);
+//     }
+//   }
+//   // Change code above this line
+//   return matches;
+// }
 
 // console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
 
@@ -460,51 +460,51 @@ function findMatches(arr, ...args) {
 //   },
 // };
 
-const atTheOldToad = {
-  potions: [
-    { name: 'Speed potion', price: 460 },
-    { name: 'Dragon breath', price: 780 },
-    { name: 'Stone skin', price: 520 },
-  ],
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Speed potion', price: 460 },
+//     { name: 'Dragon breath', price: 780 },
+//     { name: 'Stone skin', price: 520 },
+//   ],
 
-  getPotions() {
-    return this.potions;
-  },
-  addPotion(newPotion) {
-    const { potions } = this;
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     const { potions } = this;
 
-    for (const { name } of potions) {
-      if (name === newPotion.name) {
-        return `Error! Potion ${newPotion.name} is already in your inventory!`;
-      }
-    }
-    potions.push(newPotion);
-    return;
-  },
-  removePotion(potionName) {
-    const { potions } = this;
+//     for (const { name } of potions) {
+//       if (name === newPotion.name) {
+//         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//       }
+//     }
+//     potions.push(newPotion);
+//     return;
+//   },
+//   removePotion(potionName) {
+//     const { potions } = this;
 
-    for (let i = 0; i < potions.length; i += 1) {
-      if (potions[i].name === potionName) {
-        potions.splice(i, 1);
-        return;
-      }
-    }
+//     for (let i = 0; i < potions.length; i += 1) {
+//       if (potions[i].name === potionName) {
+//         potions.splice(i, 1);
+//         return;
+//       }
+//     }
 
-    return `Potion ${potionName} is not in inventory!`;
-  },
-  updatePotionName(oldName, newName) {
-    const { potions } = this;
+//     return `Potion ${potionName} is not in inventory!`;
+//   },
+//   updatePotionName(oldName, newName) {
+//     const { potions } = this;
 
-    for (let i = 0; i < potions.length; i += 1) {
-      if (potions[i].name === oldName) {
-        potions[i].name = newName;
-        return;
-      }
-    }
-    return `Potion ${oldName} is not in inventory!`;
-  },
-};
+//     for (let i = 0; i < potions.length; i += 1) {
+//       if (potions[i].name === oldName) {
+//         potions[i].name = newName;
+//         return;
+//       }
+//     }
+//     return `Potion ${oldName} is not in inventory!`;
+//   },
+// };
 
 // atTheOldToad.addPotion({ name: 'Invisibility', price: 620 });
 // atTheOldToad.addPotion({ name: 'Power potion', price: 270 });
@@ -512,22 +512,180 @@ const atTheOldToad = {
 // console.log(atTheOldToad.addPotion({ name: 'Stone skin', price: 240 }));
 // atTheOldToad.removePotion('Speed potion');
 // atTheOldToad.updatePotionName('Dragon breath', 'Polymorth');
-atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion');
+// atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion');
 
 // console.log(atTheOldToad.getPotions());
 
-function transformUserName({ firstName, lastName, ...props }) {
-  // console.log(props);
+// function transformUserName({ firstName, lastName, ...props }) {
+//   // console.log(props);
 
-  return { fullName: `${firstName} ${lastName}`, ...props };
+//   return { fullName: `${firstName} ${lastName}`, ...props };
+// }
+
+// console.log(
+//   transformUserName({
+//     firstName: 'Inga',
+//     lastName: 'Mostova',
+//     age: 28,
+//     sports: ['soccer', 'volleyball', 'tennis'],
+//     id: Date.now(),
+//   })
+// );
+
+// function fnA(message, callback) {
+//   console.log(message);
+
+//   callback(100);
+// }
+
+// function fnB(number) {
+//   console.log('LOG form fnB', number);
+// }
+
+// fnA('Mango', fnB);
+
+// function doMath(a, b, callback) {
+//   console.log(callback(a, b));
+// }
+
+// doMath(5, 2, sum);
+// doMath(5, 2, difference);
+// doMath(5, 2, dobutok);
+// doMath(5, 2, rest);
+// doMath(5, 2, (x, y) => x / y);
+
+// function sum(x, y) {
+//   return x + y;
+// }
+
+// function difference(x, y) {
+//   return x - y;
+// }
+
+// function dobutok(x, y) {
+//   return x * y;
+// }
+
+// function rest(x, y) {
+//   return x % y;
+// }
+
+// function filterArr(array, callback) {
+//   const filteredArr = [];
+
+//   for (const el of array) {
+//     console.log(callback(el));
+//     console.log(el);
+//     if (callback(el)) {
+//       filteredArr.push(el);
+//     }
+//   }
+//   return filteredArr;
+// }
+
+// const first = el => el >= 3;
+// const second = el => el <= 2;
+// const second = el => { `
+//   if (el <= 2) {
+//     return true;
+//   }
+//   return false;
+// };
+
+// console.log(filterArr([1, 2, 3, 4, 5, 6, 7], first));
+// console.log(filterArr([1, 2, 3, 4, 5, 6, 7, -2, -23, -101], second));
+
+// const fruits = [
+//   { name: '🍓', qty: 100, isFresh: true },
+//   { name: '🍇', qty: 170, isFresh: false },
+//   { name: '🍋', qty: 200, isFresh: true },
+// ];
+
+// function filterArr(array, callback) {
+//   const filteredArr = [];
+
+//   for (const el of array) {
+//     if (callback(el.qty)) {
+//       filteredArr.push(el);
+//     }
+//   }
+//   return filteredArr;
+// }
+
+// const fn = el => el > 150;
+
+// console.log(filterArr(fruits, fn));
+
+// function fnA(par) {
+//   const a = 'Inner variable in fnA';
+
+//   function fnB() {
+//     console.log('Call from fnB');
+//     console.log(a);
+//     console.log(par);
+//   }
+
+//   return fnB;
+// }
+
+// const fnC = fnA(555);
+// fnC();
+// console.log(fnC);
+
+// function makeShef(name) {
+//   function makeDish(dish) {
+//     console.log(`${name} makes ${dish}`);
+//   }
+
+//   return makeDish;
+// }
+
+// const inga = makeShef('Inga');
+
+// console.dir(inga);
+// inga('pizza');
+// inga('cake');
+
+// const floatPoint = 3.456789;
+// const someInt = Math.round(floatPoint);
+// const withDec = Number(floatPoint.toFixed(2));
+
+// function decimals(round) {
+//   function fix(number) {
+//     console.log(Number(number.toFixed(round)));
+//   }
+
+//   return fix;
+// }
+
+// round2 = decimals(4);
+// console.dir(round2);
+// round2(floatPoint);
+
+function countSalary(employer, baseSalary = 0) {
+  let salary = baseSalary;
+
+  return {
+    add(amount) {
+      salary += amount;
+      return;
+    },
+    remove(amount) {
+      salary -= amount;
+      return;
+    },
+    getCurrentSalary() {
+      return `${employer} your current salary is ${salary}`;
+    },
+  };
 }
 
-console.log(
-  transformUserName({
-    firstName: 'Inga',
-    lastName: 'Mostova',
-    age: 28,
-    sports: ['soccer', 'volleyball', 'tennis'],
-    id: Date.now(),
-  })
-);
+const salaryManager = countSalary('Inga', 20000);
+
+console.dir(salaryManager);
+
+console.log(salaryManager.getCurrentSalary());
+salaryManager.add(5000);
+console.log(salaryManager.getCurrentSalary());
+salaryManager.remove(3000);
+console.log(salaryManager.getCurrentSalary());
