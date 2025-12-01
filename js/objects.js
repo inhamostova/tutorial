@@ -662,30 +662,134 @@
 // console.dir(round2);
 // round2(floatPoint);
 
-function countSalary(employer, baseSalary = 0) {
-  let salary = baseSalary;
+// function countSalary(employer, baseSalary = 0) {
+//   let salary = baseSalary;
 
-  return {
-    add(amount) {
-      salary += amount;
-      return;
-    },
-    remove(amount) {
-      salary -= amount;
-      return;
-    },
-    getCurrentSalary() {
-      return `${employer} your current salary is ${salary}`;
-    },
-  };
+//   return {
+//     add(amount) {
+//       salary += amount;
+//       return;
+//     },
+//     remove(amount) {
+//       salary -= amount;
+//       return;
+//     },
+//     getCurrentSalary() {
+//       return `${employer} your current salary is ${salary}`;
+//     },
+//   };
+// }
+
+// const salaryManager = countSalary('Inga', 20000);
+
+// console.dir(salaryManager);
+
+// console.log(salaryManager.getCurrentSalary());
+// salaryManager.add(5000);
+// console.log(salaryManager.getCurrentSalary());
+// salaryManager.remove(3000);
+// console.log(salaryManager.getCurrentSalary());
+
+// const arr = [2, 6, 1, 7, 3];
+// function each(arr, callback) {
+//   let total = 0;
+
+//   arr.forEach(item => {
+//     total = callback(total, item);
+//   });
+
+//   return total;
+// }
+
+// const add = (a, b) => a + b;
+
+// const sum = (a, b) => a * b;
+
+// const division = (a, b) => a - b;
+
+// console.log(each(arr, add));
+// console.log(each(arr, division));
+
+// const arr = [2, 6, 1, 7, 3];
+
+// arr.forEach((item, idx, arr) => {
+//   console.log(item);
+//   console.log(idx);
+//   console.log(arr);
+// });
+// const products = [
+//   { name: 'apple', price: 100, quantity: 7 },
+//   { name: 'lemon', price: 70, quantity: 12 },
+//   { name: 'grape', price: 150, quantity: 5 },
+// ];
+
+// function createProduct(obj, callback) {
+//   const product = {
+//     id: Date.now(),
+//     ...obj,
+//   };
+//   callback(product);
+// }
+
+// const logger = obj => console.log(obj);
+
+// const logPrice = ({ price, quantity }) => console.log(price * quantity);
+
+// createProduct(products[2], logPrice);
+
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   balance: 3400,
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > this.balance) {
+//       onError('Недостатньо коштів на балансі');
+//       return;
+//     }
+
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError('Ліміт транзакцій перевищено');
+//       return;
+//     }
+//     this.balance -= amount;
+//     onSuccess(`${amount} успішно знято, поточний баланс - ${this.balance}`);
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount <= 0) {
+//       onError('Введіть коректну суму поповнення');
+//       return;
+//     }
+
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError('Ліміт транзакцій перевищено');
+//       return;
+//     }
+//     this.balance += amount;
+//     onSuccess(`${amount} успішно покладено, поточний баланс - ${this.balance}`);
+//   },
+// };
+
+// const handleSuccess = mes => alert(mes);
+// const handleError = mes => alert(mes);
+
+// account.deposit(-700, handleSuccess, handleError);
+// account.withdraw(900, handleSuccess, handleError);
+// account.deposit(1500, handleSuccess, handleError);
+// account.deposit(700, handleSuccess, handleError);
+
+function logItems(items) {
+  // console.log(items);
+  items.forEach((item, idx) => {
+    console.log(`${idx + 1} - ${item}`);
+  });
 }
 
-const salaryManager = countSalary('Inga', 20000);
+logItems(['Mango', 'Poly', 'Ajax']);
 
-console.dir(salaryManager);
+const calculateAverage = (...args) => {
+  let total = 0;
+  args.forEach(item => (total += item));
+  return total / args.length;
+};
 
-console.log(salaryManager.getCurrentSalary());
-salaryManager.add(5000);
-console.log(salaryManager.getCurrentSalary());
-salaryManager.remove(3000);
-console.log(salaryManager.getCurrentSalary());
+console.log(calculateAverage(1, 15, 22, 43, 7));
