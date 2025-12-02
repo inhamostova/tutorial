@@ -777,19 +777,87 @@
 // account.deposit(1500, handleSuccess, handleError);
 // account.deposit(700, handleSuccess, handleError);
 
-function logItems(items) {
-  // console.log(items);
-  items.forEach((item, idx) => {
-    console.log(`${idx + 1} - ${item}`);
-  });
-}
+// function logItems(items) {
+//   // console.log(items);
+//   items.forEach((item, idx) => {
+//     console.log(`${idx + 1} - ${item}`);
+//   });
+// }
 
-logItems(['Mango', 'Poly', 'Ajax']);
+// logItems(['Mango', 'Poly', 'Ajax']);
 
-const calculateAverage = (...args) => {
-  let total = 0;
-  args.forEach(item => (total += item));
-  return total / args.length;
-};
+// const calculateAverage = (...args) => {
+//   let total = 0;
+//   args.forEach(item => (total += item));
+//   return total / args.length;
+// };
 
-console.log(calculateAverage(1, 15, 22, 43, 7));
+// console.log(calculateAverage(1, 15, 22, 43, 7));
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// const total = numbers.reduce((acc, number) => {
+//   acc += number;
+//   return acc;
+// }, 0);
+
+// console.log(total);
+
+// const salary = {
+//   mango: 100,
+//   poly: 200,
+//   ajjax: 150,
+// };
+
+// const totalSalary = Object.values(salary).reduce((acc, sal) => acc + sal, 0);
+// console.log(totalSalary);
+
+// const players = [
+//   { name: 'Mango', time: 310 },
+//   { name: 'Poly', time: 470 },
+//   { name: 'Kiwi', time: 230 },
+//   { name: 'Ajax', time: 150 },
+//   { name: 'Chelsea', time: 80 },
+// ];
+
+// const totalTime = players.map(player => player.time).reduce((acc, value) => acc + value, 0);
+// console.log(totalTime);
+
+const tweets = [
+  { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+  { id: '001', likes: 2, tags: ['html', 'css'] },
+  { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+  { id: '003', likes: 8, tags: ['css', 'react'] },
+  { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
+
+// const allTags = tweets
+//   .reduce((acc, tweet) => {
+//     // console.log(acc);
+//     acc.push(...tweet.tags);
+//     return acc;
+//   }, [])
+//   .filter((item, idx, arr) => {
+//     if (arr.indexOf(item) === idx) {
+//       return item;
+//     }
+//   });
+
+const allTags = tweets.flatMap(tweet => tweet.tags);
+console.log(allTags);
+
+const stats = allTags.reduce((acc, tag) => {
+  // if (acc.hasOwnProperty(tag)) {
+  //   acc[tag] += 1;
+  //   return acc;
+  // }
+  // acc[tag] = 1;
+  // console.log(acc);
+  // return acc;
+  return {
+    ...acc,
+    [tag]: acc[tag] ? acc[tag] + 1 : 1,
+  };
+}, {});
+
+console.log(stats);
