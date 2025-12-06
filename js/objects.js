@@ -843,21 +843,93 @@ const tweets = [
 //     }
 //   });
 
-const allTags = tweets.flatMap(tweet => tweet.tags);
-console.log(allTags);
+// const allTags = tweets.flatMap(tweet => tweet.tags);
+// console.log(allTags);
 
-const stats = allTags.reduce((acc, tag) => {
-  // if (acc.hasOwnProperty(tag)) {
-  //   acc[tag] += 1;
+// const stats = allTags.reduce((acc, tag) => {
+//   // if (acc.hasOwnProperty(tag)) {
+//   //   acc[tag] += 1;
+//   //   return acc;
+//   // }
+//   // acc[tag] = 1;
+//   // console.log(acc);
+//   // return acc;
+//   return {
+//     ...acc,
+//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//   };
+// }, {});
+
+// console.log(stats);
+
+const str = 'aaBrtwabtt';
+const str2 = 'qwertqwertqwertyavsdf';
+
+// const makeObj = str => {
+//   const arr = str.split('');
+//   const result = arr.reduce((acc, item) => {
+//     // if (!acc.hasOwnProperty([item])) {
+//     //   acc[item] = 1;
+//     //   return acc;
+//     // }
+//     if (!(item in acc)) {
+//       acc[item] = 1;
+//       return acc;
+//     }
+//     acc[item] += 1;
+//     return acc;
+//   }, {});
+//   return result;
+// };
+
+// const makeObj = str =>
+//   str
+//     .split('')
+//     .reduce(
+//       (acc, item) =>
+//         !acc.hasOwnProperty([item]) ? { ...acc, [item]: 1 } : { ...acc, [item]: acc[item] + 1 },
+//       {}
+//     );
+
+// console.log(makeObj(str2));
+
+// const cars = ['Honda', 'Audi', 'BMW', 'Skoda', 'Ford', 'Renault'];
+
+// const makeString = arr =>
+//   arr.reduce(
+//     (acc, item, idx, arr) => {
+//       return acc + `${idx + 1} - ${item}\n`;
+//     },
+//     arr.length ? `Зашальна кількість автомобілів: ${arr.length}\n` : 'NO Cars left'
+//   );
+
+// console.log(makeString(cars));
+// console.log(makeString([]));
+
+const fruitBasket = [
+  'banana',
+  'cherry',
+  'orange',
+  'apple',
+  'cherry',
+  'orange',
+  'apple',
+  'banana',
+  'cherry',
+  'orange',
+  'fig',
+];
+
+const result = fruitBasket.reduce((acc, fruit) => {
+  // if (acc.hasOwnProperty(fruit)) {
+  //   acc[fruit] += 1;
   //   return acc;
   // }
-  // acc[tag] = 1;
-  // console.log(acc);
+
+  // acc[fruit] = 1;
   // return acc;
-  return {
-    ...acc,
-    [tag]: acc[tag] ? acc[tag] + 1 : 1,
-  };
+  acc[fruit] = (acc[fruit] || 0) + 1;
+  return acc;
 }, {});
 
-console.log(stats);
+console.log(result);
