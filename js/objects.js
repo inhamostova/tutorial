@@ -906,30 +906,30 @@ const str2 = 'qwertqwertqwertyavsdf';
 // console.log(makeString(cars));
 // console.log(makeString([]));
 
-const fruitBasket = [
-  'banana',
-  'cherry',
-  'orange',
-  'apple',
-  'cherry',
-  'orange',
-  'apple',
-  'banana',
-  'cherry',
-  'orange',
-  'fig',
-];
+// const fruitBasket = [
+//   'banana',
+//   'cherry',
+//   'orange',
+//   'apple',
+//   'cherry',
+//   'orange',
+//   'apple',
+//   'banana',
+//   'cherry',
+//   'orange',
+//   'fig',
+// ];
 
-const result = fruitBasket.reduce((acc, fruit) => {
-  // if (acc.hasOwnProperty(fruit)) {
-  //   acc[fruit] += 1;
-  //   return acc;
-  // }
+// const result = fruitBasket.reduce((acc, fruit) => {
+//   // if (acc.hasOwnProperty(fruit)) {
+//   //   acc[fruit] += 1;
+//   //   return acc;
+//   // }
 
-  // acc[fruit] = 1;
-  // return acc;
-  acc[fruit] = (acc[fruit] || 0) + 1;
-  return acc;
-}, {});
+//   // acc[fruit] = 1;
+//   // return acc;
+//   acc[fruit] = (acc[fruit] || 0) + 1;
+//   return acc;
+// }, {});
 
-console.log(result);
+// console.log(result);
