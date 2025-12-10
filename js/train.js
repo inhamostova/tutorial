@@ -455,18 +455,18 @@ const phonebook = {
 
 // console.log(phonebook.add({ name: 'Mango', list: 'friends', email: 'mango@mail.com' }));
 
-const newPhoneBook = {
-  name: 'NEW',
-  contacts: [],
-};
+// const newPhoneBook = {
+//   name: 'NEW',
+//   contacts: [],
+// };
 
-phonebook.add.call(newPhoneBook, {
-  name: 'Mango',
-  list: 'friends',
-  email: 'mango@mail.com',
-});
+// phonebook.add.call(newPhoneBook, {
+//   name: 'Mango',
+//   list: 'friends',
+//   email: 'mango@mail.com',
+// });
 
-console.log(newPhoneBook);
+// console.log(newPhoneBook);
 
 // const calculator = {
 //   create(a, b) {
@@ -494,3 +494,105 @@ console.log(newPhoneBook);
 // calculator.create(7, 2);
 // console.log(calculator.add());
 // console.log(calculator.mult());
+
+// const chopShop = {
+//   stones: [
+//     {
+//       name: 'Emerald',
+//       price: 1300,
+//       quantity: 4,
+//     },
+//     {
+//       name: 'Diamond',
+//       price: 2700,
+//       quantity: 3,
+//     },
+//     {
+//       name: 'Sapphire',
+//       price: 1400,
+//       quantity: 7,
+//     },
+//     {
+//       name: 'Ruby',
+//       price: 800,
+//       quantity: 2,
+//     },
+//   ],
+
+//   calculateTotalPrice(stoneName) {
+//     // return this.stones.reduce((acc, { name, price, quantity }) => {
+//     //   if (stoneName === name) {
+//     //     return price * quantity;
+//     //   }
+//     //   return acc;
+//     // }, 0);
+
+//     const { price, quantity } = this.stones.find(({ name }) => name === stoneName);
+//     return price * quantity;
+//   },
+// };
+
+// console.log(chopShop.calculateTotalPrice('Diamond'));
+
+// const chopShop2 = {
+//   stones: [
+//     {
+//       name: 'Stone',
+//       price: 200,
+//       quantity: 5,
+//     },
+//     {
+//       name: 'Chulk',
+//       price: 250,
+//       quantity: 3,
+//     },
+//   ],
+// };
+
+// console.log(chopShop.calculateTotalPrice.call(chopShop2, 'Chulk'));
+// const foo = chopShop.calculateTotalPrice.bind(chopShop2);
+
+// console.log(foo('Stone'));
+
+const phonebook1 = {
+  contacts: [],
+  add(contact) {
+    const generateId = () => {
+      return '_' + Math.random().toString(36).substr(2, 9);
+    };
+
+    const getDate = () => {
+      return Date.now();
+    };
+    const newContact = {
+      list: 'default',
+      ...contact,
+      id: generateId(),
+      createdAt: getDate(),
+    };
+
+    this.contacts.push(newContact);
+    return this;
+  },
+};
+
+const newPhoneBook = {
+  name: 'NEW',
+  contacts: [],
+};
+
+console.log(
+  phonebook1.add.call(newPhoneBook, {
+    name: 'Mango',
+    list: 'friends',
+    email: 'mango@mail.com',
+  })
+);
+
+// console.log(
+//   phonebook1.add({
+//     name: 'Mango',
+//     list: 'friends',
+//     email: 'mango@mail.com',
+//   })
+// );
