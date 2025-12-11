@@ -621,40 +621,61 @@ const phonebook = {
 // const keys = Object.keys(dog);
 // console.log(keys);
 
-class User {
-  #email;
+// class User {
+//   #email;
 
-  constructor({ name, email }) {
-    this.name = name;
-    this.#email = email;
-  }
+//   constructor({ name, email }) {
+//     this.name = name;
+//     this.#email = email;
+//   }
 
-  // getEmail() {
-  //   return this.#email;
-  // }
+// getEmail() {
+//   return this.#email;
+// }
 
-  // changeEmail(newEmail) {
-  //   this.#email = newEmail;
-  // }
-  get email() {
-    return this.#email;
-  }
+// changeEmail(newEmail) {
+//   this.#email = newEmail;
+// }
+//   get email() {
+//     return this.#email;
+//   }
 
-  set email(newEmail) {
-    this.#email = newEmail;
-  }
-}
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
 
-const mango = new User({ name: 'Mango', email: 'mango@mail.com' });
-console.log(mango);
+// const mango = new User({ name: 'Mango', email: 'mango@mail.com' });
+// console.log(mango);
 
-const poly = new User({ name: 'Poly', email: 'poly@mail.com' });
-console.log(poly);
+// const poly = new User({ name: 'Poly', email: 'poly@mail.com' });
+// console.log(poly);
 
 // console.log(poly.getEmail());
-console.log(poly.email);
+// console.log(poly.email);
 // poly.changeEmail('poly1234@gmail.com');
 // console.log(poly);
 
-poly.email = 'poly1234@gmail.com';
-console.log(poly.email);
+// poly.email = 'poly1234@gmail.com';
+// console.log(poly.email);
+
+const objC = {
+  c: 5,
+};
+
+// console.log(objC);
+// console.log(objC.hasOwnProperty('c'));
+
+const objB = Object.create(objC);
+objB.b = 7;
+
+// console.log(objB);
+// console.log(objB.c);
+
+const objA = Object.create(objB);
+objA.a = 3;
+
+console.log(objA);
+console.log(objA.a);
+console.log(objA.b);
+console.log(objA.c);
