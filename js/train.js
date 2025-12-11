@@ -554,40 +554,47 @@ const phonebook = {
 
 // console.log(foo('Stone'));
 
-const phonebook1 = {
-  contacts: [],
-  add(contact) {
-    const generateId = () => {
-      return '_' + Math.random().toString(36).substr(2, 9);
-    };
+// const phonebook1 = {
+//   contacts: [],
+//   add(contact) {
+//     const generateId = () => {
+//       // console.log(this);
+//       return '_' + Math.random().toString(36).substr(2, 9);
+//     };
 
-    const getDate = () => {
-      return Date.now();
-    };
-    const newContact = {
-      list: 'default',
-      ...contact,
-      id: generateId(),
-      createdAt: getDate(),
-    };
+//     const getDate = () => {
+//       return Date.now();
+//     };
+//     const newContact = {
+//       list: 'default',
+//       ...contact,
+//       id: generateId(),
+//       createdAt: getDate(),
+//     };
 
-    this.contacts.push(newContact);
-    return this;
-  },
-};
+//     this.contacts.push(newContact);
+//     return this;
+//   },
+// };
 
-const newPhoneBook = {
-  name: 'NEW',
-  contacts: [],
-};
+// const newPhoneBook = {
+//   name: 'NEW',
+//   contacts: [],
+// };
 
-console.log(
-  phonebook1.add.call(newPhoneBook, {
-    name: 'Mango',
-    list: 'friends',
-    email: 'mango@mail.com',
-  })
-);
+// console.log(
+//   phonebook1.add.call(newPhoneBook, {
+//     name: 'Mango',
+//     list: 'friends',
+//     email: 'mango@mail.com',
+//   })
+// );
+
+// phonebook1.add.call(newPhoneBook, {
+//   name: 'Mango',
+//   list: 'friends',
+//   email: 'mango@mail.com',
+// });
 
 // console.log(
 //   phonebook1.add({
@@ -596,3 +603,58 @@ console.log(
 //     email: 'mango@mail.com',
 //   })
 // );
+
+// const animal = {
+//   legs: 4,
+// };
+
+// const dog = Object.create(animal);
+// dog.name = 'Charlie';
+
+// console.log(dog);
+
+// for (const key in dog) {
+//   console.log(key);
+//   console.log(dog[key]);
+// }
+
+// const keys = Object.keys(dog);
+// console.log(keys);
+
+class User {
+  #email;
+
+  constructor({ name, email }) {
+    this.name = name;
+    this.#email = email;
+  }
+
+  // getEmail() {
+  //   return this.#email;
+  // }
+
+  // changeEmail(newEmail) {
+  //   this.#email = newEmail;
+  // }
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+const mango = new User({ name: 'Mango', email: 'mango@mail.com' });
+console.log(mango);
+
+const poly = new User({ name: 'Poly', email: 'poly@mail.com' });
+console.log(poly);
+
+// console.log(poly.getEmail());
+console.log(poly.email);
+// poly.changeEmail('poly1234@gmail.com');
+// console.log(poly);
+
+poly.email = 'poly1234@gmail.com';
+console.log(poly.email);
