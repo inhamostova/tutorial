@@ -659,23 +659,164 @@ const phonebook = {
 // poly.email = 'poly1234@gmail.com';
 // console.log(poly.email);
 
-const objC = {
-  c: 5,
-};
+// const objC = {
+//   c: 5,
+// };
 
 // console.log(objC);
 // console.log(objC.hasOwnProperty('c'));
 
-const objB = Object.create(objC);
-objB.b = 7;
+// const objB = Object.create(objC);
+// objB.b = 7;
 
 // console.log(objB);
 // console.log(objB.c);
 
-const objA = Object.create(objB);
-objA.a = 3;
+// const objA = Object.create(objB);
+// objA.a = 3;
 
-console.log(objA);
-console.log(objA.a);
-console.log(objA.b);
-console.log(objA.c);
+// console.log(objA);
+// console.log(objA.a);
+// console.log(objA.b);
+// console.log(objA.c);
+
+// const Car = function ({ mark, model, price, amount } = {}) {
+//   this.mark = mark;
+//   this.model = model;
+//   this.price = price;
+//   this.amount = amount;
+// };
+
+// Car.prototype.getCarPrice = function () {
+//   return this.price;
+// };
+// const car1 = new Car({ mark: 'volkswagen', model: 'JETTA', price: 12000, amount: 10 });
+// const car2 = new Car({ mark: 'toyota', model: 'RAV4', price: 17000, amount: 7 });
+// console.log(car1.getCarPrice());
+// console.log(car2);
+
+// class Car {
+//   static Number = 550;
+
+//   static isEvenNumber() {
+//     console.log(this);
+//     return !(this.Number % 2) ? true : false;
+//   }
+
+//   #mark;
+//   #model;
+//   constructor({ mark, model, price, amount } = {}) {
+//     this.#mark = mark;
+//     this.#model = model;
+//     this.price = price;
+//     this.amount = amount;
+//   }
+
+//   getModel() {
+//     return this.#model;
+//   }
+
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+
+//   get mark() {
+//     return this.#mark;
+//   }
+
+//   set mark(newMark) {
+//     if (!newMark) {
+//       console.log('ERROR');
+//       return;
+//     }
+//     this.#mark = newMark;
+//   }
+// }
+
+// const car1 = new Car({ mark: 'volkswagen', model: 'JETTA', price: 12000, amount: 10 });
+// console.log(Car.isEvenNumber());
+// console.log(car1.hasOwnProperty('model'));
+// console.log(car1);
+// console.log(car1.getModel());
+// car1.changePrice(10000);
+// console.log(car1);
+// console.log(car1.mark);
+// car1.mark = '';
+// console.log(car1);
+
+// class User {
+//   #email;
+//   constructor({ email }) {
+//     this.#email = email;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// class Editor extends User {
+//   constructor({ email, name }) {
+//     super(email);
+//     this.name = name;
+//   }
+// }
+
+// const mango = new Editor({ name: 'Mango', email: 'mango@mail.com' });
+// console.log(mango);
+
+class Hero {
+  constructor({ name = 'hero', xp = 0 } = {}) {
+    this.name = name;
+    this.xp = xp;
+  }
+
+  gainXp(amount) {
+    console.log(`${this.name} отримує ${amount} очок досвіду`);
+    this.xp += amount;
+  }
+}
+
+class Warrior extends Hero {
+  constructor({ name, xp, weapon = 'knuckles' }) {
+    super({ name, xp });
+    // console.log(config);
+    this.weapon = weapon;
+  }
+
+  attack() {
+    console.log(`${this.name} attacks with ${this.weapon}`);
+  }
+}
+
+class Mage extends Hero {
+  constructor({ spells = [], ...restProps }) {
+    super(restProps);
+
+    this.spells = spells;
+  }
+
+  doSpell() {
+    console.log(`${this.name} is doing ${this.spells[0]}`);
+  }
+}
+
+const mango = new Warrior({ name: 'Mango', xp: 1000, weapon: 'dagger' });
+
+const poly = new Mage({ name: 'Poly', xp: 3000, spells: ['Avadakedavea', 'Expecto Patronus'] });
+
+console.log(mango);
+// mango.gainXp(700);
+// mango.attack();
+// console.log(Object.getPrototypeOf(mango) === Warrior.prototype);
+// console.log(Warrior.prototype.__proto__ === Hero.prototype);
+
+console.log(poly);
+poly.doSpell();
+// console.log('Warrior prototype', Warrior.prototype);
+
+// console.log('Hero prototype', Hero.prototype);
