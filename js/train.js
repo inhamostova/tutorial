@@ -769,54 +769,294 @@ const phonebook = {
 // const mango = new Editor({ name: 'Mango', email: 'mango@mail.com' });
 // console.log(mango);
 
-class Hero {
-  constructor({ name = 'hero', xp = 0 } = {}) {
-    this.name = name;
-    this.xp = xp;
-  }
+// class Hero {
+//   constructor({ name = 'hero', xp = 0 } = {}) {
+//     this.name = name;
+//     this.xp = xp;
+//   }
 
-  gainXp(amount) {
-    console.log(`${this.name} отримує ${amount} очок досвіду`);
-    this.xp += amount;
-  }
-}
+//   gainXp(amount) {
+//     console.log(`${this.name} отримує ${amount} очок досвіду`);
+//     this.xp += amount;
+//   }
+// }
 
-class Warrior extends Hero {
-  constructor({ name, xp, weapon = 'knuckles' }) {
-    super({ name, xp });
-    // console.log(config);
-    this.weapon = weapon;
-  }
+// class Warrior extends Hero {
+//   constructor({ name, xp, weapon = 'knuckles' }) {
+//     super({ name, xp });
+//     // console.log(config);
+//     this.weapon = weapon;
+//   }
 
-  attack() {
-    console.log(`${this.name} attacks with ${this.weapon}`);
-  }
-}
+//   attack() {
+//     console.log(`${this.name} attacks with ${this.weapon}`);
+//   }
+// }
 
-class Mage extends Hero {
-  constructor({ spells = [], ...restProps }) {
-    super(restProps);
+// class Mage extends Hero {
+//   constructor({ spells = [], ...restProps }) {
+//     super(restProps);
 
-    this.spells = spells;
-  }
+//     this.spells = spells;
+//   }
 
-  doSpell() {
-    console.log(`${this.name} is doing ${this.spells[0]}`);
-  }
-}
+//   doSpell() {
+//     console.log(`${this.name} is doing ${this.spells[0]}`);
+//   }
+// }
 
-const mango = new Warrior({ name: 'Mango', xp: 1000, weapon: 'dagger' });
+// const mango = new Warrior({ name: 'Mango', xp: 1000, weapon: 'dagger' });
 
-const poly = new Mage({ name: 'Poly', xp: 3000, spells: ['Avadakedavea', 'Expecto Patronus'] });
+// const poly = new Mage({ name: 'Poly', xp: 3000, spells: ['Avadakedavea', 'Expecto Patronus'] });
 
-console.log(mango);
+// console.log(mango);
 // mango.gainXp(700);
 // mango.attack();
 // console.log(Object.getPrototypeOf(mango) === Warrior.prototype);
 // console.log(Warrior.prototype.__proto__ === Hero.prototype);
 
-console.log(poly);
-poly.doSpell();
+// console.log(poly);
+// poly.doSpell();
 // console.log('Warrior prototype', Warrior.prototype);
 
 // console.log('Hero prototype', Hero.prototype);
+
+// const obj = {
+//   name: 'User',
+//   sayHello() {
+//     console.log(`Hello, ${this.name}`);
+//   },
+// };
+
+// const objA = Object.create(obj);
+// objA.name = 'Inga';
+// objA.age = 28;
+// objA.getAge = function () {
+//   return this.age;
+// };
+
+// console.log(objA);
+
+// objA.sayHello();
+
+// console.log(obj.isPrototypeOf(objA));
+
+// const objB = Object.create(objA);
+// objB.age = 35;
+// console.log(objB);
+
+// console.log(objB.getAge());
+// const arr = [1, 2, 3, 4];
+// // console.log(arr);
+
+// Array.prototype.sayHello = function (name) {
+//   console.log(`Hello, my name is ${name}`);
+// };
+
+// const str = 'Inga';
+// [1, 2].sayHello(str);
+
+// console.log(arr);
+
+// class User {
+//   #password;
+//   constructor({ name, email, password } = {}) {
+//     this.name = name;
+//     this.email = email;
+//     this.#password = password;
+//   }
+
+//   get mail() {
+//     return this.email;
+//   }
+
+//   set mail(newEmail) {
+//     if (!newEmail) {
+//       return 'Email cant be empty string';
+//     }
+//     this.email = newEmail;
+//   }
+
+//   get password() {
+//     return this.#password;
+//   }
+
+//   set password(newPassword) {
+//     if (newPassword.length < 4) {
+//       return 'New password must be at least 4 symbols';
+//     }
+
+//     this.#password = newPassword;
+//   }
+// }
+
+// const inga = new User({ name: 'Inga', email: 'inga@gmail.com', password: '12345678' });
+
+// console.log(inga);
+// inga.mail = 'ingo4ka@mail.com';
+// inga.password = 'NEWPASSWORD';
+// console.log(inga);
+
+// class Blogger {
+//   constructor({ email, age, numberOfPosts, topics }) {
+//     this.email = email;
+//     this.age = age;
+//     this.numberOfPosts = numberOfPosts;
+//     this.topics = topics;
+//   }
+
+//   getInfo() {
+//     console.log(`User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`);
+//   }
+
+//   updatePostCount(value) {
+//     this.numberOfPosts += value;
+//   }
+// }
+
+// const mango = new Blogger({
+//   email: 'mango@mail.com',
+//   age: 24,
+//   numberOfPosts: 20,
+//   topics: ['tech', 'cooking'],
+// });
+
+// console.log(mango);
+// mango.getInfo();
+// mango.updatePostCount(5);
+// console.log(mango);
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     if (this.items.includes(itemToRemove)) {
+//       this.items.splice(this.items.indexOf(itemToRemove), 1);
+//       return;
+//     }
+//     console.log('There is no ITEM');
+//     return;
+//   }
+// }
+
+// const storage = new Storage(['🍓', '🍋', '🍇', '🍎']);
+
+// console.log(storage.getItems());
+// storage.addItem('🍌');
+// console.log(storage.getItems());
+// storage.removeItem('🍋');
+// console.log(storage.getItems());
+// storage.removeItem('🍋');
+
+// class User {
+//   #email;
+//   #password;
+
+//   constructor({ email, password }) {
+//     this.#email = email;
+//     this.#password = password;
+//   }
+
+//   get mail() {
+//     return this.#email;
+//   }
+
+//   set mail(newEmail) {
+//     this.#email = newEmail;
+//   }
+
+//   get uesrPassword() {
+//     return this.#password;
+//   }
+
+//   set uesrPassword(newPassword) {
+//     this.#password = newPassword;
+//   }
+// }
+
+// const mango = new User({ email: 'mango@woof.com', password: '12345678' });
+// console.log(mango.mail);
+// mango.mail = 'M4NgO@com';
+// console.log(mango.mail);
+
+// console.log(mango.uesrPassword);
+// mango.uesrPassword = 'qwerty';
+// console.log(mango.uesrPassword);
+
+// class Notes {
+//   static Priority = {
+//     LOW: 'low',
+//     NORMAL: 'normal',
+//     HIGH: 'high',
+//   };
+
+//   constructor(notes) {
+//     this.items = notes;
+//   }
+
+//   addNote(newNote) {
+//     this.items.push(newNote);
+//   }
+
+//   removeNote(text) {
+//     this.items.forEach(item => {
+//       if (item.text === text) {
+//         const idx = this.items.indexOf(item);
+//         this.items.splice(idx, 1);
+//         return;
+//       }
+//       console.log('There is no such NOTE');
+//     });
+//     return;
+//   }
+
+//   updatePriority(text, newPriority) {
+//     const idx = this.items.findIndex(item => item.text === text);
+//     if (!!~idx) {
+//       this.items[idx] = { ...this.items[idx], priority: newPriority };
+//       return;
+//     }
+//     console.log('NO NOTE');
+//   }
+// }
+
+// const myNotes = new Notes([]);
+// myNotes.addNote({
+//   text: 'My first note',
+//   priority: Notes.Priority.LOW,
+// });
+// myNotes.addNote({ text: 'My second note', priority: Notes.Priority.NORMAL });
+
+// console.log(myNotes);
+// myNotes.updatePriority('My first note', Notes.Priority.HIGH);
+// myNotes.updatePriority('My second note', Notes.Priority.HIGH);
+// myNotes.updatePriority('My third note', Notes.Priority.HIGH);
+// console.log(myNotes);
+
+class Toggle {
+  constructor({ isOpen = false } = {}) {
+    this.on = isOpen;
+  }
+
+  toggle() {
+    this.on = !this.on;
+  }
+}
+
+const firstToggle = new Toggle({ isOpen: true });
+console.log(firstToggle.on);
+firstToggle.toggle();
+console.log(firstToggle);
+
+const secondToggle = new Toggle();
+console.log(secondToggle.on);
