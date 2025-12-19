@@ -1043,20 +1043,106 @@ const phonebook = {
 // myNotes.updatePriority('My third note', Notes.Priority.HIGH);
 // console.log(myNotes);
 
-class Toggle {
-  constructor({ isOpen = false } = {}) {
-    this.on = isOpen;
-  }
+// class Toggle {
+//   constructor({ isOpen = false } = {}) {
+//     this.on = isOpen;
+//   }
 
-  toggle() {
-    this.on = !this.on;
-  }
-}
+//   toggle() {
+//     this.on = !this.on;
+//   }
+// }
 
-const firstToggle = new Toggle({ isOpen: true });
-console.log(firstToggle.on);
-firstToggle.toggle();
-console.log(firstToggle);
+// const firstToggle = new Toggle({ isOpen: true });
+// console.log(firstToggle.on);
+// firstToggle.toggle();
+// console.log(firstToggle);
 
-const secondToggle = new Toggle();
-console.log(secondToggle.on);
+// const secondToggle = new Toggle();
+// console.log(secondToggle.on);
+
+// class Blogger {
+//   constructor({ email, age, numberOfPosts, topics = [] } = {}) {
+//     this.email = email;
+//     this.age = age;
+
+//     this.numberOfPosts = numberOfPosts;
+
+//     this.topics = topics;
+//   }
+
+//   getInfo() {
+//     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`;
+//   }
+
+//   updatePostCout(value) {
+//     this.numberOfPosts += value;
+//     return this;
+//   }
+// }
+
+// const mango = new Blogger({
+//   email: 'mango@mail.com',
+//   age: 28,
+//   numberOfPosts: 343,
+//   topics: ['tech', 'cooking'],
+// });
+
+// console.log(mango.updatePostCout(10));
+
+// class Notes {
+//   static Priority = {
+//     LOW: 'low',
+//     NORMAL: 'normal',
+//     HIGH: 'high',
+//   };
+
+//   constructor(items = []) {
+//     this.items = items;
+//   }
+
+//   addNote(note) {
+//     this.items.push(note);
+//   }
+
+//   removeNote(text) {
+//     const idx = this.items.findIndex(item => item.text === text);
+//     if (!!~idx) {
+//       this.items.splice(idx, 1);
+//       return;
+//     }
+//     console.log('There is no NOTE');
+//   }
+
+//   updatePriority(text, newPriority) {
+//     const el = this.items.find(item => item.text === text);
+//     const idx = this.items.indexOf(el);
+//     if (!!~idx) {
+//       this.items.splice(idx, 1, { ...el, priority: newPriority });
+//       return;
+//     }
+//     console.log('NO NOTE');
+//   }
+// }
+
+// const myNotes = new Notes([]);
+// myNotes.addNote({ text: 'My first note', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'My second note', priority: Notes.Priority.NORMAL });
+// console.log(myNotes);
+// myNotes.updatePriority('My first note', Notes.Priority.HIGH);
+// console.log(myNotes);
+
+const parent = {
+  name: 'Stacey',
+  surname: 'Moore',
+  age: 54,
+  heritage: 'Irish',
+};
+// Change code below this line
+
+const child = Object.create(parent);
+// Change code above this line
+child.name = 'Jason';
+child.age = 27;
+
+console.log(child);
