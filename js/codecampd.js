@@ -154,3 +154,16 @@
 // }
 // const name = 'Inga';
 // console.log(makeObj(name));
+// const str = 'JavaScript';
+// console.log(str.indexOf('r'));
+
+// let sentence = 'JavaScript is awesome!';
+// let position = sentence.indexOf('awesome!');
+// console.log(position); // 14
+
+// let sentence = 'JavaScript is awesome, and JavaScript is powerful!';
+// let position = sentence.indexOf('JavaScript', 10);
+// console.log(position); // 27
+
+const str = 'I am learning JavaScript.';
+console.log(str.indexOf('Javascript'));
