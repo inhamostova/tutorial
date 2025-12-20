@@ -1132,17 +1132,255 @@ const phonebook = {
 // myNotes.updatePriority('My first note', Notes.Priority.HIGH);
 // console.log(myNotes);
 
-const parent = {
-  name: 'Stacey',
-  surname: 'Moore',
-  age: 54,
-  heritage: 'Irish',
-};
-// Change code below this line
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish',
+// };
+// // Change code below this line
 
-const child = Object.create(parent);
+// const child = Object.create(parent);
+// // Change code above this line
+// child.name = 'Jason';
+// child.age = 27;
+
+// console.log(child);
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     const idx = this.items.findIndex(item => item === itemToRemove);
+//     if (!!~idx) {
+//       this.items.splice(idx, 1);
+//       return;
+//     }
+
+//     console.log('NO ITEM');
+//   }
+// }
 // Change code above this line
-child.name = 'Jason';
-child.age = 27;
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
-console.log(child);
+// class StringBuilder {
+//   constructor(initialValue) {
+//     this.value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.value;
+//   }
+
+//   padEnd(str) {
+//     this.value += str;
+//   }
+
+//   padStart(str) {
+//     this.value = `${str}${this.value}`;
+//   }
+
+//   padBoth(str) {
+//     this.value = `${str}${this.value}${str}`;
+//   }
+// }
+// Change code above this line
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
+
+// class Car {
+//   // Change code below this line
+//   #brand;
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   getBrand() {
+//     return this.#brand;
+//   }
+
+//   changeBrand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+//   // Change code above this line
+// }
+
+// const car = new Car({ brand: 'Audi', model: 'Q3', price: 36000 });
+// console.log(car);
+// const car2 = new Car({ brand: 'bmw', model: 'X5', price: 58900 });
+
+// const car3 = new Car({ brand: 'Nissan', model: 'Murano', price: 31700 });
+
+// class Car {
+//   // Change code below this line
+//   #brand;
+//   #model;
+//   #price;
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.#model = model;
+//     this.#price = price;
+//   }
+
+// getBrand() {
+//   return this.#brand;
+// }
+
+// changeBrand(newBrand) {
+//   this.#brand = newBrand;
+// }
+// get brand() {
+//   return this.#brand;
+// }
+
+// set brand(newBrand) {
+//   this.#brand = newBrand;
+// }
+
+// get model() {
+//   return this.#model;
+// }
+
+// set model(newModel) {
+//   this.#model = newModel;
+// }
+
+// get price() {
+//   return this.#price;
+// }
+
+// set price(newPrice) {
+//   this.#price = newPrice;
+// }
+
+// getModel() {
+//   return this.model;
+// }
+
+// updateModel(newModel) {
+//   this.model = newModel;
+// }
+
+// getPrice() {
+//   return this.price;
+// }
+
+// setPrice(newPrice) {
+//   this.price = newPrice;
+// }
+// Change code above this line
+// }
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this line
+//   static checkPrice(price) {
+//     if (price > Car.#MAX_PRICE) {
+//       return 'Error! Price exceeds the maximum';
+//     }
+//     return 'Success! Price is within acceptable limits';
+//   }
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   static AccessLevel = { BASIC: 'basic', SUPERUSER: 'superuser' };
+// }
+
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+
+class Admin extends User {
+  // Change code below this line
+
+  static AccessLevel = {
+    BASIC: 'basic',
+    SUPERUSER: 'superuser',
+  };
+
+  constructor({ email, accessLevel, blacklistedEmails = [] }) {
+    super(email);
+    this.accessLevel = accessLevel;
+    this.blacklistedEmails = blacklistedEmails;
+  }
+
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
+  }
+
+  isBlacklisted(email) {
+    return this.blacklistedEmails.includes(email) ? true : false;
+  }
+  // Change code above this line
+}
+
+const mango = new Admin({
+  email: 'mango@mail.com',
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist('poly@mail.com');
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted('mango@mail.com')); // false
+console.log(mango.isBlacklisted('poly@mail.com')); // true
