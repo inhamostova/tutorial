@@ -282,4 +282,180 @@
 
 // const newSentence = `I ${repeatedLove} learning`;
 // console.log(newSentence);
-console.log('inga'.charCodeAt(0));
+// User Stories:
+
+// You should have a variable named firstResult that correctly adds the numbers 5 and 10 to produce the value 15.
+// You should have a variable named secondResult that correctly subtracts 5 from 8 to produce the value 3.
+// You should have a variable named thirdResult that produces the value 6 by adding two numbers. Replace the boolean currently used in the expression with a number.
+// You should have a variable named fourthResult that produces the value 8 by adding two numbers. Replace the boolean currently used in the expression with a number.
+// You should have a variable named fifthResult that correctly multiplies two numbers to get the product 20. Replace the string currently used in the expression with a number.
+// You should have a variable named sixthResult that correctly adds two numbers to produce the value 22. Replace the null currently used in the expression with a number.
+
+// const firstResult = 5 + 10;
+// console.log(`5 + 10 = ${firstResult}`);
+
+// const secondResult = 8 - 5;
+// console.log(`8 - 5 = ${secondResult}`);
+
+// const thirdResult = 1 + 5;
+// console.log(`1 + 5 = ${thirdResult}`);
+
+// const fourthResult = 0 + 8;
+// console.log(`0 + 8 = ${fourthResult}`);
+
+// const fifthResult = 10 * 2;
+// console.log(`10 * 2 = ${fifthResult}`);
+
+// const sixthResult = 0 + 22;
+// console.log(`0 + 22 = ${sixthResult}`);
+
+// let a, b;
+// a = b = 5;
+
+// console.log(a); // 5
+// console.log(b); // 5
+// console.log(a + b); // 10
+// let x = 5;
+
+// console.log(x++); // 6
+// console.log(x); // 6
+// User Stories:
+
+// You should have a variable named updatedCounter that correctly produces the value 11 by using the increment operator. Update the expression to use the correct prefix or postfix notation instead of hardcoding the value.
+// You should have a variable named finalScore that correctly produces the value 8 by using the increment operator. Update the expression to use the correct prefix or postfix notation instead of hardcoding the value.
+// You should have a variable named updatedCoins that correctly produces the value 2 by using the decrement operator. Update the expression to use the correct prefix or postfix notation instead of hardcoding the value.
+// You should have a variable named newHealth that correctly produces the value 7 by using the decrement operator. Update the expression to use the correct prefix or postfix notation instead of hardcoding the value.
+
+// let counter = 10;
+// console.log(`Counter is currently ${counter}`);
+
+// let updatedCounter = ++counter;
+// console.log(`Counter is now ${updatedCounter}`);
+
+// let score = 8;
+// console.log(`Score is currently ${score}`);
+
+// let finalScore = score++;
+// console.log(`Score is still ${finalScore}`);
+
+// let coins = 3;
+// console.log(`Coins is currently ${coins}`);
+
+// let updatedCoins = --coins;
+// console.log(`Coins is now ${updatedCoins}`);
+
+// let health = 7;
+// console.log(`Health is currently ${health}`);
+
+// let newHealth = health--;
+// console.log(`Health is still ${newHealth}`);
+
+// const hasDeveloperJob = true;
+
+// if (hasDeveloperJob) {
+//   console.log('Timmy is employed as a developer.');
+// }
+
+// const isTimmyAGamer = false;
+// if (isTimmyAGamer) {
+//   console.log('Timmy loves to play World of Warcraft.');
+// }
+// const timmyAge = 18;
+
+// if (timmyAge >= 16) {
+//   console.log('Timmy is old enough to drive.');
+// } else {
+//   console.log('Timmy is not old enough to drive.');
+// }
+// let a = 5; // Binary: 101
+// let b = 3; // Binary: 011
+// console.log(a | b);
+// let x = 8; // Binary: 1000
+// console.log(x << 2);
+// const max = 10;
+// const min = 0;
+// const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+// console.log(randomNum);
+
+// const botName = 'MathBot';
+// const greeting = `Hi there! My name is ${botName} and I am here to teach you about the Math object!`;
+// console.log(greeting);
+// console.log(
+//   'The Math.random() method returns a pseudo random number greater than or equal to 0 and less than 1.'
+// );
+// const randomNum = Math.random();
+// console.log(randomNum);
+// console.log('Now, generate a random number between two values.');
+// const min = 1;
+// const max = 100;
+
+// const randomNum2 = Math.floor(Math.random() * (max - min) + min);
+// console.log(randomNum2);
+
+// console.log('The Math.floor() method rounds the value down to the nearest whole integer.');
+
+// const numRoundedDown = Math.floor(6.7);
+// console.log(numRoundedDown);
+// console.log('Now, generate a random integer between two values.');
+
+// const randomInt = Math.floor(Math.random() * (max - min) + min);
+// console.log(randomInt);
+// console.log('The Math.ceil() method rounds the value up to the nearest whole integer.');
+// const numRoundedUp = Math.ceil(3.2);
+// console.log(numRoundedUp);
+// console.log('The Math.round() method rounds the value to the nearest whole integer.');
+
+// const numRounded = Math.round(2.7);
+// console.log(numRounded);
+// const numRounded2 = Math.round(11.2);
+// console.log(numRounded2);
+// console.log(
+//   'The Math.max() and Math.min() methods are used to get the maximum and minimum number from a range.'
+// );
+// console.log('It was fun learning about the different Math methods with you!');
+
+// User Stories:
+
+// You should initialize the five variables fortune1, fortune2, fortune3, fortune4, and fortune5 with a string value of your choice. You can use the below options if you like:
+
+// "Your cat will look very cuddly today."
+// "The weather will be nice tomorrow."
+// "Be cautious of your new neighbors."
+// "You will find a new hobby soon."
+// "It would be wise to avoid the color red today."
+// You should select a random number between 1 and 5, inclusive, and assign it to the variable randomNumber.
+
+// You should create a selectedFortune variable and assign the appropriate fortune based on these rules:
+
+// If randomNumber is 1, assign the value of fortune1 to selectedFortune.
+// If randomNumber is 2, assign the value of fortune2 to selectedFortune.
+// If randomNumber is 3, assign the value of fortune3 to selectedFortune.
+// If randomNumber is 4, assign the value of fortune4 to selectedFortune.
+// If randomNumber is 5, assign the value of fortune5 to selectedFortune.
+// You should log the selectedFortune to the console.
+
+const fortune1 = 'Your cat will look very cuddly today.';
+const fortune2 = 'The weather will be nice tomorrow.';
+const fortune3 = 'Be cautious of your new neighbors.';
+const fortune4 = 'You will find a new hobby soon.';
+const fortune5 = 'It would be wise to avoid the color red today.';
+
+const max = 5;
+const min = 1;
+const randomNumber = Math.floor(Math.random() * (max - min) + min);
+console.log(randomNumber);
+
+let selectedFortune;
+if (randomNumber === 1) {
+  selectedFortune = fortune1;
+} else if (randomNumber === 2) {
+  selectedFortune = fortune2;
+} else if (randomNumber === 3) {
+  selectedFortune = fortune3;
+} else if (randomNumber === 4) {
+  selectedFortune = fortune4;
+} else {
+  selectedFortune = fortune2;
+}
+
+console.log(selectedFortune);
