@@ -434,28 +434,54 @@
 // If randomNumber is 5, assign the value of fortune5 to selectedFortune.
 // You should log the selectedFortune to the console.
 
-const fortune1 = 'Your cat will look very cuddly today.';
-const fortune2 = 'The weather will be nice tomorrow.';
-const fortune3 = 'Be cautious of your new neighbors.';
-const fortune4 = 'You will find a new hobby soon.';
-const fortune5 = 'It would be wise to avoid the color red today.';
+// const fortune1 = 'Your cat will look very cuddly today.';
+// const fortune2 = 'The weather will be nice tomorrow.';
+// const fortune3 = 'Be cautious of your new neighbors.';
+// const fortune4 = 'You will find a new hobby soon.';
+// const fortune5 = 'It would be wise to avoid the color red today.';
 
-const max = 5;
-const min = 1;
-const randomNumber = Math.floor(Math.random() * (max - min) + min);
-console.log(randomNumber);
+// const max = 5;
+// const min = 1;
+// const randomNumber = Math.floor(Math.random() * (max - min) + min);
+// console.log(randomNumber);
 
-let selectedFortune;
-if (randomNumber === 1) {
-  selectedFortune = fortune1;
-} else if (randomNumber === 2) {
-  selectedFortune = fortune2;
-} else if (randomNumber === 3) {
-  selectedFortune = fortune3;
-} else if (randomNumber === 4) {
-  selectedFortune = fortune4;
-} else {
-  selectedFortune = fortune2;
+// let selectedFortune;
+// if (randomNumber === 1) {
+//   selectedFortune = fortune1;
+// } else if (randomNumber === 2) {
+//   selectedFortune = fortune2;
+// } else if (randomNumber === 3) {
+//   selectedFortune = fortune3;
+// } else if (randomNumber === 4) {
+//   selectedFortune = fortune4;
+// } else {
+//   selectedFortune = fortune2;
+// }
+
+// console.log(selectedFortune);
+// console.log(2 ** 3);
+// const result3 = 2 ** (3 ** 2);
+
+// console.log(result3);
+// const num = 2;
+
+// switch (num) {
+//   case 3:
+//     console.log('This is 3');
+//     break;
+//   case 5:
+//     console.log('This is 5');
+//     break;
+//   case 7:
+//     console.log('This is 7');
+//     break;
+//   default:
+//     console.log('Default');
+// }
+console.log(5 === 2 + 3 || 4 == 2);
+const a = 2;
+if (1 == '1') {
+  let b = 3;
+  console.log(a + b);
 }
-
-console.log(selectedFortune);
+console.log(b);
