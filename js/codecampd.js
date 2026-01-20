@@ -478,10 +478,81 @@
 //   default:
 //     console.log('Default');
 // }
-console.log(5 === 2 + 3 || 4 == 2);
-const a = 2;
-if (1 == '1') {
-  let b = 3;
-  console.log(a + b);
-}
-console.log(b);
+// console.log(5 === 2 + 3 || 4 == 2);
+// const a = 2;
+// if (1 == '1') {
+//   let b = 3;
+//   console.log(a + b);
+// }
+// console.log(b);
+// greeting('Bilyash');
+// function greeting(name) {
+//   console.log(`Hello, ${name}`);
+// }
+
+// const add = (num1, num2) => num1 + num2;
+// console.log(add(7, 13));
+
+// function addTwoAndSeven() {
+//   return 2 + 7;
+// }
+
+// console.log(addTwoAndSeven());
+
+// const addThreeAndFour = () => {
+//   return 3 + 4;
+// };
+// console.log(addThreeAndFour());
+
+// function calculateSum(num1, num2) {
+//   return num1 + num2;
+// }
+
+// console.log(calculateSum(2, 5));
+
+// function calculateDifference(num1, num2) {
+//   return num1 - num2;
+// }
+// console.log(calculateDifference(22, 5));
+// console.log(calculateDifference(12, 1));
+// console.log(calculateDifference(17, 9));
+
+// const calculateProduct = (num1, num2) => num1 * num2;
+// console.log(calculateProduct(13, 5));
+
+// const calculateQuotient = (num1, num2) => {
+//   if (!num2) {
+//     return 'Error: Division by zero';
+//   }
+//   return num1 / num2;
+// };
+// console.log(calculateQuotient(7, 11));
+// console.log(calculateQuotient(3, 0));
+
+// function calculateSquare(num) {
+//   return Math.pow(num, 2);
+// }
+// console.log(calculateSquare(2));
+// console.log(calculateSquare(9));
+
+// const calculateSquareRoot = num => Math.sqrt(num);
+// console.log(calculateSquareRoot(25));
+// console.log(calculateSquareRoot(100));
+
+// function booWho(par) {
+//   if (typeof par === 'boolean') {
+//     return true;
+//   }
+
+//   return false;
+// }
+
+// console.log(booWho(5));
+
+// function maskEmail(email) {
+//   const idx = email.indexOf('@');
+
+//   const str = email.slice(1, idx - 1);
+
+//   return email.replace(str, '*'.repeat(str.length));
+// }
