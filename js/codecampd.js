@@ -556,3 +556,28 @@
 
 //   return email.replace(str, '*'.repeat(str.length));
 // }
+// const foo = function (a, b) {
+//   return a * b;
+// };
+
+// console.log(foo(7, 3));
+
+// console.log('LearnJS');
+// ['Learn', 'JS'].forEach(alert);
+
+// alert('Hello');
+// let age = 18;
+// let newAge = 25;
+
+// // age = newAge;
+// console.log(age, 'age');
+// console.log(newAge, 'newAge');
+
+const colorEyes = 'brown';
+
+let user;
+let userName;
+
+userName = 'vasya';
+user = userName;
+console.log(user);
