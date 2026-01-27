@@ -573,11 +573,69 @@
 // console.log(age, 'age');
 // console.log(newAge, 'newAge');
 
-const colorEyes = 'brown';
+// const colorEyes = 'brown';
 
-let user;
-let userName;
+// let user;
+// let userName;
 
-userName = 'vasya';
-user = userName;
-console.log(user);
+// userName = 'vasya';
+// user = userName;
+// console.log(user);
+
+// let user;
+// console.log(typeof user);
+// user = 'qwerty';
+// console.log(typeof user);
+// user = 58;
+// console.log(typeof user);
+
+// const block = document.querySelector('.block');
+// console.log(block);
+// console.log(typeof block);
+
+// const inf = -59 / 0;
+// console.log(inf);
+// console.log(typeof inf);
+
+// const bigInteger = 12339418385748520495109483190584390309493482378427384n;
+// console.log(bigInteger);
+// console.log(typeof bigInteger);
+
+// const foo = function (a, b) {
+//   return a * b;
+// };
+
+// console.log(typeof foo);
+
+// const user = '58a';
+
+// const user1 = Number(user);
+// console.log(user1);
+// console.log(typeof user1);
+
+// const a = '10';
+// const b = '25';
+
+// console.log(a + b);
+// console.log(+a + +b);
+
+// let a = 0;
+// console.log(a++);
+// console.log(a);
+
+// let name;
+
+// console.log(name ?? 'Noname');
+
+// console.log('35' + -'22'); //13
+// console.log('35' * '22'); //770
+// console.log('558' > 22++);  //true
+
+// let userCounter = 0;
+// let newUsers = userCounter++;
+// console.log(newUsers); //1
+
+// console.log((!false && 11) || (18 && !'')); //18
+
+// let name = 0;
+// console.log(name ?? 'NoName');
