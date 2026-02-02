@@ -639,3 +639,81 @@
 
 // let name = 0;
 // console.log(name ?? 'NoName');
+
+// if (true) console.log(555);
+
+// const num = 30;
+
+// switch (num) {
+//   case 40:
+//     console.log(40);
+//     break;
+//   case 30:
+//     console.log(30);
+//     break;
+//   case 20:
+//     console.log(20);
+//     break;
+//   default:
+//     console.log('noone');
+// }
+
+// if (1 === '1') {
+//   console.log('True');
+// } else {
+//   console.log('False'); //False
+// }
+
+// if (5 == '5') {
+//   console.log('True');
+// } else {
+//   console.log('False'); //true
+// }
+
+// let message = 92 > '11' && 58 < 100 ? 'True' : 'False';
+// console.log(message); //true
+
+// if (0) {
+//   console.log('False');
+// } else if (' ') {
+//   console.log('True'); //true
+// }
+
+// for (let i = 0; i <= 5; i += 1) {
+//   if (i === 2) continue;
+//   console.log(i);
+// }
+
+// let i = 0;
+// while (i <= 5) {
+//   console.log(i);
+//   i += 1;
+// }
+
+// do {
+//   console.log(i);
+//   i += 1;
+// } while (i <= 5);
+
+// let num = 8;
+// while (num) {
+//   console.log(num);
+//   num--;
+// }
+
+// for (let num = 0; num < 3; num += 1) {
+//   console.log(`Number: ${num}`);
+// }
+
+// let num = 0;
+// while (num < 3) {
+//   console.log(`Number: ${num}`);
+//   num += 1;
+// }
+
+forOne: for (let num = 0; num < 2; num += 1) {
+  for (let size = 0; size < 3; size += 1) {
+    if (size === 1) break forOne;
+    console.log(size);
+  }
+}
