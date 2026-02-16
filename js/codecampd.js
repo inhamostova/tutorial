@@ -639,3 +639,228 @@
 
 // let name = 0;
 // console.log(name ?? 'NoName');
+
+// if (true) console.log(555);
+
+// const num = 30;
+
+// switch (num) {
+//   case 40:
+//     console.log(40);
+//     break;
+//   case 30:
+//     console.log(30);
+//     break;
+//   case 20:
+//     console.log(20);
+//     break;
+//   default:
+//     console.log('noone');
+// }
+
+// if (1 === '1') {
+//   console.log('True');
+// } else {
+//   console.log('False'); //False
+// }
+
+// if (5 == '5') {
+//   console.log('True');
+// } else {
+//   console.log('False'); //true
+// }
+
+// let message = 92 > '11' && 58 < 100 ? 'True' : 'False';
+// console.log(message); //true
+
+// if (0) {
+//   console.log('False');
+// } else if (' ') {
+//   console.log('True'); //true
+// }
+
+// for (let i = 0; i <= 5; i += 1) {
+//   if (i === 2) continue;
+//   console.log(i);
+// }
+
+// let i = 0;
+// while (i <= 5) {
+//   console.log(i);
+//   i += 1;
+// }
+
+// do {
+//   console.log(i);
+//   i += 1;
+// } while (i <= 5);
+
+// let num = 8;
+// while (num) {
+//   console.log(num);
+//   num--;
+// }
+
+// for (let num = 0; num < 3; num += 1) {
+//   console.log(`Number: ${num}`);
+// }
+
+// let num = 0;
+// while (num < 3) {
+//   console.log(`Number: ${num}`);
+//   num += 1;
+// }
+
+// forOne: for (let num = 0; num < 3; num += 1) {
+//   for (let size = 0; size < 3; size += 1) {
+//     if (size === 1) break forOne;
+//     console.log(size);
+//   }
+// }
+
+// function foo(a, b, more, less) {
+//   const total = a + b;
+
+//   if (total > 3) {
+//     more();
+//   } else {
+//     less();
+//   }
+// }
+
+// function showMore() {
+//   console.log('More than 3');
+// }
+
+// function showLess() {
+//   console.log('Less than 3');
+// }
+
+// foo(5, 7, showMore, showLess);
+
+// function boo(a, b) {
+//   return a + b;
+// }
+
+// const total = boo(3, 7);
+// console.log(total);
+
+// function calcSum(numOne, numTwo) {
+//   let result = 1;
+//   for (let i = 0; i < numTwo; i += 1) {
+//     result *= numOne;
+//   }
+//   return result;
+// }
+
+// console.log(calcSum(2, 3));
+
+// function calcSum(numOne, numTwo) {
+//   if (numTwo === 1) {
+//     return numOne;
+//   }
+//   return numOne * calcSum(numOne, numTwo - 1);
+// }
+
+// console.log(calcSum(2, 3));
+
+// const showMes = (text, name) => console.log(`${text}, ${name}`);
+
+// setInterval(showMes, 2500, 'Hello', 'Tanya');
+
+// function showName() {
+//   console.log('Vasya');
+// }
+// setTimeout(showName, 0);
+// console.log('Kolya');
+
+// let foo;
+// if (2 > 1) {
+//   function showMes() {
+//     console.log('Message');
+//   }
+
+//   foo = showMes;
+// }
+
+// foo();
+
+// const minIncomeForDuplex = 60000;
+// const minCreditScoreForDuplex = 700;
+// const minIncomeForCondo = 45000;
+// const minCreditScoreForCondo = 680;
+// const minIncomeForCar = 30000;
+// const minCreditScoreForCar = 650;
+
+// function getLoanMessage(annualIncome, creditScore) {
+//   if (annualIncome >= minIncomeForDuplex && creditScore >= minCreditScoreForDuplex) {
+//     return 'You qualify for a duplex, condo, and car loan.';
+//   }
+//   if (annualIncome >= minIncomeForCondo && creditScore >= minCreditScoreForCondo) {
+//     return 'You qualify for a condo and car loan.';
+//   }
+//   if (annualIncome >= minIncomeForCar && creditScore >= minCreditScoreForCar) {
+//     return 'You qualify for a car loan.';
+//   }
+//   return "You don't qualify for any loans.";
+// }
+
+// const duplexLoanMsg = getLoanMessage(85000, 850);
+// const condoLoanMsg = getLoanMessage(65000, 690);
+// const carLoanMsg = getLoanMessage(45000, 660);
+// const noLoanMsg = getLoanMessage(25000, 550);
+
+// console.log(duplexLoanMsg);
+// console.log(condoLoanMsg);
+// console.log(carLoanMsg);
+// console.log(noLoanMsg);
+
+// function convertCtoF(degree) {
+//   return Number(degree * (9 / 5) + 32);
+// }
+// (10, 'J', 'Q', 'K', 'A');
+// let count = 0;
+
+// function cardCounter(card) {
+//   if (card >= 2 && card <= 6) {
+//     count += 1;
+//   }
+//   if (card === 10 || card === 'J' || card === 'Q' || card === 'K' || card === 'A') {
+//     count -= 1;
+//   }
+
+//   return count > 0 ? `${count} Bet` : `${count} Hold`;
+// }
+// [year] is a leap year.
+
+const year = 1900;
+
+function isLeapYear(number) {
+  if (!(number % 4) && !(number % 100) && !(number % 400)) {
+    return `${number} is a leap year.`;
+  } else if (!(number % 4) && !(number % 100)) {
+    return `${number} is not a leap year.`;
+  } else if (!(number % 4)) {
+    return `${number} is a leap year.`;
+  } else {
+    return `${number} is not a leap year.`;
+  }
+}
+
+const result = isLeapYear(year);
+console.log(result);
+
+// let year = 1900;
+// function isLeapYear(year) {
+//   if (year % 4 == 0 && year % 400 == 0) {
+//     return `${year} is a leap year.`;
+//   } else if (year % 4 == 0 && year % 100 == 0) {
+//     return `${year} is not a leap year.`;
+//   } else if (year % 4 == 0 && year % 100 != 0) {
+//     return `${year} is a leap year.`;
+//   } else {
+//     return `${year} is not a leap year.`;
+//   }
+// }
+// let result = isLeapYear();
+// console.log(result);
