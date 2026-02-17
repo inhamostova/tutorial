@@ -833,22 +833,22 @@
 // }
 // [year] is a leap year.
 
-const year = 1900;
+// const year = 1900;
 
-function isLeapYear(number) {
-  if (!(number % 4) && !(number % 100) && !(number % 400)) {
-    return `${number} is a leap year.`;
-  } else if (!(number % 4) && !(number % 100)) {
-    return `${number} is not a leap year.`;
-  } else if (!(number % 4)) {
-    return `${number} is a leap year.`;
-  } else {
-    return `${number} is not a leap year.`;
-  }
-}
+// function isLeapYear(number) {
+//   if (!(number % 4) && !(number % 100) && !(number % 400)) {
+//     return `${number} is a leap year.`;
+//   } else if (!(number % 4) && !(number % 100)) {
+//     return `${number} is not a leap year.`;
+//   } else if (!(number % 4)) {
+//     return `${number} is a leap year.`;
+//   } else {
+//     return `${number} is not a leap year.`;
+//   }
+// }
 
-const result = isLeapYear(year);
-console.log(result);
+// const result = isLeapYear(year);
+// console.log(result);
 
 // let year = 1900;
 // function isLeapYear(year) {
@@ -864,3 +864,30 @@ console.log(result);
 // }
 // let result = isLeapYear();
 // console.log(result);
+
+// function truncateString(str, num) {
+//   if (str.length > num) {
+//     return `${str.slice(0, num)}...`;
+//   }
+//   return str;
+// }
+
+// console.log(truncateString('qwertyqwerty', 12));
+// console.log(truncateString('A-tisket a-tasket A green and yellow basket', 8));
+// console.log(truncateString('A-', 1));
+
+// const str = 'qwerty';
+// console.log(str.slice(0, str.length));
+
+// function confirmEnding(str, sub) {
+//   if (str.slice(-sub.length) === sub) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// console.log(confirmEnding('Inga', 'g'));
+const exampleFunction = (param1, param2) => param1 + param2;
+console.log(exampleFunction(3, 'Something'));
+const divideTwoNumbers = (num1, num2) => num1 / num2;
+console.log(divideTwoNumbers(3, 0));
