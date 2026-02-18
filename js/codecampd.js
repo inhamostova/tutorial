@@ -887,7 +887,112 @@
 // }
 
 // console.log(confirmEnding('Inga', 'g'));
-const exampleFunction = (param1, param2) => param1 + param2;
-console.log(exampleFunction(3, 'Something'));
-const divideTwoNumbers = (num1, num2) => num1 / num2;
-console.log(divideTwoNumbers(3, 0));
+// const exampleFunction = (param1, param2) => param1 + param2;
+// console.log(exampleFunction(3, 'Something'));
+// const divideTwoNumbers = (num1, num2) => num1 / num2;
+// console.log(divideTwoNumbers(3, 0));
+// const max = 50;
+// const min = 5;
+// const num = Number((Math.random() * (max - min) + min).toFixed());
+// console.log(num);
+
+// let weight = '88,3';
+// let height = '1.75';
+
+// weight = Number(weight.replace(',', '.'));
+
+// height = Number(height);
+
+// const bmi = Number((weight / height ** 2).toFixed(1));
+// console.log(bmi);
+
+// const stars = 2;
+// let price;
+
+// if (stars === 1) {
+//   price = 10;
+// } else if (stars === 2) {
+//   price = 20;
+// } else if (stars === 3) {
+//   price = 50;
+// } else if (stars === 4) {
+//   price = 100;
+// } else if (stars === 5) {
+//   price = 120;
+// } else {
+//   price = 0;
+//   console.log('There are no stars');
+// }
+
+// switch (stars) {
+//   case 1:
+//   case 2:
+//     price = 10;
+//     break;
+//   // case 2:
+//   //   price = 20;
+//   //   break;
+//   case 3:
+//     price = 50;
+//     break;
+//   case 4:
+//     price = 100;
+//     break;
+//   case 5:
+//     price = 120;
+//     break;
+//   default:
+//     price = 0;
+//     console.log('There are no stars');
+// }
+
+// console.log(price);
+
+// const str = 'string';
+
+// for (let i = 0; i < str.length; i += 1) {
+//   console.log(str[i]);
+// }
+
+// let a = 10;
+// const b = ++a;
+
+// console.log(a);
+// console.log(b);
+
+// const employees = 10;
+// let total = 0;
+
+// for (let i = 1; i <= employees; i += 1) {
+//   const sal = Number((Math.random() * (5000 - 500) + 500).toFixed());
+//   total += sal;
+//   console.log(`${i} - ${sal}`);
+//   console.log(total);
+// }
+
+// console.log(total);
+
+// const min = 0;
+// const max = 10;
+// let total = 0;
+
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 2) {
+//     continue;
+//   }
+//   console.log(i);
+//   total += i;
+// }
+
+// console.log(total);
+
+let fruits = ['apple', 'banana', 'orange', 'mango', 'kiwi'];
+let [first, second, ...a] = fruits;
+
+const newArr = [...fruits];
+
+console.log(first); // "apple"
+console.log(second); // "banana"
+console.log(a); // ["orange", "mango", "kiwi"]
+console.log(newArr);
+console.log(fruits === newArr);
