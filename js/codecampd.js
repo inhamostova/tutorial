@@ -833,22 +833,22 @@
 // }
 // [year] is a leap year.
 
-const year = 1900;
+// const year = 1900;
 
-function isLeapYear(number) {
-  if (!(number % 4) && !(number % 100) && !(number % 400)) {
-    return `${number} is a leap year.`;
-  } else if (!(number % 4) && !(number % 100)) {
-    return `${number} is not a leap year.`;
-  } else if (!(number % 4)) {
-    return `${number} is a leap year.`;
-  } else {
-    return `${number} is not a leap year.`;
-  }
-}
+// function isLeapYear(number) {
+//   if (!(number % 4) && !(number % 100) && !(number % 400)) {
+//     return `${number} is a leap year.`;
+//   } else if (!(number % 4) && !(number % 100)) {
+//     return `${number} is not a leap year.`;
+//   } else if (!(number % 4)) {
+//     return `${number} is a leap year.`;
+//   } else {
+//     return `${number} is not a leap year.`;
+//   }
+// }
 
-const result = isLeapYear(year);
-console.log(result);
+// const result = isLeapYear(year);
+// console.log(result);
 
 // let year = 1900;
 // function isLeapYear(year) {
@@ -864,3 +864,181 @@ console.log(result);
 // }
 // let result = isLeapYear();
 // console.log(result);
+
+// function truncateString(str, num) {
+//   if (str.length > num) {
+//     return `${str.slice(0, num)}...`;
+//   }
+//   return str;
+// }
+
+// console.log(truncateString('qwertyqwerty', 12));
+// console.log(truncateString('A-tisket a-tasket A green and yellow basket', 8));
+// console.log(truncateString('A-', 1));
+
+// const str = 'qwerty';
+// console.log(str.slice(0, str.length));
+
+// function confirmEnding(str, sub) {
+//   if (str.slice(-sub.length) === sub) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// console.log(confirmEnding('Inga', 'g'));
+// const exampleFunction = (param1, param2) => param1 + param2;
+// console.log(exampleFunction(3, 'Something'));
+// const divideTwoNumbers = (num1, num2) => num1 / num2;
+// console.log(divideTwoNumbers(3, 0));
+// const max = 50;
+// const min = 5;
+// const num = Number((Math.random() * (max - min) + min).toFixed());
+// console.log(num);
+
+// let weight = '88,3';
+// let height = '1.75';
+
+// weight = Number(weight.replace(',', '.'));
+
+// height = Number(height);
+
+// const bmi = Number((weight / height ** 2).toFixed(1));
+// console.log(bmi);
+
+// const stars = 2;
+// let price;
+
+// if (stars === 1) {
+//   price = 10;
+// } else if (stars === 2) {
+//   price = 20;
+// } else if (stars === 3) {
+//   price = 50;
+// } else if (stars === 4) {
+//   price = 100;
+// } else if (stars === 5) {
+//   price = 120;
+// } else {
+//   price = 0;
+//   console.log('There are no stars');
+// }
+
+// switch (stars) {
+//   case 1:
+//   case 2:
+//     price = 10;
+//     break;
+//   // case 2:
+//   //   price = 20;
+//   //   break;
+//   case 3:
+//     price = 50;
+//     break;
+//   case 4:
+//     price = 100;
+//     break;
+//   case 5:
+//     price = 120;
+//     break;
+//   default:
+//     price = 0;
+//     console.log('There are no stars');
+// }
+
+// console.log(price);
+
+// const str = 'string';
+
+// for (let i = 0; i < str.length; i += 1) {
+//   console.log(str[i]);
+// }
+
+// let a = 10;
+// const b = ++a;
+
+// console.log(a);
+// console.log(b);
+
+// const employees = 10;
+// let total = 0;
+
+// for (let i = 1; i <= employees; i += 1) {
+//   const sal = Number((Math.random() * (5000 - 500) + 500).toFixed());
+//   total += sal;
+//   console.log(`${i} - ${sal}`);
+//   console.log(total);
+// }
+
+// console.log(total);
+
+// const min = 0;
+// const max = 10;
+// let total = 0;
+
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 2) {
+//     continue;
+//   }
+//   console.log(i);
+//   total += i;
+// }
+
+// console.log(total);
+
+// let fruits = ['apple', 'banana', 'orange', 'mango', 'kiwi'];
+// let [first, second, ...a] = fruits;
+
+// const newArr = [...fruits];
+
+// console.log(first); // "apple"
+// console.log(second); // "banana"
+// console.log(a); // ["orange", "mango", "kiwi"]
+// console.log(newArr);
+// console.log(fruits === newArr);
+
+// const totalSpent = 2000;
+// let payment = 500;
+// let discount = 0;
+
+// if (totalSpent >= 100 && totalSpent < 1000) {
+//   discount = 0.02;
+//   console.log(`bronze partner , discount - ${discount}`);
+// } else if (totalSpent >= 1000 && totalSpent < 5000) {
+//   discount = 0.05;
+//   console.log(`silver partner , discount - ${discount}`);
+// } else if (totalSpent >= 5000) {
+//   discount = 0.1;
+//   console.log(`gold partner , discount - ${discount}`);
+// } else {
+//   console.log('no discount');
+// }
+
+// console.log(`Your purchase ${payment * (1 - discount)} with ${discount * 100}%`);
+
+// const deadline = Number(prompt('How many days?') ?? NaN);
+
+// if (isNaN(deadline)) {
+//   console.log('INCORRECT');
+// } else {
+//   if (deadline === 0) {
+//     console.log('Today');
+//   } else if (deadline === 1) {
+//     console.log('Tomorrow');
+//   } else if (deadline === 2) {
+//     console.log('after Tomorrow');
+//   } else {
+//     console.log('Date in the future');
+//   }
+// }
+
+const min = 20;
+const max = 100;
+
+for (let i = min; i <= max; i += 1) {
+  if (i % 5) {
+    // console.log(i % 5);
+    continue;
+  }
+  console.log(i);
+}
