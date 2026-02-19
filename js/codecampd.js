@@ -986,13 +986,59 @@
 
 // console.log(total);
 
-let fruits = ['apple', 'banana', 'orange', 'mango', 'kiwi'];
-let [first, second, ...a] = fruits;
+// let fruits = ['apple', 'banana', 'orange', 'mango', 'kiwi'];
+// let [first, second, ...a] = fruits;
 
-const newArr = [...fruits];
+// const newArr = [...fruits];
 
-console.log(first); // "apple"
-console.log(second); // "banana"
-console.log(a); // ["orange", "mango", "kiwi"]
-console.log(newArr);
-console.log(fruits === newArr);
+// console.log(first); // "apple"
+// console.log(second); // "banana"
+// console.log(a); // ["orange", "mango", "kiwi"]
+// console.log(newArr);
+// console.log(fruits === newArr);
+
+// const totalSpent = 2000;
+// let payment = 500;
+// let discount = 0;
+
+// if (totalSpent >= 100 && totalSpent < 1000) {
+//   discount = 0.02;
+//   console.log(`bronze partner , discount - ${discount}`);
+// } else if (totalSpent >= 1000 && totalSpent < 5000) {
+//   discount = 0.05;
+//   console.log(`silver partner , discount - ${discount}`);
+// } else if (totalSpent >= 5000) {
+//   discount = 0.1;
+//   console.log(`gold partner , discount - ${discount}`);
+// } else {
+//   console.log('no discount');
+// }
+
+// console.log(`Your purchase ${payment * (1 - discount)} with ${discount * 100}%`);
+
+// const deadline = Number(prompt('How many days?') ?? NaN);
+
+// if (isNaN(deadline)) {
+//   console.log('INCORRECT');
+// } else {
+//   if (deadline === 0) {
+//     console.log('Today');
+//   } else if (deadline === 1) {
+//     console.log('Tomorrow');
+//   } else if (deadline === 2) {
+//     console.log('after Tomorrow');
+//   } else {
+//     console.log('Date in the future');
+//   }
+// }
+
+const min = 20;
+const max = 100;
+
+for (let i = min; i <= max; i += 1) {
+  if (i % 5) {
+    // console.log(i % 5);
+    continue;
+  }
+  console.log(i);
+}
