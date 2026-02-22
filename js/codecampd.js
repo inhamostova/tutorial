@@ -1032,13 +1032,135 @@
 //   }
 // }
 
-const min = 20;
-const max = 100;
+// const min = 20;
+// const max = 100;
 
-for (let i = min; i <= max; i += 1) {
-  if (i % 5) {
-    // console.log(i % 5);
-    continue;
-  }
-  console.log(i);
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5) {
+//     // console.log(i % 5);
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// console.log('Grocery shopping list');
+// const shoppingList = [];
+// console.log('It will be nice to have some fruit to eat.');
+// shoppingList.push('Apples');
+
+// function getShoppingListMsg(arr) {
+//   return `Current Shopping List: ${arr}`;
+// }
+
+// console.log(getShoppingListMsg(shoppingList));
+// shoppingList.push('Grapes');
+// console.log(getShoppingListMsg(shoppingList));
+// console.log('It looks like we need to get some cooking oil.');
+// shoppingList.unshift('Vegetable Oil');
+// console.log(getShoppingListMsg(shoppingList));
+// shoppingList.push('Popcorn', 'Beef Jerky', 'Potato Chips');
+// console.log(getShoppingListMsg(shoppingList));
+// console.log('This looks like too much junk food.');
+// shoppingList.pop();
+// console.log(getShoppingListMsg(shoppingList));
+// console.log('It might be nice to get a dessert.');
+// shoppingList.unshift('Chocolate Cake');
+// console.log(getShoppingListMsg(shoppingList));
+// console.log('On second thought, maybe we should be more health conscious.');
+// shoppingList.shift();
+// console.log(getShoppingListMsg(shoppingList));
+// shoppingList[0] = 'Canola Oil';
+
+// const lunches = ['Stew', 'Soup', 'Toast'];
+
+// for (const lunch of lunches) {
+//   console.log(lunch);
+// }
+
+// function getRandom(max, min) {
+//   return Number((Math.random() * (max - min) + min).toFixed());
+// }
+
+// function addLunchToEnd(arr, str) {
+//   arr.push(str);
+//   console.log(`${str} added to the end of the lunch menu.`);
+//   return arr;
+// }
+
+// function addLunchToStart(arr, str) {
+//   arr.unshift(str);
+//   console.log(`${str} added to the start of the lunch menu.`);
+//   return arr;
+// }
+
+// function removeLastLunch(arr) {
+//   if (arr.length) {
+//     console.log(`${arr.pop()} removed from the end of the lunch menu.`);
+//     // arr.pop();
+//   } else {
+//     console.log('No lunches to remove.');
+//   }
+//   return arr;
+// }
+
+// function removeFirstLunch(arr) {
+//   if (arr.length) {
+//     console.log(`${arr[0]} removed from the start of the lunch menu.`);
+//     arr.shift();
+//   } else {
+//     console.log('No lunches to remove.');
+//   }
+//   return arr;
+// }
+
+// function getRandomLunch(arr) {
+//   if (arr.length) {
+//     console.log(`Randomly selected lunch: ${arr[getRandom(arr.length - 1, 0)]}`);
+//   } else {
+//     console.log('No lunches available.');
+//   }
+// }
+
+// function showLunchMenu(arr) {
+//   if (arr.length) {
+//     console.log(`Menu items: ${arr.join(', ')}`);
+//   } else {
+//     console.log('The menu is empty.');
+//   }
+// }
+
+// console.log(addLunchToEnd(['Pizza', 'Tacos'], 'Burger'));
+// console.log(addLunchToStart(['Burger', 'Sushi'], 'Pizza'));
+
+// console.log(removeLastLunch(['Stew', 'Soup', 'Toast']));
+// console.log(removeLastLunch(['Sushi', 'Pizza', 'Noodles']));
+// console.log(getRandomLunch(['Sushi', 'Pizza', 'Noodles']));
+// console.log(showLunchMenu(['Greens', 'Corns', 'Beans']));
+
+// function golfScore(par, strokes) {
+//   if (strokes === 1) {
+//     return 'Hole-in-one!';
+//   } else if (strokes <= par - 2) {
+//     return 'Eagle';
+//   } else if (strokes === par - 1) {
+//     return 'Birdie';
+//   } else if (strokes === par) {
+//     return 'Par';
+//   } else if (strokes === par + 1) {
+//     return 'Bogey';
+//   } else if (strokes === par + 2) {
+//     return 'Double Bogey';
+//   } else if (strokes >= par + 3) {
+//     return 'Go Home!';
+//   } else {
+//     return ')';
+//   }
+// }
+
+// console.log(golfScore(4, 3));
+
+const string = 'javascript';
+
+for (const character of string) {
+  console.log(character);
 }
