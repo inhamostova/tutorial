@@ -1159,8 +1159,8 @@
 
 // console.log(golfScore(4, 3));
 
-const string = 'javascript';
+// const string = 'javascript';
 
-for (const character of string) {
-  console.log(character);
-}
+// for (const character of string) {
+//   console.log(character);
+// }
