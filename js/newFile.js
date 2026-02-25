@@ -91,14 +91,14 @@
 // const slug = title.toLowerCase().split(' ').join('-');
 // console.log(slug);
 
-const cards = ['Card-1', 'Card-2', 'Card-3', 'Card-4', 'Card-5'];
+// const cards = ['Card-1', 'Card-2', 'Card-3', 'Card-4', 'Card-5'];
 
-const cardToRemove = 'Card-3';
+// const cardToRemove = 'Card-3';
 
-const cardToInsert = 'Card-6';
-const index = 3;
+// const cardToInsert = 'Card-6';
+// const index = 3;
 
-const cardToUpdate = 'Card-4';
+// const cardToUpdate = 'Card-4';
 
 // const idx = cards.indexOf(cardToRemove);
 // if (idx !== -1) {
@@ -127,74 +127,69 @@ const cardToUpdate = 'Card-4';
 // const rev = str.split('').reverse().join('');
 // console.log(rev);
 
-const topSpeed = 160;
-const distance = 617.54;
-const login = 'mango935';
-const isOnline = true;
-const isAdmin = false;
+// const topSpeed = 160;
+// const distance = 617.54;
+// const login = 'mango935';
+// const isOnline = true;
+// const isAdmin = false;
 
-// Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути у довільному регістрі, наприклад SPAM або sAlE.
+// function checkForSpam(message) {
+//   let result;
+//   // Change code below this line
+//   result = message.toLowerCase().includes('spam') || message.toLowerCase().includes('sale');
+//   // Change code above this line
+//   return result;
+// }
 
-// Якщо знайшли заборонене слово (spam або sale) то функція повертає буль true.
-// Якщо в рядку відсутні заборонені слова, функція повертає буль false.
+// function formatMessage(message, maxLength) {
+//   let result;
+//   // Change code below this line
+//   result = message.length <= maxLength ? message : message.slice(0, maxLength) + '...';
+//   /// Change code above this line
+//   return result;
+// }
 
-function checkForSpam(message) {
-  let result;
-  // Change code below this line
-  result = message.toLowerCase().includes('spam') || message.toLowerCase().includes('sale');
-  // Change code above this line
-  return result;
-}
+// function getShippingCost(country) {
+//   let message;
+//   // Change code below this line
+//   switch (country) {
+//     case 'China':
+//       message = `Shipping to ${country} will cost 100 credits`;
+//       break;
+//     case 'Chile':
+//       message = `Shipping to ${country} will cost 250 credits`;
+//       break;
+//     case 'Australia':
+//       message = `Shipping to ${country} will cost 170 credits`;
+//       break;
+//     case 'Jamaica':
+//       message = `Shipping to ${country} will cost 120 credits`;
+//       break;
+//     default:
+//       message = 'Sorry, there is no delivery to your country';
+//   }
+//   // Change code above this line
+//   return message;
+// }
 
-function formatMessage(message, maxLength) {
-  let result;
-  // Change code below this line
-  result = message.length <= maxLength ? message : message.slice(0, maxLength) + '...';
-  /// Change code above this line
-  return result;
-}
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = 'jqueryismyjam';
+//   let message;
+//   // Change code below this line
+//   switch (password) {
+//     case null:
+//       message = 'Canceled by user!';
+//       break;
+//     case ADMIN_PASSWORD:
+//       message = 'Welcome!';
+//       break;
+//     default:
+//       message = 'Access denied, wrong password!';
+//   }
 
-function getShippingCost(country) {
-  let message;
-  // Change code below this line
-  switch (country) {
-    case 'China':
-      message = `Shipping to ${country} will cost 100 credits`;
-      break;
-    case 'Chile':
-      message = `Shipping to ${country} will cost 250 credits`;
-      break;
-    case 'Australia':
-      message = `Shipping to ${country} will cost 170 credits`;
-      break;
-    case 'Jamaica':
-      message = `Shipping to ${country} will cost 120 credits`;
-      break;
-    default:
-      message = 'Sorry, there is no delivery to your country';
-  }
-  // Change code above this line
-  return message;
-}
-
-function checkPassword(password) {
-  const ADMIN_PASSWORD = 'jqueryismyjam';
-  let message;
-  // Change code below this line
-  switch (password) {
-    case null:
-      message = 'Canceled by user!';
-      break;
-    case ADMIN_PASSWORD:
-      message = 'Welcome!';
-      break;
-    default:
-      message = 'Access denied, wrong password!';
-  }
-
-  // Change code above this line
-  return message;
-}
+//   // Change code above this line
+//   return message;
+// }
 
 // function getSubscriptionPrice(type) {
 //   let price;
@@ -227,26 +222,26 @@ function checkPassword(password) {
 // }
 // console.log(checkPassword('jqueryismjam'));
 
-function isNumberNotInRange(start, end, number) {
-  const isInRange = number >= start && number <= end;
-  const isNotInRange = !isInRange; // Change this line
+// function isNumberNotInRange(start, end, number) {
+//   const isInRange = number >= start && number <= end;
+//   const isNotInRange = !isInRange; // Change this line
 
-  return isNotInRange;
-}
+//   return isNotInRange;
+// }
 
-function checkIfCanAccessContent(subType) {
-  return subType === 'pro' || subType === 'vip';
-}
+// function checkIfCanAccessContent(subType) {
+//   return subType === 'pro' || subType === 'vip';
+// }
 
-function checkStorage(available, ordered) {
-  if (!ordered) {
-    return 'There are no products in the order!';
-  } else if (ordered > available) {
-    return 'Your order is too large, there are not enough items in stock!';
-  } else {
-    return 'The order is accepted, our manager will contact you';
-  }
-}
+// function checkStorage(available, ordered) {
+//   if (!ordered) {
+//     return 'There are no products in the order!';
+//   } else if (ordered > available) {
+//     return 'Your order is too large, there are not enough items in stock!';
+//   } else {
+//     return 'The order is accepted, our manager will contact you';
+//   }
+// }
 
 // function checkPassword(password) {
 //   const ADMIN_PASSWORD = 'jqueryismyjam';
@@ -265,60 +260,90 @@ function checkStorage(available, ordered) {
 //   return message;
 // }
 
-function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
-  if (pricePerDroid * orderedQuantity > customerCredits) {
-    return 'Insufficient funds!';
-  }
-  return `You ordered ${orderedQuantity} droids, you have ${customerCredits - pricePerDroid * orderedQuantity} credits left`;
-}
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   if (pricePerDroid * orderedQuantity > customerCredits) {
+//     return 'Insufficient funds!';
+//   }
+//   return `You ordered ${orderedQuantity} droids, you have ${customerCredits - pricePerDroid * orderedQuantity} credits left`;
+// }
 
-function checkStorage(available, ordered) {
-  if (ordered > available) {
-    return 'Not enough goods in stock!';
-  }
-  return 'Order is processed, our manager will contact you.';
-}
+// function checkStorage(available, ordered) {
+//   if (ordered > available) {
+//     return 'Not enough goods in stock!';
+//   }
+//   return 'Order is processed, our manager will contact you.';
+// }
 
-function checkAge(age) {
-  let message;
+// function checkAge(age) {
+//   let message;
 
-  if (age >= 18) {
-    // Change this line
-    message = 'You are an adult';
-  } else {
-    message = 'You are a minor';
-  }
+//   if (age >= 18) {
+//     // Change this line
+//     message = 'You are an adult';
+//   } else {
+//     message = 'You are a minor';
+//   }
 
-  return message;
-}
+//   return message;
+// }
 
-function isValidPassword(password) {
-  const SAVED_PASSWORD = 'jqueryismyjam';
-  // Change code below this line
-  const isMatch = SAVED_PASSWORD === password;
+// function isValidPassword(password) {
+//   const SAVED_PASSWORD = 'jqueryismyjam';
+//   // Change code below this line
+//   const isMatch = SAVED_PASSWORD === password;
 
-  // Change code above this line
-  return isMatch;
-}
+//   // Change code above this line
+//   return isMatch;
+// }
 
-function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
-  return `You ordered droids worth ${orderedQuantity * pricePerDroid + deliveryFee} credits. Delivery (${deliveryFee} credits) is included in total price.`;
-}
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   return `You ordered droids worth ${orderedQuantity * pricePerDroid + deliveryFee} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+// }
 
-function calculateTotalPrice(orderedQuantity, pricePerItem) {
-  return orderedQuantity * pricePerItem;
-}
+// function calculateTotalPrice(orderedQuantity, pricePerItem) {
+//   return orderedQuantity * pricePerItem;
+// }
 
-function makeMessage(name, price) {
-  return `You picked ${name}, price per item is ${price} credits`;
-}
+// function makeMessage(name, price) {
+//   return `You picked ${name}, price per item is ${price} credits`;
+// }
 
-function add(a, b, c) {
-  return a + b + c;
-}
+// function add(a, b, c) {
+//   return a + b + c;
+// }
 
 // const pricePerDroid = 800;
 // const orderedQuantity = 6;
 // const deliveryFee = 50;
 // const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
 // const message = `You ordered droids worth ${totalPrice} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+
+// const arr = [1, 'Hello', null, true, [1, 2, 3]];
+
+// arr.length = 2;
+// console.log(arr);
+
+// arr[5] = 'Inga';
+// console.log(arr.length);
+
+const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'node', 'master'];
+let swapped;
+
+for (let j = 0; j < langs.length - 1; j += 1) {
+  swapped = false;
+  for (let i = 0; i < langs.length - 1 - j; i += 1) {
+    if (langs[i][0] > langs[i + 1][0]) {
+      const temp = langs[i];
+      langs[i] = langs[i + 1];
+      langs[i + 1] = temp;
+      swapped = true;
+    }
+  }
+  if (!swapped) {
+    break;
+  }
+
+  console.log(`Прохід номер ${j + 1}`, langs);
+}
+
+// console.log(langs);
