@@ -12,13 +12,18 @@
 // console.log(friends);
 
 // const cart = [54, 28, 105, 70, 92, 17, 120];
-// let total = 0;
 
-// for (const purchase of cart) {
-//   total += purchase;
+// function calculateTotalPrice(items) {
+//   let total = 0;
+
+//   for (const item of items) {
+//     total += item;
+//   }
+
+//   return total;
 // }
 
-// console.log(total);
+// console.log(calculateTotalPrice(cart));
 
 // const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
 // let total = 0;
@@ -50,6 +55,27 @@
 //     break;
 //   }
 // }
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+
+// function findLogin(allLogins, loginToFind) {
+//   return allLogins.includes(loginToFind)
+//     ? `User ${loginToFind} found`
+//     : `User ${loginToFind} NOT found`;
+// }
+
+// function findLogin(allLogins, loginToFind) {
+//   let message = 'Login is not found';
+//   for (const login of allLogins) {
+//     if (login === loginToFind) {
+//       message = 'We found IT!!!';
+//       break;
+//     }
+//   }
+
+//   return message;
+// }
+
+// console.log(findLogin(logins, 'poly1scute'));
 
 // console.log(message);
 
@@ -63,6 +89,18 @@
 // // console.log(smallest);
 // const smallest = Math.min(...numbers);
 // console.log(smallest);
+
+// function findSmallestNumber(numbers) {
+//   let smallest = numbers[0];
+//   for (const number of numbers) {
+//     smallest = number < smallest ? number : smallest;
+//   }
+//   return smallest;
+// }
+
+// console.log(findSmallestNumber([3, 8, 12, -2, 15]));
+// console.log(findSmallestNumber([100, 54, 12, 8, 47]));
+// console.log(findSmallestNumber([7, 21, 84, 15, 4]));
 
 // const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
 
@@ -326,24 +364,192 @@
 // arr[5] = 'Inga';
 // console.log(arr.length);
 
-const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'node', 'master'];
-let swapped;
+// const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby', 'node', 'master'];
+// const langs = ['cython', 'bjavascript', 'ac++', 'haskel', 'php', 'ruby'];
+// let swapped;
 
-for (let j = 0; j < langs.length - 1; j += 1) {
-  swapped = false;
-  for (let i = 0; i < langs.length - 1 - j; i += 1) {
-    if (langs[i][0] > langs[i + 1][0]) {
-      const temp = langs[i];
-      langs[i] = langs[i + 1];
-      langs[i + 1] = temp;
-      swapped = true;
-    }
-  }
-  if (!swapped) {
-    break;
-  }
+// for (let i = 0; i < langs.length; i += 1) {
+//   if (langs[0] > langs[i]) {
+//     const res = langs.splice(i, 1)[0];
+//     langs.unshift(res);
+//   }
+// }
+// console.log(langs);
 
-  console.log(`Прохід номер ${j + 1}`, langs);
-}
+// for (let j = 0; j < langs.length - 1; j += 1) {
+//   swapped = false;
+//   for (let i = 0; i < langs.length - 1 - j; i += 1) {
+//     if (langs[i][0] > langs[i + 1][0]) {
+//       const temp = langs[i];
+//       langs[i] = langs[i + 1];
+//       langs[i + 1] = temp;
+//       swapped = true;
+//     }
+//   }
+//   if (!swapped) {
+//     break;
+//   }
+
+//   console.log(`Прохід номер ${j + 1}`, langs);
+// }
 
 // console.log(langs);
+
+// const numbers = [2, 17, 94, 1, 23, 37];
+// let min = numbers[0];
+
+// for (const number of numbers) {
+//   min = min > number ? number : min;
+// }
+
+// console.log(min);
+
+// function bar() {
+//   console.log('bar');
+// }
+
+// function baz() {
+//   console.log('baz');
+// }
+
+// function foo() {
+//   console.log('foo');
+//   bar();
+//   baz();
+// }
+
+// foo();
+
+// function filterNumbers(numbers, ...args) {
+//   const arr = [];
+
+//   for (const number of numbers) {
+//     if (args.includes(number)) {
+//       arr.push(number);
+//     }
+//   }
+
+//   return arr;
+// }
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+
+// function findBmi(weight, height) {
+//   const finalWeight = Number(weight.replace(',', '.'));
+//   const finalHeight = Number(height.replace(',', '.'));
+//   return Number((finalWeight / finalHeight ** 2).toFixed(1));
+// }
+
+// console.log(findBmi('88,3', '1.75'));
+
+// function findMin(a, b) {
+//   return a < b ? a : b;
+// }
+
+// console.log(findMin(2, 5));
+// console.log(findMin(3, -1));
+// console.log(findMin(1, 1));
+
+// function getRectArea(dimensions) {
+//   return dimensions.split(' ')[0] * dimensions.split(' ')[1];
+// }
+
+// console.log(getRectArea('8 11'));
+// console.log(getRectArea('5 10'));
+
+// function logItems(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     console.log(`${i + 1} - ${arr[i]}`);
+//   }
+// }
+
+// logItems(['Mango', 'Poly', 'Kiwi']);
+
+// function findLargestNumber() {
+//   const arr = [...arguments];
+//   let max;
+
+//   for (const num of arr) {
+//     if (typeof num === 'number') {
+//       max = num;
+//       break;
+//     }
+//   }
+
+//   for (const item of arr) {
+//     if (typeof item === 'number') {
+//       if (item > max) {
+//         max = item;
+//       }
+//     } else {
+//       max = findLargestNumber(...item);
+//     }
+//   }
+
+//   return max;
+// }
+
+// console.log(findLargestNumber(1, 13, 72, 43, 55, 2));
+// console.log(findLargestNumber([1, 13, 72], 43, [55, 89], 2));
+
+// function calcAverage() {
+//   let total = 0;
+//   //   console.log(arguments);
+
+//   for (const arg of arguments) {
+//     total += arg;
+//   }
+
+//   return total / arguments.length;
+// }
+
+// console.log(calcAverage(1, 2, 3, 4));
+// console.log(calcAverage(14, 2, 8));
+
+// function formatTime(minutes) {
+//   const hours = Math.floor(minutes / 60);
+//   minutes = minutes % 60;
+
+//   return `${hours > 9 ? hours : '0' + hours}:${minutes > 9 ? minutes : '0' + minutes}`;
+// }
+
+// console.log(formatTime(70));
+// console.log(formatTime(450));
+// console.log(formatTime(1441));
+
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'Express'];
+
+function addCourse(courses, name) {
+  if (!courses.includes(name)) {
+    courses.push(name);
+    return `Course ${name} added succesfully`;
+  }
+  return `Course is already`;
+}
+
+// console.log(addCourse(courses, 'CSS'));
+// console.log(courses);
+
+function removeCourse(courses, name) {
+  if (courses.includes(name)) {
+    const idx = courses.indexOf(name);
+    courses.splice(idx, 1);
+    return `Course ${name} removed succesfully`;
+  }
+  return `Course is NOT found`;
+}
+
+// console.log(removeCourse(courses, 'Node'));
+// console.log(courses);
+
+function updateCourse(courses, oldName, newName) {
+  if (courses.includes(oldName)) {
+    const idx = courses.indexOf(oldName);
+    courses[idx] = newName;
+    return `Course ${oldName} updated to ${newName} succesfully`;
+  }
+  return `Course is NOT found`;
+}
+
+console.log(updateCourse(courses, 'Node', 'Haskel'));
+console.log(courses);
