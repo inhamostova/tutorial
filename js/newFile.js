@@ -517,39 +517,170 @@
 // console.log(formatTime(450));
 // console.log(formatTime(1441));
 
-const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'Express'];
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'Express'];
 
-function addCourse(courses, name) {
-  if (!courses.includes(name)) {
-    courses.push(name);
-    return `Course ${name} added succesfully`;
-  }
-  return `Course is already`;
-}
+// function addCourse(courses, name) {
+//   if (!courses.includes(name)) {
+//     courses.push(name);
+//     return `Course ${name} added succesfully`;
+//   }
+//   return `Course is already`;
+// }
 
 // console.log(addCourse(courses, 'CSS'));
 // console.log(courses);
 
-function removeCourse(courses, name) {
-  if (courses.includes(name)) {
-    const idx = courses.indexOf(name);
-    courses.splice(idx, 1);
-    return `Course ${name} removed succesfully`;
-  }
-  return `Course is NOT found`;
-}
+// function removeCourse(courses, name) {
+//   if (courses.includes(name)) {
+//     const idx = courses.indexOf(name);
+//     courses.splice(idx, 1);
+//     return `Course ${name} removed succesfully`;
+//   }
+//   return `Course is NOT found`;
+// }
 
 // console.log(removeCourse(courses, 'Node'));
 // console.log(courses);
 
-function updateCourse(courses, oldName, newName) {
-  if (courses.includes(oldName)) {
-    const idx = courses.indexOf(oldName);
-    courses[idx] = newName;
-    return `Course ${oldName} updated to ${newName} succesfully`;
+// function updateCourse(courses, oldName, newName) {
+//   if (courses.includes(oldName)) {
+//     const idx = courses.indexOf(oldName);
+//     courses[idx] = newName;
+//     return `Course ${oldName} updated to ${newName} succesfully`;
+//   }
+//   return `Course is NOT found`;
+// }
+
+// console.log(updateCourse(courses, 'Node', 'Haskel'));
+// console.log(courses);
+
+// function getExtremeElements(array) {
+//   const arr = [array.shift(), array.pop()];
+//   return arr;
+// }
+// console.log(getExtremeElements(['apple', 'peach', 'pear', 'banana']));
+
+// Напиши функцію includes(array, value), яка робить те саме, що і метод масиву масив.includes(значення) - перевіряє, чи присутнє в масиві array значення value, повертаючи true, якщо присутнє, і false в іншому випадку.
+
+// При виконанні цього завдання в тілі функції includes() не можна використовувати метод масив.includes(значення).
+
+// Тобі потрібно реалізувати свою власну логіку для виконання цього завдання. Розглянь вибір методу ітерації, який пройде по всьому масиву (array), і на кожній ітерації перевірятиме, чи дорівнює елемент масиву value. Якщо так, поверниtrue, в іншому випадку поверни false.
+
+function includes(array, value) {
+  for (const item of array) {
+    if (item === value) {
+      return true;
+    }
   }
-  return `Course is NOT found`;
+
+  return false;
 }
 
-console.log(updateCourse(courses, 'Node', 'Haskel'));
-console.log(courses);
+// function getEvenNumbers(start, end) {
+//   const arr = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (!(i % 2)) {
+//       arr.push(i);
+//     }
+//   }
+//   return arr;
+// }
+// console.log(getEvenNumbers(6, 12));
+// function getCommonElements(array1, array2) {
+//   const newArray = [];
+
+//   for (const item of array1) {
+//     if (array2.includes(item)) {
+//       newArray.push(item);
+//     }
+//   }
+
+//   return newArray;
+// }
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+
+// function filterArray(numbers, value) {
+//   const newArray = [];
+
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       newArray.push(numbers[i]);
+//     }
+//   }
+
+//   return newArray;
+// }
+// console.log(filterArray([12, 24, 8, 41, 76], 38));
+
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//   // Change code below this line
+//   for (let i = min; i <= max; i += 1) {
+//     numbers.push(i);
+//   }
+//   // Change code above this line
+//   return numbers;
+// }
+
+// function findLongestWord(string) {
+//   const arr = string.split(' ');
+//   let longestWord = arr[0];
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i].length > longestWord.length) {
+//       longestWord = arr[i];
+//     }
+//   }
+
+//   return longestWord;
+// }
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   for (i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+//   // Change code above this line
+//   return total;
+// }
+
+// function calculateTotal(number) {
+//   let total = 0;
+
+//   for (let i = 0; i <= number; i += 1) {
+//     total += i;
+//   }
+
+//   return total;
+// }
+// console.log(calculateTotal(7));
+
+// function makeArray(firstArray, secondArray, maxLength) {
+//   const arr = firstArray.concat(secondArray);
+
+//   if (arr.length > maxLength) {
+//     return arr.slice(0, maxLength);
+//   }
+
+//   return arr;
+// }
+
+// console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4));
+// function slugify(title) {
+//   return title.toLowerCase().split(' ').join('-');
+// }
+// console.log(slugify('How to become a JUNIOR developer in TWO WEEKS'));
+
+// function makeStringFromArray(array, delimiter) {
+//   let string;
+//   // Change code below this line
+//   string = array.join(delimiter);
+//   // Change code above this line
+//   return string;
+// }
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//   return pricePerWord * message.split(' ').length;
+// }
+// console.log(calculateEngravingPrice('JavaScript is in my blood', 20));
