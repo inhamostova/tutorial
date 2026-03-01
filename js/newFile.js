@@ -566,15 +566,15 @@
 
 // Тобі потрібно реалізувати свою власну логіку для виконання цього завдання. Розглянь вибір методу ітерації, який пройде по всьому масиву (array), і на кожній ітерації перевірятиме, чи дорівнює елемент масиву value. Якщо так, поверниtrue, в іншому випадку поверни false.
 
-function includes(array, value) {
-  for (const item of array) {
-    if (item === value) {
-      return true;
-    }
-  }
+// function includes(array, value) {
+//   for (const item of array) {
+//     if (item === value) {
+//       return true;
+//     }
+//   }
 
-  return false;
-}
+//   return false;
+// }
 
 // function getEvenNumbers(start, end) {
 //   const arr = [];
@@ -684,3 +684,146 @@ function includes(array, value) {
 //   return pricePerWord * message.split(' ').length;
 // }
 // console.log(calculateEngravingPrice('JavaScript is in my blood', 20));
+
+// const feedback = {
+//   good: 5,
+//   neutral: 10,
+//   bad: 3,
+// };
+
+// let total = 0;
+
+// const entries = Object.entries(feedback);
+// console.log(entries);
+// // const keys = Object.keys(feedback);
+// // console.log(keys);
+// const values = Object.values(feedback);
+// console.log(values);
+
+// for (const value of values) {
+//   total += value;
+// }
+
+// console.log(total);
+
+const friends = [
+  { name: 'Mango', online: false },
+  { name: 'Kiwi', online: true },
+  { name: 'Poly', online: true },
+  { name: 'Ajax', online: false },
+];
+
+// console.log(friends);
+
+// function findFriendByName(allFriends, name) {
+//   for (const friend of allFriends) {
+//     if (friend.name === name) {
+//       return `Friend ${name} is found`;
+//     }
+//   }
+//   return 'Friend is NOT found';
+// }
+
+// console.log(findFriendByName(friends, 'Poly'));
+// console.log(findFriendByName(friends, 'Chelsy'));
+
+// function getAllNames(allFriends) {
+//   const names = [];
+
+//   for (const friend of allFriends) {
+//     names.push(friend.name);
+//   }
+
+//   return names;
+// }
+
+// console.log(getAllNames(friends));
+
+// function getOnlineFriends(allFriends) {
+//   const onlineFriends = [];
+
+//   for (const friend of allFriends) {
+//     if (friend.online) {
+//       onlineFriends.push(friend);
+//     }
+//   }
+
+//   return onlineFriends;
+// }
+
+// console.log(getOnlineFriends(friends));
+
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    if (!this.items.length) {
+      this.items.push({ ...product, quantity: 1 });
+      return;
+    }
+
+    for (const productItem of this.items) {
+      if (productItem.name === product.name) {
+        this.increaseQuantity(product.name);
+        return;
+      }
+      this.items.push({ ...product, quantity: 1 });
+      return;
+    }
+  },
+  remove(productName) {
+    for (const product of this.items) {
+      if (product.name === productName) {
+        const idx = this.items.indexOf(product);
+        this.items.splice(idx, 1);
+        return `${productName} succesfully removed from your cart`;
+      }
+    }
+
+    return 'There is no such product in your cart';
+  },
+  clear() {
+    this.items = [];
+  },
+  countTotalPrice() {
+    let total = 0;
+
+    for (const product of this.items) {
+      total += product.price * product.quantity;
+    }
+
+    return total;
+  },
+  increaseQuantity(productName) {
+    for (const product of this.items) {
+      if (product.name === productName) {
+        product.quantity += 1;
+      }
+    }
+  },
+  decreaseQuantity(productName) {
+    for (const product of this.items) {
+      if (product.name === productName) {
+        if (product.quantity === 1) {
+          this.remove(product.name);
+          return;
+        }
+        product.quantity -= 1;
+        return;
+      }
+    }
+  },
+};
+
+cart.add({ name: '🍓', price: 50 });
+cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍌', price: 60 });
+cart.add({ name: '🍇', price: 110 });
+
+cart.add({ name: '🍓', price: 50 });
+
+console.log(cart.remove('🍋'));
+
+console.log(cart.getItems());
