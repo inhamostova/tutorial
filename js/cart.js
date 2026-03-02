@@ -1,22 +1,26 @@
 const cart = {
-  items: [],
+  items: [
+    { name: '🍓', quantity: 1 },
+    { name: '🍌', quantity: 1 },
+  ],
   getItems() {
     return this.items;
   },
   add(product) {
-    if (!this.items.length) {
-      this.items.push({ ...product, quantity: 1 });
-      return;
-    }
+    // if (!this.items.length) {
+    //   this.items.push({ ...product, quantity: 1 });
+    //   return;
+    // }
 
     for (const productItem of this.items) {
       if (productItem.name === product.name) {
         this.increaseQuantity(product.name);
         return;
       }
-      this.items.push({ ...product, quantity: 1 });
-      return;
     }
+
+    this.items.push({ ...product, quantity: 1 });
+    return;
   },
   remove(productName) {
     for (const product of this.items) {
@@ -45,6 +49,7 @@ const cart = {
     for (const product of this.items) {
       if (product.name === productName) {
         product.quantity += 1;
+        return;
       }
     }
   },

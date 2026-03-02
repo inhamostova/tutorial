@@ -706,12 +706,12 @@
 
 // console.log(total);
 
-const friends = [
-  { name: 'Mango', online: false },
-  { name: 'Kiwi', online: true },
-  { name: 'Poly', online: true },
-  { name: 'Ajax', online: false },
-];
+// const friends = [
+//   { name: 'Mango', online: false },
+//   { name: 'Kiwi', online: true },
+//   { name: 'Poly', online: true },
+//   { name: 'Ajax', online: false },
+// ];
 
 // console.log(friends);
 
@@ -753,77 +753,137 @@ const friends = [
 
 // console.log(getOnlineFriends(friends));
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    if (!this.items.length) {
-      this.items.push({ ...product, quantity: 1 });
-      return;
-    }
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     if (!this.items.length) {
+//       this.items.push({ ...product, quantity: 1 });
+//       return;
+//     }
 
-    for (const productItem of this.items) {
-      if (productItem.name === product.name) {
-        this.increaseQuantity(product.name);
-        return;
-      }
-      this.items.push({ ...product, quantity: 1 });
-      return;
-    }
-  },
-  remove(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        const idx = this.items.indexOf(product);
-        this.items.splice(idx, 1);
-        return `${productName} succesfully removed from your cart`;
-      }
-    }
+//     for (const productItem of this.items) {
+//       if (productItem.name === product.name) {
+//         this.increaseQuantity(product.name);
+//         return;
+//       }
+//       this.items.push({ ...product, quantity: 1 });
+//       return;
+//     }
+//   },
+//   remove(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         const idx = this.items.indexOf(product);
+//         this.items.splice(idx, 1);
+//         return `${productName} succesfully removed from your cart`;
+//       }
+//     }
 
-    return 'There is no such product in your cart';
+//     return 'There is no such product in your cart';
+//   },
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice() {
+//     let total = 0;
+
+//     for (const product of this.items) {
+//       total += product.price * product.quantity;
+//     }
+
+//     return total;
+//   },
+//   increaseQuantity(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         product.quantity += 1;
+//       }
+//     }
+//   },
+//   decreaseQuantity(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         if (product.quantity === 1) {
+//           this.remove(product.name);
+//           return;
+//         }
+//         product.quantity -= 1;
+//         return;
+//       }
+//     }
+//   },
+// };
+
+// cart.add({ name: '🍓', price: 50 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍌', price: 60 });
+// cart.add({ name: '🍇', price: 110 });
+
+// cart.add({ name: '🍓', price: 50 });
+
+// console.log(cart.remove('🍋'));
+
+// console.log(cart.getItems());
+
+const Transaction = {
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
+};
+
+const account = {
+  balance: 0,
+  transactions: [],
+  createTransaction(amount, type) {
+    return {
+      amount,
+      type,
+      id: Date.now(),
+    };
   },
-  clear() {
-    this.items = [];
+  deposit(amount) {
+    const trans = this.createTransaction(amount, Transaction.DEPOSIT);
+    this.transactions.push(trans);
+    this.balance += trans.amount;
+    return `${trans.amount} succesfully deposit`;
   },
-  countTotalPrice() {
+  withdraw(amount) {
+    if (amount > this.balance) {
+      return 'NOT enough money';
+    }
+    const trans = this.createTransaction(amount, Transaction.WITHDRAW);
+    this.transactions.push(trans);
+    this.balance -= trans.amount;
+    return `${trans.amount} succesfully withdraw`;
+  },
+  getBalance() {
+    return this.balance;
+  },
+  getTransactionDetail(id) {
+    for (const trans of this.transactions) {
+      if (trans.id === id) {
+        return trans;
+      }
+    }
+  },
+  getTransactionTotal(type) {
     let total = 0;
 
-    for (const product of this.items) {
-      total += product.price * product.quantity;
+    for (const trans of this.transactions) {
+      if (trans.type === type) {
+        total += trans.amount;
+      }
     }
 
     return total;
   },
-  increaseQuantity(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        product.quantity += 1;
-      }
-    }
-  },
-  decreaseQuantity(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        if (product.quantity === 1) {
-          this.remove(product.name);
-          return;
-        }
-        product.quantity -= 1;
-        return;
-      }
-    }
-  },
 };
 
-cart.add({ name: '🍓', price: 50 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍌', price: 60 });
-cart.add({ name: '🍇', price: 110 });
-
-cart.add({ name: '🍓', price: 50 });
-
-console.log(cart.remove('🍋'));
-
-console.log(cart.getItems());
+console.log(account.deposit(1000));
+console.log(account.deposit(500));
+console.log(account.getBalance());
+console.log(account.withdraw(700));
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+console.log(account);
