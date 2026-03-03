@@ -881,9 +881,9 @@ const account = {
   },
 };
 
-console.log(account.deposit(1000));
-console.log(account.deposit(500));
-console.log(account.getBalance());
-console.log(account.withdraw(700));
-console.log(account.getTransactionTotal(Transaction.DEPOSIT));
-console.log(account);
+// console.log(account.deposit(1000));
+// console.log(account.deposit(500));
+// console.log(account.getBalance());
+// console.log(account.withdraw(700));
+// console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+// console.log(account);
