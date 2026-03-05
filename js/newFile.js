@@ -706,12 +706,12 @@
 
 // console.log(total);
 
-const friends = [
-  { name: 'Mango', online: false },
-  { name: 'Kiwi', online: true },
-  { name: 'Poly', online: true },
-  { name: 'Ajax', online: false },
-];
+// const friends = [
+//   { name: 'Mango', online: false },
+//   { name: 'Kiwi', online: true },
+//   { name: 'Poly', online: true },
+//   { name: 'Ajax', online: false },
+// ];
 
 // console.log(friends);
 
@@ -753,77 +753,268 @@ const friends = [
 
 // console.log(getOnlineFriends(friends));
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    if (!this.items.length) {
-      this.items.push({ ...product, quantity: 1 });
-      return;
-    }
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     if (!this.items.length) {
+//       this.items.push({ ...product, quantity: 1 });
+//       return;
+//     }
 
-    for (const productItem of this.items) {
-      if (productItem.name === product.name) {
-        this.increaseQuantity(product.name);
-        return;
-      }
-      this.items.push({ ...product, quantity: 1 });
-      return;
-    }
-  },
-  remove(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        const idx = this.items.indexOf(product);
-        this.items.splice(idx, 1);
-        return `${productName} succesfully removed from your cart`;
-      }
-    }
+//     for (const productItem of this.items) {
+//       if (productItem.name === product.name) {
+//         this.increaseQuantity(product.name);
+//         return;
+//       }
+//       this.items.push({ ...product, quantity: 1 });
+//       return;
+//     }
+//   },
+//   remove(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         const idx = this.items.indexOf(product);
+//         this.items.splice(idx, 1);
+//         return `${productName} succesfully removed from your cart`;
+//       }
+//     }
 
-    return 'There is no such product in your cart';
-  },
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice() {
-    let total = 0;
+//     return 'There is no such product in your cart';
+//   },
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice() {
+//     let total = 0;
 
-    for (const product of this.items) {
-      total += product.price * product.quantity;
-    }
+//     for (const product of this.items) {
+//       total += product.price * product.quantity;
+//     }
 
-    return total;
-  },
-  increaseQuantity(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        product.quantity += 1;
-      }
-    }
-  },
-  decreaseQuantity(productName) {
-    for (const product of this.items) {
-      if (product.name === productName) {
-        if (product.quantity === 1) {
-          this.remove(product.name);
-          return;
-        }
-        product.quantity -= 1;
-        return;
-      }
-    }
-  },
-};
+//     return total;
+//   },
+//   increaseQuantity(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         product.quantity += 1;
+//       }
+//     }
+//   },
+//   decreaseQuantity(productName) {
+//     for (const product of this.items) {
+//       if (product.name === productName) {
+//         if (product.quantity === 1) {
+//           this.remove(product.name);
+//           return;
+//         }
+//         product.quantity -= 1;
+//         return;
+//       }
+//     }
+//   },
+// };
 
-cart.add({ name: '🍓', price: 50 });
-cart.add({ name: '🍋', price: 60 });
-cart.add({ name: '🍌', price: 60 });
-cart.add({ name: '🍇', price: 110 });
+// cart.add({ name: '🍓', price: 50 });
+// cart.add({ name: '🍋', price: 60 });
+// cart.add({ name: '🍌', price: 60 });
+// cart.add({ name: '🍇', price: 110 });
 
-cart.add({ name: '🍓', price: 50 });
+// cart.add({ name: '🍓', price: 50 });
 
-console.log(cart.remove('🍋'));
+// console.log(cart.remove('🍋'));
 
-console.log(cart.getItems());
+// console.log(cart.getItems());
+
+// const Transaction = {
+//   DEPOSIT: 'deposit',
+//   WITHDRAW: 'withdraw',
+// };
+
+// const account = {
+//   balance: 0,
+//   transactions: [],
+//   createTransaction(amount, type) {
+//     return {
+//       amount,
+//       type,
+//       id: Date.now(),
+//     };
+//   },
+//   deposit(amount) {
+//     const trans = this.createTransaction(amount, Transaction.DEPOSIT);
+//     this.transactions.push(trans);
+//     this.balance += trans.amount;
+//     return `${trans.amount} succesfully deposit`;
+//   },
+//   withdraw(amount) {
+//     if (amount > this.balance) {
+//       return 'NOT enough money';
+//     }
+//     const trans = this.createTransaction(amount, Transaction.WITHDRAW);
+//     this.transactions.push(trans);
+//     this.balance -= trans.amount;
+//     return `${trans.amount} succesfully withdraw`;
+//   },
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getTransactionDetail(id) {
+//     for (const trans of this.transactions) {
+//       if (trans.id === id) {
+//         return trans;
+//       }
+//     }
+//   },
+//   getTransactionTotal(type) {
+//     let total = 0;
+
+//     for (const trans of this.transactions) {
+//       if (trans.type === type) {
+//         total += trans.amount;
+//       }
+//     }
+
+//     return total;
+//   },
+// };
+
+// console.log(account.deposit(1000));
+// console.log(account.deposit(500));
+// console.log(account.getBalance());
+// console.log(account.withdraw(700));
+// console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+// console.log(account);
+
+// /**
+//  *
+//  * @param {Object} partialContact
+//  * @returns {Object} new object with id
+//  */
+
+// function createContact(partialContact) {
+//   return { list: 'deafult', id: generateId(), ...partialContact };
+// }
+
+// console.log(createContact({ name: 'Poly', email: 'poly@mail.com' }));
+// console.log(createContact({ name: 'Mango', email: 'mango@mail.com', list: 'friends' }));
+
+// /**
+//  *
+//  * @returns {String} string id
+//  */
+// function generateId() {
+//   return '_' + Math.random().toString(36).substring(2, 9);
+// }
+
+// Доповни об'єкт квартири властивістю , значенням якого буде об'єкт з інформацією про власника. Додай йому наступні властивості:
+
+//
+//
+//
+
+// const apartment = {
+//   imgUrl: 'https://via.placeholder.com/640x480',
+//   descr: 'Spacious apartment in the city center',
+//   rating: 4,
+//   price: 2153,
+//   tags: ['premium', 'promoted', 'top'],
+//   owner: {
+//     name: 'Henry',
+//     phone: '982-126-1588',
+//     email: 'henry.carter@aptmail.com',
+//   },
+// };
+
+// Замовниця хоче, щоб кожне зілля було представлено не тільки ім'ям, але й ціною, а в майбутньому, можливо, й іншими характеристиками. Тому зараз у властивості potions буде зберігатися масив об'єктів з наступними властивостями.
+
+// {
+//   name: "Dragon breath",
+//   price: 700
+// }
+// Виконай рефакторинг методів об'єкта atTheOldToad таким чином, щоб вони працювали не з масивом рядків, а з масивом об'єктів.
+
+// getPotions() - метод для отримання всього зілля. Повертає значення властивості potions.
+// addPotion(newPotion) - додає зілля newPotion (вже об'єкт) в масив у властивості potions, але тільки, якщо такого зілля ще немає в інвентарі. В іншому випадку повертається рядок.
+// removePotion(potionName) - видаляє об'єкт зілля з ім'ям potionName з масиву у властивості potions.
+// updatePotionName(oldName, newName) - оновлює властивість name об'єкта-зілля з назвою oldName на newName в масиві potions.
+// Поради:
+
+// Зміни код кожного методу для роботи з новим масивом об’єктів зілля.
+// Переконайся, що ти маєш правильний доступ до властивостей name і price кожного об'єкта зілля.
+// Використовуй цикли або методи ітерації, щоб перебирати масив інвентаризації та виконувати необхідні перевірки та оновлення.
+
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Speed potion', price: 460 },
+//     { name: 'Dragon breath', price: 780 },
+//     { name: 'Stone skin', price: 520 },
+//   ],
+
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     for (const potion of this.potions) {
+//       if (potion.name === newPotion.name) {
+//         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//       }
+//     }
+
+//     this.potions.push(newPotion);
+//   },
+//   removePotion(potionName) {
+//     for (let i = 0; i < this.potions.length; i += 1) {
+//       if (potionName === this.potions[i].name) {
+//         this.potions.splice(i, 1);
+//         return;
+//       }
+//     }
+
+//     return `Potion ${potionName} is not in inventory!`;
+//   },
+//   updatePotionName(oldName, newName) {
+//     const { potions } = this;
+
+//     for (let i = 0; i < potions.length; i += 1) {
+//       if (potions[i].name === oldName) {
+//         potions[i].name = newName;
+//         return;
+//       }
+//     }
+//     return `Potion ${oldName} is not in inventory!`;
+//   },
+// };
+
+// console.log(atTheOldToad.updatePotionName('Dragon breath', 'Polymorth'));
+// console.log(atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion'));
+// console.log(atTheOldToad.getPotions());
+
+// function getNotEvenNumbers(numbers) {
+//   //   const arr = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2) {
+//       continue;
+//     }
+//     numbers.splice(i, 1);
+//     console.table(numbers);
+//   }
+//   return numbers;
+// }
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+// function getNotEvenNumbers(numbers) {
+//   for (let i = numbers.length - 1; i >= 0; i -= 1) {
+//     if (numbers[i] % 2) {
+//       continue;
+//     }
+//     numbers.splice(i, 1);
+//   }
+//   return numbers;
+// }
+
+// // console.log(getNotEvenNumbers([2, 4, 6, 8]));
+// console.log(getNotEvenNumbers(numbers));
