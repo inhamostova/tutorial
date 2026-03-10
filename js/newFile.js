@@ -1027,25 +1027,25 @@
 // value - a string containing the information used to update the album’s property
 // Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
 
-function updateRecords(records, id, prop, value) {
-  if (value === '') {
-    delete records[id][prop];
-    return records;
-  }
-  if (prop !== 'tracks') {
-    records[id][prop] = value;
-    return records;
-  }
-  if (prop === 'tracks' && value !== '') {
-    if (records[id].hasOwnProperty(prop)) {
-      records[id][prop].push(value);
-      return records;
-    }
-    records[id][prop] = [];
-    records[id][prop].push(value);
-    return records;
-  }
-}
+// function updateRecords(records, id, prop, value) {
+//   if (value === '') {
+//     delete records[id][prop];
+//     return records;
+//   }
+//   if (prop !== 'tracks') {
+//     records[id][prop] = value;
+//     return records;
+//   }
+//   if (prop === 'tracks' && value !== '') {
+//     if (records[id].hasOwnProperty(prop)) {
+//       records[id][prop].push(value);
+//       return records;
+//     }
+//     records[id][prop] = [];
+//     records[id][prop].push(value);
+//     return records;
+//   }
+// }
 
 // User Stories:
 
@@ -1056,31 +1056,104 @@ function updateRecords(records, id, prop, value) {
 // If prop is tracks and value isn't an empty string, add value to the end of the album's existing tracks array.
 // Note: A copy of the recordCollection object is used for the tests. Your function should not directly refer to the recordCollection object, only the function parameter.
 
-const recordCollection = {
-  2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name'],
-  },
-  2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette'],
-  },
-  1245: {
-    artist: 'Robert Palmer',
-    tracks: [],
-  },
-  5439: {
-    albumTitle: 'ABBA Gold',
-  },
-};
+// const recordCollection = {
+//   2548: {
+//     albumTitle: 'Slippery When Wet',
+//     artist: 'Bon Jovi',
+//     tracks: ['Let It Rock', 'You Give Love a Bad Name'],
+//   },
+//   2468: {
+//     albumTitle: '1999',
+//     artist: 'Prince',
+//     tracks: ['1999', 'Little Red Corvette'],
+//   },
+//   1245: {
+//     artist: 'Robert Palmer',
+//     tracks: [],
+//   },
+//   5439: {
+//     albumTitle: 'ABBA Gold',
+//   },
+// };
 
-console.log(updateRecords(recordCollection, 5439, 'artist', 'ABBA'));
+// console.log(updateRecords(recordCollection, 5439, 'artist', 'ABBA'));
 // updateRecords(recordCollection, 5439, 'tracks', 'Take a Chance on Me');
 // updateRecords(recordCollection, 2548, 'artist', '');
 // updateRecords(recordCollection, 1245, 'tracks', 'Addicted to Love');
 // updateRecords(recordCollection, 2468, 'tracks', 'Free');
 // updateRecords(recordCollection, 2548, 'tracks', '');
 // updateRecords(recordCollection, 1245, 'albumTitle', 'Riptide');
-console.log(recordCollection);
+// console.log(recordCollection);
+
+const users = [
+  { name: 'Anna', age: 22 },
+  { name: 'Ivan', age: 17 },
+  { name: 'Oleh', age: 30 },
+  { name: 'Maria', age: 16 },
+];
+
+// function filterUsers(users, callback) {
+//   const arr = [];
+
+//   users.forEach(user => {
+//     if (callback(user)) {
+//       arr.push(user);
+//     }
+//   });
+
+//   return arr;
+// }
+
+// const isAdult = user => user.age >= 18;
+
+// const isTeenager = user => user.age >= 13 && user.age <= 19;
+
+// function transformUsers(users, callback) {
+//   const transformedUsers = [];
+
+//   users.forEach(user => transformedUsers.push(callback(user)));
+
+//   return transformedUsers;
+// }
+
+// const names = transformUsers(users, user => user.name);
+
+// console.log(names);
+
+// console.log(filterUsers(users, isAdult));
+// const teens = filterUsers(users, isTeenager);
+
+// console.log(teens);
+
+// function repeat(n, callback) {
+//   for (let i = 0; i < n; i += 1) {
+//     callback(i);
+//   }
+// }
+
+// repeat(3, i => {
+//   console.log(`Iteration ${i}`);
+// });
+// repeat(5, i => console.log(i * 2));
+
+// const arr = [];
+
+// repeat(4, i => arr.push(i));
+
+// console.log(arr);
+
+function repeat(n, callback) {
+  for (let i = 0; i < n; i++) {
+    callback(i);
+  }
+}
+
+// repeat(3, i => {
+//   if (i === 1) return;
+//   console.log(i);
+// });
+
+repeat(3, i => {
+  console.log(i);
+  return;
+});
