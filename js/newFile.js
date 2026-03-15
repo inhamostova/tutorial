@@ -1018,3 +1018,702 @@
 
 // // console.log(getNotEvenNumbers([2, 4, 6, 8]));
 // console.log(getNotEvenNumbers(numbers));
+
+// The updateRecords function takes 4 arguments represented by the following function parameters:
+
+// records - an object containing several individual albums
+// id - a number representing a specific album in the records object
+// prop - a string representing the name of the album’s property to update
+// value - a string containing the information used to update the album’s property
+// Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+// function updateRecords(records, id, prop, value) {
+//   if (value === '') {
+//     delete records[id][prop];
+//     return records;
+//   }
+//   if (prop !== 'tracks') {
+//     records[id][prop] = value;
+//     return records;
+//   }
+//   if (prop === 'tracks' && value !== '') {
+//     if (records[id].hasOwnProperty(prop)) {
+//       records[id][prop].push(value);
+//       return records;
+//     }
+//     records[id][prop] = [];
+//     records[id][prop].push(value);
+//     return records;
+//   }
+// }
+
+// User Stories:
+
+// Your function must always return the entire records object.
+// If value is an empty string, delete the given prop property from the album.
+// If prop isn't tracks and value isn't an empty string, assign the value to that album's prop.
+// If prop is tracks and value isn't an empty string, but the album doesn't have a tracks property, create an empty array and add value to it.
+// If prop is tracks and value isn't an empty string, add value to the end of the album's existing tracks array.
+// Note: A copy of the recordCollection object is used for the tests. Your function should not directly refer to the recordCollection object, only the function parameter.
+
+// const recordCollection = {
+//   2548: {
+//     albumTitle: 'Slippery When Wet',
+//     artist: 'Bon Jovi',
+//     tracks: ['Let It Rock', 'You Give Love a Bad Name'],
+//   },
+//   2468: {
+//     albumTitle: '1999',
+//     artist: 'Prince',
+//     tracks: ['1999', 'Little Red Corvette'],
+//   },
+//   1245: {
+//     artist: 'Robert Palmer',
+//     tracks: [],
+//   },
+//   5439: {
+//     albumTitle: 'ABBA Gold',
+//   },
+// };
+
+// console.log(updateRecords(recordCollection, 5439, 'artist', 'ABBA'));
+// updateRecords(recordCollection, 5439, 'tracks', 'Take a Chance on Me');
+// updateRecords(recordCollection, 2548, 'artist', '');
+// updateRecords(recordCollection, 1245, 'tracks', 'Addicted to Love');
+// updateRecords(recordCollection, 2468, 'tracks', 'Free');
+// updateRecords(recordCollection, 2548, 'tracks', '');
+// updateRecords(recordCollection, 1245, 'albumTitle', 'Riptide');
+// console.log(recordCollection);
+
+// function filterUsers(users, callback) {
+//   const arr = [];
+
+//   users.forEach(user => {
+//     if (callback(user)) {
+//       arr.push(user);
+//     }
+//   });
+
+//   return arr;
+// }
+
+// const isAdult = user => user.age >= 18;
+
+// const isTeenager = user => user.age >= 13 && user.age <= 19;
+
+// function transformUsers(users, callback) {
+//   const transformedUsers = [];
+
+//   users.forEach(user => transformedUsers.push(callback(user)));
+
+//   return transformedUsers;
+// }
+
+// const names = transformUsers(users, user => user.name);
+
+// console.log(names);
+
+// console.log(filterUsers(users, isAdult));
+// const teens = filterUsers(users, isTeenager);
+
+// console.log(teens);
+
+// function repeat(n, callback) {
+//   for (let i = 0; i < n; i += 1) {
+//     callback(i);
+//   }
+// }
+
+// repeat(3, i => {
+//   console.log(`Iteration ${i}`);
+// });
+// repeat(5, i => console.log(i * 2));
+
+// const arr = [];
+
+// repeat(4, i => arr.push(i));
+
+// console.log(arr);
+
+// const numbers = [5, 10, 15, 20, 25];
+// numbers.forEach((number, idx, arr) => {
+//   arr[idx] = number * 2;
+// });
+
+// const doubleNumbers = numbers.map(number => number * 2);
+// console.log(doubleNumbers);
+
+// const user = {
+//   name: 'Inga',
+//   age: 28,
+//   location: {
+//     city: 'Lviv',
+//     country: 'Ukraine',
+//     coordination: {
+//       x: 56,
+//       y: 12,
+//     },
+//   },
+// };
+
+// const user2 = { ...user };
+// user2.location.city = 'Kyiv';
+
+// console.log(user);
+// console.log(user2);
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// const total = numbers.reduce((acc, number) => acc + number, 0);
+// console.log(total);
+
+// const salary = {
+//   mango: 100,
+//   poly: 50,
+//   ajax: 150,
+// };
+
+// const result = Object.values(salary).reduce((acc, value) => acc + value, 0);
+// console.log(result);
+
+// const cart = [
+//   { label: 'Apples', price: 100, qty: 2 },
+//   { label: 'Bananas', price: 120, qty: 3 },
+//   { label: 'Lemons', price: 70, qty: 4 },
+// ];
+
+// const totalPrice = cart.reduce((acc, { price, qty }) => acc + price * qty, 0);
+// console.log(totalPrice);
+
+// const tweets = [
+//   {
+//     id: '000',
+//     likes: 5,
+//     tags: ['js', 'node.js'],
+//   },
+//   {
+//     id: '001',
+//     likes: 2,
+//     tags: ['html', 'css'],
+//   },
+//   {
+//     id: '002',
+//     likes: 17,
+//     tags: ['html', 'js', 'node.js'],
+//   },
+//   {
+//     id: '003',
+//     likes: 8,
+//     tags: ['css', 'react'],
+//   },
+//   {
+//     id: '004',
+//     likes: 0,
+//     tags: ['js', 'node.js', 'react'],
+//   },
+// ];
+
+// const allTags = tweets.reduce((acc, tweet) => {
+//   acc.push(...tweet.tags);
+//   return acc;
+// }, []);
+
+// console.log(allTags);
+
+// const tagsStats = allTags.reduce(
+//   (acc, tag) => ({
+//     ...acc,
+//     [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//   }),
+// acc.hasOwnProperty(tag)
+//   ? {
+//       ...acc,
+//       [tag]: acc[tag] + 1,
+//     }
+//   : {
+//       ...acc,
+//       [tag]: 1,
+//     },
+// {
+//   if (acc.hasOwnProperty(tag)) {
+//     return {
+//       ...acc,
+//       [tag]: acc[tag] + 1,
+//     };
+//   }
+//   return {
+//     ...acc,
+//     [tag]: 1,
+//   };
+// },
+//   {}
+// );
+
+// console.log(tagsStats);
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// const result = arr.map(item => (item % 2 ? item : item * 2));
+// const result = arr.filter(item => !(item % 2)).map(item => item * 2);
+// console.log(result);
+
+// function customMap(arr, callback) {
+//   const result = [];
+
+//   for (const item of arr) {
+//     // result.push(!(item % 2) ? item * 2 : item);
+//     result.push(callback(item));
+//   }
+
+//   return result;
+// }
+
+// const foo = item => (item % 2 ? item : item * 2);
+// console.log(customMap(arr, foo));
+// console.log(arr);
+
+// const cars = [
+//   {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true,
+//   },
+//   {
+//     make: 'Honda',
+//     model: 'Accord',
+//     type: 'sedan',
+//     amount: 12,
+//     price: 22455,
+//     onSale: true,
+//   },
+//   {
+//     make: 'Ford',
+//     model: 'Explorer',
+//     type: 'suv',
+//     amount: 6,
+//     price: 31660,
+//     onSale: false,
+//   },
+//   {
+//     make: 'Ford',
+//     model: 'Fusion',
+//     type: 'sedan',
+//     amount: 13,
+//     price: 22120,
+//     onSale: true,
+//   },
+//   {
+//     make: 'Ford',
+//     model: 'F-150',
+//     type: 'truck',
+//     amount: 11,
+//     price: 27110,
+//     onSale: true,
+//   },
+//   {
+//     make: 'Mazda',
+//     model: 'CX-9',
+//     type: 'suv',
+//     amount: 7,
+//     price: 31520,
+//     onSale: true,
+//   },
+//   {
+//     make: 'Mazda',
+//     model: 'Mazda 6',
+//     type: 'sedan',
+//     amount: 8,
+//     price: 24195,
+//     onSale: false,
+//   },
+//   {
+//     make: 'Toyota',
+//     model: '4Runner',
+//     type: 'suv',
+//     amount: 19,
+//     price: 314210,
+//     onSale: false,
+//   },
+//   {
+//     make: 'Toyota',
+//     model: 'Sequoia',
+//     type: 'suv',
+//     amount: 16,
+//     price: 45560,
+//     onSale: false,
+//   },
+//   {
+//     make: 'Toyota',
+//     model: 'Tacoma',
+//     type: 'truck',
+//     amount: 4,
+//     price: 24320,
+//     onSale: false,
+//   },
+// ];
+
+/**
+ *
+ * @param {Array} cars
+ * @returns {Array} sorted cars by price ascendig
+ */
+// const getSortedCarsOnSale = cars =>
+//   cars.filter(car => car.onSale).sort(({ price: a }, { price: b }) => a - b);
+// console.log(getSortedCarsOnSale(cars));
+
+// const getModelOnSale = cars => cars.filter(car => car.onSale).map(car => car.model);
+// console.log(getModelOnSale(cars));
+
+// const getTotalAmount = cars => cars.reduce((acc, car) => acc + car.amount, 0);
+// console.log(getTotalAmount(cars));
+
+// const sortByModel = (cars, order) =>
+//   [...cars].sort(({ model: a }, { model: b }) =>
+//     order === 'asc' ? a.localeCompare(b) : b.localeCompare(a)
+//   );
+// console.log(sortByModel(cars, 'desc'));
+
+// const sortByAscAmount = cars => [...cars].sort((a, b) => a.amount - b.amount);
+// console.log(sortByAscAmount(cars));
+
+// const getCarsWithType = (cars, type) => cars.filter(({ type: carType }) => carType === type);
+// console.log(getCarsWithType(cars, 'suv'));
+// console.log(getCarsWithType(cars, 'sedan'));
+
+// const getCarsOnSale = cars => cars.filter(car => car.onSale);
+// console.log(getCarsOnSale(cars));
+
+// const getModels = arr => arr.map(item => item.model);
+// console.log(getModels(cars));
+
+// const makeCarsWithDiscount = (arr, discount) =>
+//   arr.map(item => {
+//     item.price -= Math.floor(item.price * discount);
+//     return item;
+//   });
+// const makeCarsWithDiscount = (arr, discount) =>
+//   arr.map(item => ({
+//     ...item,
+//     price: item.price * (1 - discount),
+//   }));
+// console.log(makeCarsWithDiscount(cars, 0.2));
+
+// const filteredCars = (cars, threshold) => cars.filter(({ price }) => price < threshold);
+// console.log(filteredCars(cars, 30000));
+// console.log(filteredCars(cars, 25000));
+
+const str = 'ddjqpwdkasdddmxasmsnqmaSA';
+
+// const getObj = str => {
+//   str = str.split('');
+
+//   return str.reduce((acc, value) => {
+//     if (acc.hasOwnProperty(value)) {
+//       return {
+//         ...acc,
+//         [value]: acc[value] + 1,
+//       };
+//     }
+
+//     return {
+//       ...acc,
+//       [value]: 1,
+//     };
+//   }, {});
+// };
+
+// const getObj = str =>
+//   str.split('').reduce((acc, item) => ({ ...acc, [item]: acc[item] ? acc[item] + 1 : 1 }), {});
+
+// console.log(getObj(str));
+
+// const cars = ['Honda', 'Audi', 'Skoda', 'BMW', 'Ford', 'Renault'];
+
+// const makeStr = arr =>
+//   arr.reduce(
+//     (acc, car, idx) => acc + `${idx + 1} - ${car} \n`,
+//     arr.length ? `Загальна кількість автомобілів ${arr.length}: \n` : 'Немає автомобілів'
+//   );
+// console.log(makeStr(cars));
+// console.log(makeStr([]));
+
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
+
+// const getUserEmails = users => users.map(user => user.email);
+
+// Використовуючи метод filter(), доповни код таким чином, щоб:
+
+// У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+// У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = 'Bernard Cornwell';
+// // Change code below this line
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   orderedItems.forEach(item => (totalPrice += item));
+
+//   // Change code above this line
+//   return totalPrice;
+// }
+
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     if (!this.pizzas.includes(pizzaName)) {
+//       return onError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+//     }
+//     return onSuccess(pizzaName);
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+
+// // Method calls with callbacks
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Four meats', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Big Mike', makePizza, onOrderError));
+// console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
+
+// const getUsersWithEyeColor = (users, color) => users.filter(({ eyeColor }) => eyeColor === color);
+
+// const getFriends = users =>
+// users.flatMap(user => user.friends).filter((friend, idx, arr) => arr.indexOf(friend) === idx);
+
+// Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця, і отримати загальну суму цих значень часу. Розрахувати час для кожного з гравців можна, розділивши його час (властивість playtime) на кількість ігор (властивість gamesPlayed).
+
+// Поради:
+
+// Використовуй метод reduce() для ітерації по масиву players та обчислення загальної суми середнього часу гри на одну гру.
+// Усередині колбек функції reduce(), поділи playtime гравця на gamesPlayed, щоб отримати середній час, витрачений на одну гру.
+// Накопичуй результат у змінній acc і повертай його в кінці кожної ітерації.
+// Ініціалізуй параметр acc методу reduce() початковим значенням 0, щоб уникнути отримання NaN при виконанні обчислень.
+// Після зменшення змінна totalAveragePlaytimePerGame міститиме загальну суму середнього часу гри на одну гру для всіх гравців.
+
+// const players = [
+//   { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
+//   { name: 'Poly', playtime: 469, gamesPlayed: 2 },
+//   { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
+//   { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
+// ];
+// // Change code below this line
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, { playtime, gamesPlayed }) => {
+//   acc += playtime / gamesPlayed;
+//   return acc;
+// }, 0);
+
+// console.log(totalAveragePlaytimePerGame);
+
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dreams in the Witch House',
+    author: 'Howard Lovecraft',
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+  },
+];
+
+const getTotalBalanceByGender = (users, gender) =>
+  users
+    .filter(({ gender: userGender }) => userGender === gender)
+    .reduce((acc, { balance }) => acc + balance, 0);
