@@ -1621,99 +1621,254 @@ const str = 'ddjqpwdkasdddmxasmsnqmaSA';
 
 // console.log(totalAveragePlaytimePerGame);
 
-const books = [
-  {
-    title: 'The Last Kingdom',
-    author: 'Bernard Cornwell',
-    rating: 8.38,
-  },
-  {
-    title: 'Beside Still Waters',
-    author: 'Robert Sheckley',
-    rating: 8.51,
-  },
-  {
-    title: 'The Dream of a Ridiculous Man',
-    author: 'Fyodor Dostoevsky',
-    rating: 7.75,
-  },
-  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
-  {
-    title: 'The Dreams in the Witch House',
-    author: 'Howard Lovecraft',
-    rating: 8.67,
-  },
-];
-const MIN_BOOK_RATING = 8;
-// Change code below this line
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   {
+//     title: 'The Dreams in the Witch House',
+//     author: 'Howard Lovecraft',
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
 
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-  },
-];
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
 
-const getTotalBalanceByGender = (users, gender) =>
-  users
-    .filter(({ gender: userGender }) => userGender === gender)
-    .reduce((acc, { balance }) => acc + balance, 0);
+// const getTotalBalanceByGender = (users, gender) =>
+//   users
+//     .filter(({ gender: userGender }) => userGender === gender)
+//     .reduce((acc, { balance }) => acc + balance, 0);
+
+// const numbers = [2, 4, 6, 8];
+
+// const newNumbers = numbers.map(number => number * 3);
+// console.log(newNumbers);
+
+// const numbers2 = [5, 12, 8, 130, 44];
+// const updatedNumbers = numbers2.filter(num => num > 10);
+// console.log(updatedNumbers);
+
+// const users = [
+//   { name: 'Anna', age: 22 },
+//   { name: 'Ivan', age: 17 },
+//   { name: 'Oleh', age: 30 },
+// ];
+// const names = users.map(user => user.name);
+// const adults = users.filter(({ age }) => age >= 18);
+
+// const products = [
+//   { name: 'Apple', price: 30 },
+//   { name: 'Banana', price: 20 },
+//   { name: 'Orange', price: 25 },
+// ];
+// const productToFind = 'Banana';
+
+// const prod = products.find(({ name }) => name === productToFind);
+
+// const numbers3 = [3, 7, 11, 18];
+// const isAnyEven = numbers3.some(num => !(num % 2));
+
+// const numbers4 = [4, 8, 12, 16];
+// const isEveryEven = numbers4.every(num => !(num % 2));
+
+// const products2 = [
+//   { name: 'Apple', price: 30 },
+//   { name: 'Banana', price: 20 },
+//   { name: 'Orange', price: 25 },
+//   { name: 'Mango', price: 50 },
+// ];
+
+// const productsNames = products2.filter(({ price }) => price > 25).map(prod => prod.name);
+
+// const users = [
+//   { name: 'Anna', age: 22, isActive: true },
+//   { name: 'Ivan', age: 17, isActive: false },
+//   { name: 'Oleh', age: 30, isActive: true },
+//   { name: 'Maria', age: 25, isActive: false },
+// ];
+
+// const activeUsers = users => users.filter(({ isActive }) => isActive).map(({ name }) => name);
+// console.log(activeUsers(users));
+
+// const orders = [
+//   { id: 1, price: 120 },
+//   { id: 2, price: 80 },
+//   { id: 3, price: 200 },
+//   { id: 4, price: 50 },
+// ];
+
+// const getPriceOverThreshold = (orders, threshold) =>
+//   orders.filter(({ price }) => price > threshold).map(({ price }) => price);
+
+// console.log(getPriceOverThreshold(orders, 100));
+
+// const numbers = [10, 20, 30, 40];
+
+// const getTotalNumbers = numbers => numbers.reduce((acc, num) => acc + num, 0);
+// console.log(getTotalNumbers(numbers));
+
+// const numbers = [3, 7, 2, 9, 5];
+
+// const findLargestNumber = numbers => numbers.reduce((acc, num) => (num > acc ? num : acc));
+// console.log(findLargestNumber(numbers));
+
+// const orders = [
+//   { id: 1, price: 120 },
+//   { id: 2, price: 80 },
+//   { id: 3, price: 200 },
+// ];
+
+// const getTotalPrice = orders => orders.reduce((acc, { price }) => acc + price, 0);
+// console.log(getTotalPrice(orders));
+
+// const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+// const getFruitCount = fruits =>
+//   fruits.reduce((acc, fruit) => {
+//     return {
+//       ...acc,
+//       [fruit]: acc[fruit] ? acc[fruit] + 1 : 1,
+//     };
+//   }, {});
+
+// console.log(getFruitCount(fruits));
+
+// const users = [
+//   { name: 'Anna', age: 22, isActive: true },
+//   { name: 'Ivan', age: 17, isActive: false },
+//   { name: 'Oleh', age: 30, isActive: true },
+//   { name: 'Maria', age: 25, isActive: true },
+// ];
+
+// const getTotalAgeActiveUsers = users =>
+//   users.reduce((acc, { isActive, age }) => (isActive ? acc + age : acc), 0);
+
+// console.log(getTotalAgeActiveUsers(users));
+
+// const orders = [
+//   { id: 1, price: 120, status: 'completed' },
+//   { id: 2, price: 80, status: 'pending' },
+//   { id: 3, price: 200, status: 'completed' },
+//   { id: 4, price: 150, status: 'pending' },
+// ];
+
+// const getPriceComletedOrders = (orders, status) =>
+//   orders.reduce((acc, { status: userStatus, price }) => {
+//     if (status === userStatus) {
+//       acc.push(price);
+//     }
+//     return acc;
+//   }, []);
+
+// console.log(getPriceComletedOrders(orders, 'completed'));
+
+// const users = [
+//   { name: 'Anna', city: 'Kyiv' },
+//   { name: 'Ivan', city: 'Lviv' },
+//   { name: 'Oleh', city: 'Kyiv' },
+//   { name: 'Maria', city: 'Lviv' },
+//   { name: 'Petro', city: 'Odesa' },
+// ];
+
+// const obj = users.reduce((acc, { city, name }) => {
+//   if (!acc.hasOwnProperty(city)) {
+//     acc[city] = [name];
+//   } else {
+//     acc[city].push(name);
+//   }
+
+//   return acc;
+// }, {});
+
+// console.log(obj);
+
+const numbers = [1, 2, 3, 4, 5];
+
+const customMap = (numbers, callback) =>
+  numbers.reduce((acc, number) => {
+    acc.push(callback(number));
+    return acc;
+  }, []);
+
+const multiply = value => value * 2;
+
+console.log(customMap(numbers, multiply));
