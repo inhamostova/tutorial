@@ -1861,14 +1861,163 @@ const str = 'ddjqpwdkasdddmxasmsnqmaSA';
 
 // console.log(obj);
 
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-const customMap = (numbers, callback) =>
-  numbers.reduce((acc, number) => {
-    acc.push(callback(number));
-    return acc;
-  }, []);
+// const customMap = (numbers, callback) =>
+//   numbers.reduce((acc, number) => {
+//     acc.push(callback(number));
+//     return acc;
+//   }, []);
 
-const multiply = value => value * 2;
+// const multiply = value => value * 2;
 
-console.log(customMap(numbers, multiply));
+// console.log(customMap(numbers, multiply));
+
+// const user = {
+//   name: 'Inga',
+//   age: 28,
+//   foo: () => {
+//     console.log('this in foo', this);
+//     const objA = {
+//       name: 'ObjA',
+//       boo: () => {
+//         console.log('this in boo', this);
+//       },
+//     };
+//     const obgB = {
+//       name: 'ObjB',
+//       doo: objA.boo,
+//     };
+//     obgB.doo();
+//   },
+// };
+
+// const user2 = {
+//   name: 'Tanya',
+// };
+
+// user.foo.call(user2);
+
+// const chopShop = {
+//   stones: [
+//     {
+//       name: 'Emerald',
+//       price: 1300,
+//       qty: 4,
+//     },
+//     {
+//       name: 'Diamond',
+//       price: 2700,
+//       qty: 3,
+//     },
+//     {
+//       name: 'Sapphire',
+//       price: 1400,
+//       qty: 7,
+//     },
+//     {
+//       name: 'Ruby',
+//       price: 800,
+//       qty: 2,
+//     },
+//   ],
+//   calcTotalPrice(stoneName) {
+//     console.log(this);
+//     return this.stones.reduce(
+//       (acc, { price, qty, name }) => (name === stoneName ? (acc = price * qty) : acc),
+//       0
+//     );
+//   },
+// };
+
+// console.log(chopShop.calcTotalPrice('Emerald'));
+
+// const shop2 = {
+//   stones: [
+//     {
+//       name: 'Shebin',
+//       price: 1300,
+//       qty: 4,
+//     },
+//     {
+//       name: 'Pisok',
+//       price: 200,
+//       qty: 3,
+//     },
+//   ],
+// };
+// const foo = chopShop.calcTotalPrice.bind(shop2);
+// console.log(foo('Pisok'));
+
+// const phonebook = {
+//   contacts: [],
+//   add(contact) {
+//     const generateId = () => {
+//       console.log(this);
+//       return '_' + Math.random().toString(36).substr(2, 9);
+//     };
+
+//     const getDate = () => {
+//       console.log(this);
+//       return Date.now();
+//     };
+//     console.log(this);
+//     const newContact = {
+//       list: 'default',
+//       ...contact,
+//       id: generateId(),
+//       createdAt: getDate(),
+//     };
+
+//     this.contacts.push(newContact);
+//     return this.contacts;
+//   },
+// };
+
+// console.log(phonebook.add({ name: 'Mango', list: 'friends', email: 'mango@mail.com' }));
+
+// const newPhoneBook = {
+//   contacts: [],
+// };
+
+// console.log(phonebook.add.call(newPhoneBook, { name: 'Poly', email: 'poly@mail.com' }));
+
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//     return this;
+//   },
+//   add() {
+//     return (this.a ?? 0) + (this.b ?? 0);
+//   },
+//   mult() {
+//     const { a, b } = this;
+//     return (a || 1) * (b || 1);
+//   },
+// };
+
+// console.log(calculator.add());
+// console.log(calculator.read(2, 2));
+// console.log(calculator.mult());
+
+// const user1 = { name: 'Anna' };
+// const user2 = { name: 'Ivan' };
+
+// function showName() {
+//   console.log(this.name);
+// }
+
+// const fn = showName.bind(user1);
+// fn.call(user2);
+
+// const user = {
+//   name: 'Anna',
+//   showName() {
+//     return function () {
+//       console.log(this.name);
+//     }.bind(this);
+//   },
+// };
+
+// user.showName()();
