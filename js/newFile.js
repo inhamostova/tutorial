@@ -2021,3 +2021,154 @@ const str = 'ddjqpwdkasdddmxasmsnqmaSA';
 // };
 
 // user.showName()();
+
+// const objA = {
+//   x: 10,
+// };
+
+// const objB = Object.create(objA);
+// objB.y = 5;
+
+// const objC = {
+//   z: 15,
+// };
+
+// objA.__proto__ = objC;
+// console.log(objA.z);
+
+// console.log(objC);
+
+// class Car {
+//   constructor(brand) {
+//     this.brand = brand;
+//   }
+
+//   sayHello() {
+//     console.log(this);
+//     console.log('Hello');
+//   }
+// }
+
+// class Audi extends Car {
+//   constructor({ model = 'car', price = 0, brand = 'default' }) {
+//     super(brand);
+
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+
+// Audi.prototype.sayHello = function () {
+//   console.log('this =>', this);
+//   return 'Hello :)';
+// };
+
+// const audi = new Audi({
+//   brand: 'Audi',
+//   model: 'Q5',
+//   price: 30000,
+// });
+// const bmw = new Audi({
+//   brand: 'BMW',
+
+//   price: 40000,
+// });
+// // audi.carBrand = 'skoda';
+// console.log(bmw);
+// console.log(bmw.sayHello());
+
+// class Car {
+//   constructor() {
+//     this.price = 100;
+//   }
+
+//   changePrice() {
+//     this.price += 50;
+//   }
+// }
+
+// const car1 = new Car();
+// const car2 = new Car();
+
+// car1.changePrice();
+
+// console.log(car1.price);
+// console.log(car2.price);
+// class Car {
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   addItem(item) {
+//     this.items.push(item);
+//   }
+// }
+
+// const car1 = new Car();
+// const car2 = new Car();
+
+// car1.addItem('wheel');
+
+// console.log(car1.items);
+// console.log(car2.items);
+
+class Counter {
+  #value;
+  #step;
+
+  constructor({ rootSelector, initialValue, step } = {}) {
+    this.#step = step;
+    this.#value = initialValue;
+
+    this.refs = this.getRefs(rootSelector);
+    this.bindEvents();
+    this.updateValueUi();
+  }
+
+  increment() {
+    this.#value += this.#step;
+    this.updateValueUi();
+  }
+
+  decrement() {
+    this.#value -= this.#step;
+    this.updateValueUi();
+  }
+
+  getRefs(selector) {
+    const refs = {};
+
+    refs.container = document.querySelector(selector);
+    console.log(refs);
+    refs.incrementBtn = refs.container.querySelector('[data-increment]');
+    refs.decrementBtn = refs.container.querySelector('[data-decrement]');
+    refs.value = refs.container.querySelector('[data-value]');
+    console.log(refs);
+    return refs;
+  }
+
+  bindEvents() {
+    // console.log(this.refs.incrementBtn);
+    this.refs.incrementBtn.addEventListener('click', () => {
+      console.log('this=>', this);
+      this.increment();
+    });
+    this.refs.decrementBtn.addEventListener('click', () => {
+      console.log('this=>', this);
+      this.decrement();
+    });
+  }
+
+  updateValueUi() {
+    this.refs.value.textContent = this.#value;
+  }
+}
+
+const counter1 = new Counter({ initialValue: 0, step: 2, rootSelector: '.counter-1' });
+console.log(counter1);
+
+const counter2 = new Counter({ initialValue: 100, step: 10, rootSelector: '.counter-2' });
