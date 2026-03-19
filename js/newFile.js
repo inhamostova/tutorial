@@ -1621,99 +1621,554 @@ const str = 'ddjqpwdkasdddmxasmsnqmaSA';
 
 // console.log(totalAveragePlaytimePerGame);
 
-const books = [
-  {
-    title: 'The Last Kingdom',
-    author: 'Bernard Cornwell',
-    rating: 8.38,
-  },
-  {
-    title: 'Beside Still Waters',
-    author: 'Robert Sheckley',
-    rating: 8.51,
-  },
-  {
-    title: 'The Dream of a Ridiculous Man',
-    author: 'Fyodor Dostoevsky',
-    rating: 7.75,
-  },
-  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
-  {
-    title: 'The Dreams in the Witch House',
-    author: 'Howard Lovecraft',
-    rating: 8.67,
-  },
-];
-const MIN_BOOK_RATING = 8;
-// Change code below this line
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   {
+//     title: 'The Dreams in the Witch House',
+//     author: 'Howard Lovecraft',
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
 
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-  },
-];
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
 
-const getTotalBalanceByGender = (users, gender) =>
-  users
-    .filter(({ gender: userGender }) => userGender === gender)
-    .reduce((acc, { balance }) => acc + balance, 0);
+// const getTotalBalanceByGender = (users, gender) =>
+//   users
+//     .filter(({ gender: userGender }) => userGender === gender)
+//     .reduce((acc, { balance }) => acc + balance, 0);
+
+// const numbers = [2, 4, 6, 8];
+
+// const newNumbers = numbers.map(number => number * 3);
+// console.log(newNumbers);
+
+// const numbers2 = [5, 12, 8, 130, 44];
+// const updatedNumbers = numbers2.filter(num => num > 10);
+// console.log(updatedNumbers);
+
+// const users = [
+//   { name: 'Anna', age: 22 },
+//   { name: 'Ivan', age: 17 },
+//   { name: 'Oleh', age: 30 },
+// ];
+// const names = users.map(user => user.name);
+// const adults = users.filter(({ age }) => age >= 18);
+
+// const products = [
+//   { name: 'Apple', price: 30 },
+//   { name: 'Banana', price: 20 },
+//   { name: 'Orange', price: 25 },
+// ];
+// const productToFind = 'Banana';
+
+// const prod = products.find(({ name }) => name === productToFind);
+
+// const numbers3 = [3, 7, 11, 18];
+// const isAnyEven = numbers3.some(num => !(num % 2));
+
+// const numbers4 = [4, 8, 12, 16];
+// const isEveryEven = numbers4.every(num => !(num % 2));
+
+// const products2 = [
+//   { name: 'Apple', price: 30 },
+//   { name: 'Banana', price: 20 },
+//   { name: 'Orange', price: 25 },
+//   { name: 'Mango', price: 50 },
+// ];
+
+// const productsNames = products2.filter(({ price }) => price > 25).map(prod => prod.name);
+
+// const users = [
+//   { name: 'Anna', age: 22, isActive: true },
+//   { name: 'Ivan', age: 17, isActive: false },
+//   { name: 'Oleh', age: 30, isActive: true },
+//   { name: 'Maria', age: 25, isActive: false },
+// ];
+
+// const activeUsers = users => users.filter(({ isActive }) => isActive).map(({ name }) => name);
+// console.log(activeUsers(users));
+
+// const orders = [
+//   { id: 1, price: 120 },
+//   { id: 2, price: 80 },
+//   { id: 3, price: 200 },
+//   { id: 4, price: 50 },
+// ];
+
+// const getPriceOverThreshold = (orders, threshold) =>
+//   orders.filter(({ price }) => price > threshold).map(({ price }) => price);
+
+// console.log(getPriceOverThreshold(orders, 100));
+
+// const numbers = [10, 20, 30, 40];
+
+// const getTotalNumbers = numbers => numbers.reduce((acc, num) => acc + num, 0);
+// console.log(getTotalNumbers(numbers));
+
+// const numbers = [3, 7, 2, 9, 5];
+
+// const findLargestNumber = numbers => numbers.reduce((acc, num) => (num > acc ? num : acc));
+// console.log(findLargestNumber(numbers));
+
+// const orders = [
+//   { id: 1, price: 120 },
+//   { id: 2, price: 80 },
+//   { id: 3, price: 200 },
+// ];
+
+// const getTotalPrice = orders => orders.reduce((acc, { price }) => acc + price, 0);
+// console.log(getTotalPrice(orders));
+
+// const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+// const getFruitCount = fruits =>
+//   fruits.reduce((acc, fruit) => {
+//     return {
+//       ...acc,
+//       [fruit]: acc[fruit] ? acc[fruit] + 1 : 1,
+//     };
+//   }, {});
+
+// console.log(getFruitCount(fruits));
+
+// const users = [
+//   { name: 'Anna', age: 22, isActive: true },
+//   { name: 'Ivan', age: 17, isActive: false },
+//   { name: 'Oleh', age: 30, isActive: true },
+//   { name: 'Maria', age: 25, isActive: true },
+// ];
+
+// const getTotalAgeActiveUsers = users =>
+//   users.reduce((acc, { isActive, age }) => (isActive ? acc + age : acc), 0);
+
+// console.log(getTotalAgeActiveUsers(users));
+
+// const orders = [
+//   { id: 1, price: 120, status: 'completed' },
+//   { id: 2, price: 80, status: 'pending' },
+//   { id: 3, price: 200, status: 'completed' },
+//   { id: 4, price: 150, status: 'pending' },
+// ];
+
+// const getPriceComletedOrders = (orders, status) =>
+//   orders.reduce((acc, { status: userStatus, price }) => {
+//     if (status === userStatus) {
+//       acc.push(price);
+//     }
+//     return acc;
+//   }, []);
+
+// console.log(getPriceComletedOrders(orders, 'completed'));
+
+// const users = [
+//   { name: 'Anna', city: 'Kyiv' },
+//   { name: 'Ivan', city: 'Lviv' },
+//   { name: 'Oleh', city: 'Kyiv' },
+//   { name: 'Maria', city: 'Lviv' },
+//   { name: 'Petro', city: 'Odesa' },
+// ];
+
+// const obj = users.reduce((acc, { city, name }) => {
+//   if (!acc.hasOwnProperty(city)) {
+//     acc[city] = [name];
+//   } else {
+//     acc[city].push(name);
+//   }
+
+//   return acc;
+// }, {});
+
+// console.log(obj);
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const customMap = (numbers, callback) =>
+//   numbers.reduce((acc, number) => {
+//     acc.push(callback(number));
+//     return acc;
+//   }, []);
+
+// const multiply = value => value * 2;
+
+// console.log(customMap(numbers, multiply));
+
+// const user = {
+//   name: 'Inga',
+//   age: 28,
+//   foo: () => {
+//     console.log('this in foo', this);
+//     const objA = {
+//       name: 'ObjA',
+//       boo: () => {
+//         console.log('this in boo', this);
+//       },
+//     };
+//     const obgB = {
+//       name: 'ObjB',
+//       doo: objA.boo,
+//     };
+//     obgB.doo();
+//   },
+// };
+
+// const user2 = {
+//   name: 'Tanya',
+// };
+
+// user.foo.call(user2);
+
+// const chopShop = {
+//   stones: [
+//     {
+//       name: 'Emerald',
+//       price: 1300,
+//       qty: 4,
+//     },
+//     {
+//       name: 'Diamond',
+//       price: 2700,
+//       qty: 3,
+//     },
+//     {
+//       name: 'Sapphire',
+//       price: 1400,
+//       qty: 7,
+//     },
+//     {
+//       name: 'Ruby',
+//       price: 800,
+//       qty: 2,
+//     },
+//   ],
+//   calcTotalPrice(stoneName) {
+//     console.log(this);
+//     return this.stones.reduce(
+//       (acc, { price, qty, name }) => (name === stoneName ? (acc = price * qty) : acc),
+//       0
+//     );
+//   },
+// };
+
+// console.log(chopShop.calcTotalPrice('Emerald'));
+
+// const shop2 = {
+//   stones: [
+//     {
+//       name: 'Shebin',
+//       price: 1300,
+//       qty: 4,
+//     },
+//     {
+//       name: 'Pisok',
+//       price: 200,
+//       qty: 3,
+//     },
+//   ],
+// };
+// const foo = chopShop.calcTotalPrice.bind(shop2);
+// console.log(foo('Pisok'));
+
+// const phonebook = {
+//   contacts: [],
+//   add(contact) {
+//     const generateId = () => {
+//       console.log(this);
+//       return '_' + Math.random().toString(36).substr(2, 9);
+//     };
+
+//     const getDate = () => {
+//       console.log(this);
+//       return Date.now();
+//     };
+//     console.log(this);
+//     const newContact = {
+//       list: 'default',
+//       ...contact,
+//       id: generateId(),
+//       createdAt: getDate(),
+//     };
+
+//     this.contacts.push(newContact);
+//     return this.contacts;
+//   },
+// };
+
+// console.log(phonebook.add({ name: 'Mango', list: 'friends', email: 'mango@mail.com' }));
+
+// const newPhoneBook = {
+//   contacts: [],
+// };
+
+// console.log(phonebook.add.call(newPhoneBook, { name: 'Poly', email: 'poly@mail.com' }));
+
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//     return this;
+//   },
+//   add() {
+//     return (this.a ?? 0) + (this.b ?? 0);
+//   },
+//   mult() {
+//     const { a, b } = this;
+//     return (a || 1) * (b || 1);
+//   },
+// };
+
+// console.log(calculator.add());
+// console.log(calculator.read(2, 2));
+// console.log(calculator.mult());
+
+// const user1 = { name: 'Anna' };
+// const user2 = { name: 'Ivan' };
+
+// function showName() {
+//   console.log(this.name);
+// }
+
+// const fn = showName.bind(user1);
+// fn.call(user2);
+
+// const user = {
+//   name: 'Anna',
+//   showName() {
+//     return function () {
+//       console.log(this.name);
+//     }.bind(this);
+//   },
+// };
+
+// user.showName()();
+
+// const objA = {
+//   x: 10,
+// };
+
+// const objB = Object.create(objA);
+// objB.y = 5;
+
+// const objC = {
+//   z: 15,
+// };
+
+// objA.__proto__ = objC;
+// console.log(objA.z);
+
+// console.log(objC);
+
+// class Car {
+//   constructor(brand) {
+//     this.brand = brand;
+//   }
+
+//   sayHello() {
+//     console.log(this);
+//     console.log('Hello');
+//   }
+// }
+
+// class Audi extends Car {
+//   constructor({ model = 'car', price = 0, brand = 'default' }) {
+//     super(brand);
+
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+
+// Audi.prototype.sayHello = function () {
+//   console.log('this =>', this);
+//   return 'Hello :)';
+// };
+
+// const audi = new Audi({
+//   brand: 'Audi',
+//   model: 'Q5',
+//   price: 30000,
+// });
+// const bmw = new Audi({
+//   brand: 'BMW',
+
+//   price: 40000,
+// });
+// // audi.carBrand = 'skoda';
+// console.log(bmw);
+// console.log(bmw.sayHello());
+
+// class Car {
+//   constructor() {
+//     this.price = 100;
+//   }
+
+//   changePrice() {
+//     this.price += 50;
+//   }
+// }
+
+// const car1 = new Car();
+// const car2 = new Car();
+
+// car1.changePrice();
+
+// console.log(car1.price);
+// console.log(car2.price);
+// class Car {
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   addItem(item) {
+//     this.items.push(item);
+//   }
+// }
+
+// const car1 = new Car();
+// const car2 = new Car();
+
+// car1.addItem('wheel');
+
+// console.log(car1.items);
+// console.log(car2.items);
+
+class Counter {
+  #value;
+  #step;
+
+  constructor({ rootSelector, initialValue, step } = {}) {
+    this.#step = step;
+    this.#value = initialValue;
+
+    this.refs = this.getRefs(rootSelector);
+    this.bindEvents();
+    this.updateValueUi();
+  }
+
+  increment() {
+    this.#value += this.#step;
+    this.updateValueUi();
+  }
+
+  decrement() {
+    this.#value -= this.#step;
+    this.updateValueUi();
+  }
+
+  getRefs(selector) {
+    const refs = {};
+
+    refs.container = document.querySelector(selector);
+    console.log(refs);
+    refs.incrementBtn = refs.container.querySelector('[data-increment]');
+    refs.decrementBtn = refs.container.querySelector('[data-decrement]');
+    refs.value = refs.container.querySelector('[data-value]');
+    console.log(refs);
+    return refs;
+  }
+
+  bindEvents() {
+    // console.log(this.refs.incrementBtn);
+    this.refs.incrementBtn.addEventListener('click', () => {
+      console.log('this=>', this);
+      this.increment();
+    });
+    this.refs.decrementBtn.addEventListener('click', () => {
+      console.log('this=>', this);
+      this.decrement();
+    });
+  }
+
+  updateValueUi() {
+    this.refs.value.textContent = this.#value;
+  }
+}
+
+const counter1 = new Counter({ initialValue: 0, step: 2, rootSelector: '.counter-1' });
+console.log(counter1);
+
+const counter2 = new Counter({ initialValue: 100, step: 10, rootSelector: '.counter-2' });
