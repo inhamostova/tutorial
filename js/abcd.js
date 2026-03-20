@@ -229,3 +229,50 @@
 
 // fn();
 // console.log(counter);
+
+// class Hero {
+//   constructor(name = 'hero', xp = 0) {
+//     this.name = name;
+//     this.xp = xp;
+//   }
+
+//   gainXp(amount) {
+//     this.xp += amount;
+//     return `${this.name} gain ${amount} experience`;
+//   }
+// }
+
+// class Warrior extends Hero {
+//   constructor({ name, xp, weapon } = {}) {
+//     super(name, xp);
+//     this.weapon = weapon;
+//   }
+
+//   attack() {
+//     return `${this.name} attacks with ${this.weapon}`;
+//   }
+// }
+
+// const mango = new Warrior({ name: 'Mango', weapon: 'knight' });
+// console.log(mango.gainXp(1000));
+// console.log(mango.attack());
+// const objA = {
+//   a: 10,
+// };
+// console.log(objA);
+
+// console.log([1, 2, 3].hasOwnProperty('name'));
+
+class User {
+  constructor(val1, val2) {
+    this.name = val1;
+    this.email = val2;
+  }
+
+  getEmail() {
+    return this.email;
+  }
+}
+
+const user1 = new User('Inga', 'inga@mail.com');
+console.log(user1.getEmail());
