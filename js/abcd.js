@@ -852,3 +852,145 @@
 // console.log(calcDays(42));
 // console.log(calcDays(17));
 // console.log(calcDays(18));
+
+// Singleton pattern JS
+// let counterModule = (function () {
+//   let instance;
+//   let counter = 0;
+
+//   let getCounter = function () {
+//     return counter;
+//   };
+
+//   let increaseCounter = function () {
+//     counter++;
+//   };
+
+//   let createInstance = function () {
+//     return {
+//       getCounter: getCounter,
+//       increaseCounter: increaseCounter,
+//     };
+//   };
+
+//   return {
+//     getInstance: function () {
+//       return instance || (instance = createInstance());
+//     },
+//   };
+// })();
+
+// const counter = counterModule();
+// const counter = counterModule.getInstance();
+// counter.increaseCounter();
+// console.log(counter.getCounter());
+// // console.log(counterModule.getInstance().getCounter());
+// const counter2 = counterModule.getInstance();
+// console.log(counter2.getCounter());
+// console.log(counter === counter2);
+
+// const obj = {
+//   a: 1,
+//   b: 2,
+//   c: 3,
+// };
+// копіювання обєкта
+// const obj2 = Object.assign(obj);
+// console.log(obj2 === obj);
+
+// function sum(n) {
+//   let total = n;
+//   if (n > 0) {
+//     total += sum(n - 1);
+//   }
+//   return total;
+// }
+// function sum(n) {
+//   if (n === 1) return 1;
+//   return n + sum(n - 1);
+// }
+
+// console.log(sum(3));
+
+// const arr = [1, 2, 3, 4];
+
+// function sumArray(arr) {
+//   if (!arr.length) return 0;
+//   return arr[0] + sumArray(arr.slice(1));
+// }
+
+// console.log(sumArray(arr));
+
+// function createCounter() {
+//   let count = 0;
+//   return function () {
+//     count += 1;
+//     return count;
+//   };
+// }
+
+// const counter = createCounter();
+// counter();
+// counter();
+// console.log(counter());
+
+// function createAdder(x) {
+//   return function (a) {
+//     return x + a;
+//   };
+// }
+
+// const add5 = createAdder(5);
+
+// console.log(add5(10)); // 15
+// console.log(add5(3)); // 8
+
+// function outer() {
+//   let count = 0;
+
+//   return function inner() {
+//     count++;
+//     console.log(count);
+//   };
+// }
+
+// const fn1 = outer();
+// const fn2 = outer();
+
+// fn1();
+// fn1();
+// fn2();
+// fn2();
+
+function createCounter() {
+  let count = 0;
+
+  return {
+    increment() {
+      count += 1;
+    },
+    decrement() {
+      count -= 1;
+    },
+    getValue() {
+      return count;
+    },
+  };
+}
+
+const counterA = createCounter();
+const counterB = createCounter();
+
+counterA.increment();
+counterA.increment();
+
+counterB.increment();
+
+console.log(counterA.getValue());
+console.log(counterB.getValue());
+
+counterA.count = 100;
+console.log(counterA);
+console.log(counterB);
+
+console.log(counterA.getValue());
