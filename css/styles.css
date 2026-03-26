@@ -18,6 +18,14 @@ img {
   width: 100%;
 }
 
+body {
+  position: relative;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
 .parent {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +92,7 @@ img {
   padding: 15px;
   border: 1px solid rgb(47, 255, 252);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn::before {
@@ -107,4 +116,49 @@ img {
     linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(0, 0, 255, 0.5)),
     url('https://blog.gale.com/wp-content/uploads/2024/07/iStock-1693812103.jpg');
   background-position: center;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay.is-open {
+  display: block;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+
+  transform: translate(-50%, -50%);
+}
+
+.btn-close {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blueviolet;
+  color: white;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+.btn-close:hover {
+  cursor: pointer;
+  background-color: rgb(87, 74, 197);
 }

@@ -962,35 +962,52 @@
 // fn2();
 // fn2();
 
-function createCounter() {
-  let count = 0;
+// function createCounter() {
+//   let count = 0;
 
-  return {
-    increment() {
-      count += 1;
-    },
-    decrement() {
-      count -= 1;
-    },
-    getValue() {
-      return count;
-    },
-  };
-}
+//   return {
+//     increment() {
+//       count += 1;
+//     },
+//     decrement() {
+//       count -= 1;
+//     },
+//     getValue() {
+//       return count;
+//     },
+//   };
+// }
 
-const counterA = createCounter();
-const counterB = createCounter();
+// const counterA = createCounter();
+// const counterB = createCounter();
 
-counterA.increment();
-counterA.increment();
+// counterA.increment();
+// counterA.increment();
 
-counterB.increment();
+// counterB.increment();
 
-console.log(counterA.getValue());
-console.log(counterB.getValue());
+// console.log(counterA.getValue());
+// console.log(counterB.getValue());
 
-counterA.count = 100;
-console.log(counterA);
-console.log(counterB);
+// counterA.count = 100;
+// console.log(counterA);
+// console.log(counterB);
 
-console.log(counterA.getValue());
+// console.log(counterA.getValue());
+
+const overlayEl = document.querySelector('.overlay');
+const modalBtn = document.querySelector('.btn');
+const modalCloseBtn = overlayEl.querySelector('.btn-close');
+const body = document.querySelector('body');
+
+// console.log(modalBtn);
+
+modalBtn.addEventListener('click', () => {
+  overlayEl.classList.toggle('is-open');
+  body.classList.toggle('no-scroll');
+});
+
+modalCloseBtn.addEventListener('click', () => {
+  overlayEl.classList.toggle('is-open');
+  body.classList.toggle('no-scroll');
+});
