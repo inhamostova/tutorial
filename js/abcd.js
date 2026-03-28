@@ -995,19 +995,19 @@
 
 // console.log(counterA.getValue());
 
-const overlayEl = document.querySelector('.overlay');
-const modalBtn = document.querySelector('.btn');
-const modalCloseBtn = overlayEl.querySelector('.btn-close');
-const body = document.querySelector('body');
+// const overlayEl = document.querySelector('.overlay');
+// const modalBtn = document.querySelector('.btn');
+// const modalCloseBtn = overlayEl.querySelector('.btn-close');
+// const body = document.querySelector('body');
 
 // console.log(modalBtn);
 
-modalBtn.addEventListener('click', () => {
-  overlayEl.classList.toggle('is-open');
-  body.classList.toggle('no-scroll');
-});
+// modalBtn.addEventListener('click', () => {
+//   overlayEl.classList.toggle('is-open');
+//   body.classList.toggle('no-scroll');
+// });
 
-modalCloseBtn.addEventListener('click', () => {
-  overlayEl.classList.toggle('is-open');
-  body.classList.toggle('no-scroll');
-});
+// modalCloseBtn.addEventListener('click', () => {
+//   overlayEl.classList.toggle('is-open');
+//   body.classList.toggle('no-scroll');
+// });
