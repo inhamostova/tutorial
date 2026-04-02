@@ -77,7 +77,7 @@ function makeMarkup(arr) {
   return arr.map(makeProduct);
 }
 
-console.log(makeMarkup(products));
+// console.log(makeMarkup(products));
 
 const container = document.querySelector('.js-products');
 container.append(...makeMarkup(products));

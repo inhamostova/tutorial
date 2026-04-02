@@ -1011,3 +1011,93 @@
 //   overlayEl.classList.toggle('is-open');
 //   body.classList.toggle('no-scroll');
 // });
+
+// const numbers = [3, 7, 2, 9, 12, 5];
+
+// const obj = numbers.reduce(
+//   (acc, num) => {
+//     if (num % 2) {
+//       console.log(acc.oddSum);
+//       acc.oddSum += num;
+//       return acc;
+//     }
+//     acc.even.push(num);
+//     return acc;
+//   },
+//   {
+//     even: [],
+//     oddSum: 0,
+//   }
+// );
+
+// console.log(obj);
+
+// const users = [
+//   { name: 'Mango', active: true },
+//   { name: 'Poly', active: false },
+//   { name: 'Ajax', active: true },
+// ];
+
+// const activeUsersNames = users.filter(user => user.active).map(user => user.name);
+
+// const isEveryActive = users.every(user => user.active);
+// console.log(isEveryActive);
+
+// const user = {
+//   name: 'Inga',
+//   sayHi() {
+//     return `Hi, ${this.name}`;
+//   },
+// };
+
+// const fn = user.sayHi;
+// const newArray = [];
+
+// function flatten(arr) {
+//   for (const num of arr) {
+//     if (!Array.isArray(num)) {
+//       newArray.push(num);
+//     } else {
+//       flatten(num);
+//     }
+//   }
+// }
+
+// flatten([1, [2, [3, 4]], 5]); // [1, 2, 3, 4, 5]
+// console.log(newArray);
+
+// console.log(Array.isArray([2, [3, 4]]));
+
+// function createMultiplier(x) {
+//   return function (num) {
+//     return num * x;
+//   };
+// }
+
+// const double = createMultiplier();
+
+// console.log(double(5)); // 10
+// double(3); // 6
+
+const products = [
+  { name: 'apple', price: 10, qty: 3 },
+  { name: 'banana', price: 5, qty: 6 },
+  { name: 'apple', price: 10, qty: 2 },
+];
+
+// const productStats = products.reduce((acc, { name, price, qty }) => {
+//   if ([name] in acc) {
+//     acc[name] = acc[name] + qty * price;
+//     return acc;
+//   }
+
+//   acc[name] = price * qty;
+//   return acc;
+// }, {});
+
+const productStats = products.reduce((acc, { name, price, qty }) => {
+  acc[name] = (acc[name] || 0) + price * qty;
+  return acc;
+}, {});
+
+console.log(productStats);
