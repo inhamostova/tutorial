@@ -1569,7 +1569,7 @@ function filterArray(value, arr) {
 // console.log(filterArray('ho', cars));
 
 function onInputChange(event) {
-  console.log(event.currentTarget.value);
+  // console.log(event.currentTarget.value);
   const filteredCars = filterArray(event.currentTarget.value, cars);
   container.innerHTML = createMarkup(filteredCars);
 }
