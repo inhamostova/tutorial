@@ -1079,11 +1079,11 @@
 // console.log(double(5)); // 10
 // double(3); // 6
 
-const products = [
-  { name: 'apple', price: 10, qty: 3 },
-  { name: 'banana', price: 5, qty: 6 },
-  { name: 'apple', price: 10, qty: 2 },
-];
+// const products = [
+//   { name: 'apple', price: 10, qty: 3 },
+//   { name: 'banana', price: 5, qty: 6 },
+//   { name: 'apple', price: 10, qty: 2 },
+// ];
 
 // const productStats = products.reduce((acc, { name, price, qty }) => {
 //   if ([name] in acc) {
@@ -1095,9 +1095,481 @@ const products = [
 //   return acc;
 // }, {});
 
-const productStats = products.reduce((acc, { name, price, qty }) => {
-  acc[name] = (acc[name] || 0) + price * qty;
-  return acc;
-}, {});
+// const productStats = products.reduce((acc, { name, price, qty }) => {
+//   acc[name] = (acc[name] || 0) + price * qty;
+//   return acc;
+// }, {});
 
-console.log(productStats);
+// console.log(productStats);
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// const obj = numbers.reduce(
+//   (acc, num) => {
+//     num % 2 === 0 ? acc.even.push(num) : acc.odd.push(num);
+//     acc.total += num;
+//     return acc;
+//   },
+//   { even: [], odd: [], total: 0 }
+// );
+
+// const users = [
+//   { name: 'Mango', skills: ['js', 'react'] },
+//   { name: 'Poly', skills: ['html', 'css'] },
+//   { name: 'Ajax', skills: ['js', 'node'] },
+// ];
+
+// const stats = users
+//   .flatMap(user => user.skills)
+//   .reduce((acc, skill) => {
+//     acc[skill] = (acc[skill] ?? 0) + 1;
+//     return acc;
+//   }, {});
+
+// console.log(stats);
+
+// const user = {
+//   name: 'Inga',
+//   sayHi() {
+//     return this.name;
+//   },
+// };
+
+// const obj = {
+//   name: 'Test',
+//   sayHi: user.sayHi,
+// };
+
+// const fn = obj.sayHi;
+
+// // console.log(obj.sayHi());
+// fn();
+// const data = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: {
+//       e: 3,
+//     },
+//   },
+// };
+
+// function countProps(obj) {
+//   const values = Object.values(obj);
+//   let total = 0;
+
+//   for (const value of values) {
+//     typeof value === 'number' ? (total += value) : (total += countProps(value));
+//   }
+
+//   return total;
+// }
+
+// console.log(countProps(data));
+
+// function createStorage() {
+//   return {
+//     set(key, value) {
+//       this[key] = value;
+//     },
+//     get(key) {
+//       return this[key];
+//     },
+//   };
+// }
+
+// const storage = createStorage();
+
+// storage.set('a', 10);
+// storage.set('b', 20);
+
+// storage.get('a'); // 10
+// storage.get('b'); // 20
+
+// console.log(storage.get('b'));
+
+// const orders = [
+//   { id: 1, items: ['apple', 'banana'] },
+//   { id: 2, items: ['banana', 'orange'] },
+//   { id: 3, items: ['apple'] },
+// ];
+
+// const stats = orders
+//   .flatMap(order => order.items)
+//   .reduce((acc, item) => {
+//     acc[item] = (acc[item] ?? 0) + 1;
+//     return acc;
+//   }, {});
+// console.log(stats);
+
+// const transactions = [
+//   { type: 'deposit', amount: 100 },
+//   { type: 'withdraw', amount: 40 },
+//   { type: 'deposit', amount: 50 },
+// ];
+
+// const stats = transactions.reduce((acc, { type, amount }) => {
+//   acc[type] = (acc[type] ?? 0) + amount;
+//   return acc;
+// }, {});
+
+// console.log(stats);
+
+// const user = {
+//   name: 'Inga',
+//   sayHi() {
+//     return this.name;
+//   },
+// };
+
+// const anotherUser = {
+//   name: 'Test',
+// };
+
+// anotherUser.sayHi = user.sayHi;
+
+// const result = anotherUser.sayHi;
+
+// const obj = {
+//   a: 1,
+//   b: {
+//     c: 2,
+//     d: {
+//       e: 3,
+//       f: 4,
+//     },
+//   },
+// };
+
+// function sumValues(obj) {
+//   let total = 0;
+//   const values = Object.values(obj);
+
+//   for (const value of values) {
+//     total += typeof value === 'object' ? sumValues(value) : value;
+//   }
+
+//   return total;
+// }
+
+// console.log(sumValues(obj));
+// function createSecret(value = 'default') {
+//   const data = {
+//     value,
+//   };
+
+//   return {
+//     get() {
+//       return data.value;
+//     },
+//     set(newValue) {
+//       data.value = newValue;
+//     },
+//   };
+// }
+
+// const secret = createSecret('12345');
+
+// console.log(secret.get()); // '12345'
+// secret.set('new');
+
+// console.log(secret.get());
+
+// const users = [
+//   { name: 'Mango', age: 20 },
+//   { name: 'Poly', age: 25 },
+//   { name: 'Ajax', age: 20 },
+//   { name: 'Kiwi', age: 25 },
+// ];
+
+// const stats = users.reduce((acc, { name, age }) => {
+//   acc[age] = (acc[age] ?? 0) + 1;
+//   return acc;
+// }, {});
+
+// console.log(stats);
+
+// function makeCounter() {
+//   let count = 0;
+
+//   return function () {
+//     return count++;
+//   };
+// }
+
+// const counter = makeCounter();
+
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+// const refs = {
+//   list: document.querySelector('.js-list'),
+//   item: document.querySelector('.js-item'),
+// };
+
+// const items = document.querySelectorAll('.js-item');
+// const items2 = document.getElementsByClassName('js-item');
+// console.log(items);
+
+// console.log(refs.list);
+
+// const elements = [];
+
+// for (let i = 0; i < 3; i += 1) {
+//   const itemEl = document.createElement('li');
+//   itemEl.classList.add('js-item');
+//   itemEl.textContent = `Item-${refs.list.children.length + i + 1}`;
+//   elements.push(itemEl);
+// }
+
+// refs.list.append(...elements);
+// console.log(items);
+
+// const singleBtn = document.querySelector('#single');
+
+// const handleClick = () => {
+//   console.log('click event listener callback');
+// };
+
+// singleBtn.addEventListener('click', handleClick);
+
+// ===============================================
+// const multiBtn = document.querySelector('#multiple');
+
+// const firstCallback = () => {
+//   console.log('First callback!');
+// };
+// const secondCallback = () => {
+//   console.log('Second callback!');
+// };
+// const thirdCallback = () => {
+//   console.log('Third callback!');
+// };
+
+// multiBtn.addEventListener('click', firstCallback);
+// multiBtn.addEventListener('click', secondCallback);
+// multiBtn.addEventListener('click', thirdCallback);
+
+const cars = [
+  {
+    id: 1,
+    model: 'Honda',
+    type: 'Civic',
+    price: 12000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  },
+  {
+    id: 2,
+    model: 'Audi',
+    type: 'Q7',
+    price: 40000,
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  },
+  {
+    id: 3,
+    model: 'BMW',
+    type: '5 siries',
+    price: 9000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  },
+  {
+    id: 4,
+    model: 'Honda',
+    type: 'Accord',
+    price: 20000,
+    img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  },
+  {
+    id: 5,
+    model: 'Audi',
+    type: 'Q7',
+    price: 40000,
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  },
+  {
+    id: 6,
+    model: 'Honda',
+    type: 'Civic',
+    price: 12000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  },
+  //   {
+  //     model: 'Audi',
+  //     type: 'Q7',
+  //     price: 40000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  //   },
+  //   {
+  //     model: 'BMW',
+  //     type: '5 siries',
+  //     price: 9000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Accord',
+  //     price: 20000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  //   },
+  //   {
+  //     model: 'Volvo',
+  //     type: 'XC60',
+  //     price: 7000,
+  //     img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Civic',
+  //     price: 12000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Audi',
+  //     type: 'Q7',
+  //     price: 40000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  //   },
+  //   {
+  //     model: 'BMW',
+  //     type: '5 siries',
+  //     price: 9000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Accord',
+  //     price: 20000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  //   },
+  //   {
+  //     model: 'Volvo',
+  //     type: 'XC60',
+  //     price: 7000,
+  //     img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Civic',
+  //     price: 12000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Audi',
+  //     type: 'Q7',
+  //     price: 40000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  //   },
+  //   {
+  //     model: 'BMW',
+  //     type: '5 siries',
+  //     price: 9000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Accord',
+  //     price: 20000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  //   },
+  //   {
+  //     model: 'Volvo',
+  //     type: 'XC60',
+  //     price: 7000,
+  //     img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Civic',
+  //     price: 12000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Audi',
+  //     type: 'Q7',
+  //     price: 40000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  //   },
+  //   {
+  //     model: 'BMW',
+  //     type: '5 siries',
+  //     price: 9000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Accord',
+  //     price: 20000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  //   },
+  //   {
+  //     model: 'Volvo',
+  //     type: 'XC60',
+  //     price: 7000,
+  //     img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Civic',
+  //     price: 12000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Audi',
+  //     type: 'Q7',
+  //     price: 40000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  //   },
+  //   {
+  //     model: 'BMW',
+  //     type: '5 siries',
+  //     price: 9000,
+  //     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  //   },
+  //   {
+  //     model: 'Honda',
+  //     type: 'Accord',
+  //     price: 20000,
+  //     img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  //   },
+  //   {
+  //     id: 4,
+  //     model: 'Volvo',
+  //     type: 'XC60',
+  //     price: 7000,
+  //     img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  //   },
+];
+
+const container = document.querySelector('.js-container');
+
+const input = document.querySelector('.form-input');
+
+input.addEventListener('input', onInputChange);
+
+function createMarkup(arr) {
+  return arr
+    .map(
+      ({ id = 'default', model, type, price, img }) => `<li class="item" data-id="${id}">
+        <img class="item-img" src="${img}" alt="${model}">
+        <h2>Марка - ${model}</h2>
+        <p>Модель - ${type}</p>
+        <p>Ціна - ${price}</p>
+      </li>`
+    )
+    .join('');
+}
+
+container.innerHTML = createMarkup(cars);
+
+function filterArray(value, arr) {
+  return arr.filter(({ model }) => model.toLowerCase().includes(value));
+}
+
+// console.log(filterArray('ho', cars));
+
+function onInputChange(event) {
+  console.log(event.currentTarget.value);
+  const filteredCars = filterArray(event.currentTarget.value, cars);
+  container.innerHTML = createMarkup(filteredCars);
+}

@@ -162,3 +162,7 @@ body {
   cursor: pointer;
   background-color: rgb(87, 74, 197);
 }
+
+.item-img {
+  width: 400px;
+}
