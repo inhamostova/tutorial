@@ -81,4 +81,34 @@
 
 // const container = document.querySelector('.js-products');
 // container.append(...makeMarkup(products));
-console.log('Hello');
+
+// ДУЖЕ складна задача на знаходження унікального рядка в масиві літери якого відсутні у будь-якому інші рядку масива
+
+// console.log(findUniq(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba'])); //'foo'
+// console.log(findUniq(['fghj', 'ghfj', 'abcd', 'jhgf', 'fghj', 'fgjh', 'ghjf'])); //'abcd'
+// console.log(findUniq(['qwe', 'camp', 'acmp', 'pmac', 'camp', 'apmc', 'pmac'])); //'qwe'
+
+// function findUniq(arr) {
+//   const normalizedArr = arr.map(item => normalizeStr(item));
+//   return arr.find((word, idx) => {
+//     const current = normalizedArr[idx];
+//     return normalizedArr.filter(item => item === current).length === 1;
+//   });
+// }
+
+// function normalizeStr(str) {
+//   return [...new Set(str)].sort().join('');
+// }
+
+// function findUniq(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     const result = arr[i].split('').every(letter => {
+//       for (let j = 0; j < arr.length; j += 1) {
+//         if (i !== j) {
+//           return arr[j].includes(letter) ? false : true;
+//         }
+//       }
+//     });
+//     if (result) return arr[i];
+//   }
+// }
