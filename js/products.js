@@ -112,3 +112,57 @@
 //     if (result) return arr[i];
 //   }
 // }
+
+console.log(getUniqueValues([{ id: 1 }, { id: 1 }, { id: 2 }]));
+
+// console.log(getUniqueValues([1, 2, 2, 3, 4, 4]));
+// → [1, 2, 3, 4]
+
+function getUniqueValues(arr) {
+  const seen = new Set();
+  console.log(seen);
+
+  return arr.filter(item => {
+    if (seen.has(item.id)) {
+      return false;
+    }
+    seen.add(item.id); // запам’ятали
+    return true;
+  });
+}
+
+// console.log(countOccurrences(['a', 'b', 'a', 'c', 'b', 'a']));
+// // → { a: 3, b: 2, c: 1 }
+
+// function countOccurrences(arr) {
+//   return arr.reduce((acc, item) => {
+//     acc[item] = (acc[item] ?? 0) + 1;
+//     return acc;
+//   }, {});
+// }
+
+// console.log(reverseArray([1, 2, 3]));
+// // → [3, 2, 1]
+
+// function reverseArray(arr) {
+//   const result = [];
+//   for (let i = arr.length - 1; i >= 0; i -= 1) {
+//     result.push(arr[i]);
+//   }
+
+//   return result;
+// }
+
+groupBy([
+  { type: 'fruit', name: 'apple' },
+  { type: 'veg', name: 'carrot' },
+  { type: 'fruit', name: 'banana' },
+]);
+// {
+//   fruit: [{...}, {...}],
+//   veg: [{...}]
+// }
+
+function groupBy(arr) {
+  return arr.reduce((acc, { type, name }) => {}, { fruit: [], veg: [] });
+}
