@@ -340,9 +340,9 @@
 
 // console.log(flatten([1, [2, 3], 4]));
 
-console.log(findFirstUnique([2, 3, 4, 2, 3, 5]));
-console.log(findFirstUnique([2, 3, 4, 4, 5, 2, 3, 5]));
-console.log(findFirstUnique([2, 17, 99, 22, 3, 4, 4, 17, 99, 2, 3, 7, 5]));
+// console.log(findFirstUnique([2, 3, 4, 2, 3, 5]));
+// console.log(findFirstUnique([2, 3, 4, 4, 5, 2, 3, 5]));
+// console.log(findFirstUnique([2, 17, 99, 22, 3, 4, 4, 17, 99, 2, 3, 7, 5]));
 
 // 4
 
@@ -361,15 +361,111 @@ console.log(findFirstUnique([2, 17, 99, 22, 3, 4, 4, 17, 99, 2, 3, 7, 5]));
 //   return false;
 // }
 
-function findFirstUnique(arr) {
-  const counts = {};
+// function findFirstUnique(arr) {
+//   const counts = {};
 
-  for (const num of arr) {
-    counts[num] = (counts[num] ?? 0) + 1;
-  }
+//   for (const num of arr) {
+//     counts[num] = (counts[num] ?? 0) + 1;
+//   }
 
-  for (const num of arr) {
-    if (counts[num] === 1) return num;
-  }
-  return null;
-}
+//   for (const num of arr) {
+//     if (counts[num] === 1) return num;
+//   }
+//   return null;
+// }
+
+// console.log(sumEven([1, 2, 3, 4])); // 6
+
+// function sumEven(arr) {
+//   return arr.reduce((acc, item) => {
+//     if (item % 2 === 0) acc += item;
+//     return acc;
+//   }, 0);
+// }
+
+// console.log(findMin([5, 2, 8, 1])); // 1
+
+// function findMin(arr) {
+//   let min = arr[0];
+//   for (let i = 1; i < arr.length; i += 1) {
+//     min = arr[i] < min ? arr[i] : min;
+//   }
+//   return min;
+// }
+
+// console.log(cleanArray([0, 1, false, 0, 2, '', 3])); // [1, 2, 3]
+
+// function cleanArray(arr) {
+//   const cleanArr = [];
+//   arr.forEach(item => {
+//     if (item) cleanArr.push(item);
+//   });
+//   return cleanArr;
+// }
+
+// function cleanArray(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (!arr[i]) {
+//       arr.splice(i, 1);
+//       i -= 1;
+//     }
+//   }
+
+//   return arr;
+// }
+
+// console.log(countWords('hello world here')); // 3
+// function countWords(str) {
+//   return str.split(' ').length;
+// }
+
+// console.log(capitalizeFirst('hello world')); // 'Hello world'
+
+// function capitalizeFirst(str) {
+//   return str[0].toUpperCase() + str.slice(1);
+// }
+
+// console.log(trimSpaces('   hello   ')); // 'hello'
+
+// function trimSpaces(str) {
+//   return str.trim();
+// }
+
+// console.log(findIndex([10, 20, 30], 20)); // 1
+
+// function findIndex(...args) {
+//   return args.findIndex(item => typeof item === 'number');
+// }
+
+// console.log(allPositive([1, 2, 3])); // true
+// console.log(allPositive([1, -2, 3])); // false
+
+// function allPositive(arr) {
+//   return arr.every(item => item > 0);
+// }
+
+// console.log(doubleOdd([1, 2, 3, 4])); // [2, 2, 6, 4]
+
+// function doubleOdd(arr) {
+//   return arr.map(item => (item % 2 === 0 ? item : item * 2));
+// }
+
+// console.log(getTotalPrice([{ price: 10 }, { price: 20 }])); // 30
+
+// function getTotalPrice(arr) {
+//   return arr.reduce((acc, { price }) => acc + price, 0);
+// }
+
+// console.log(findById([{ id: 1 }, { id: 2 }, { id: 3 }], 2));
+// { id: 2 }
+
+// function findById(products, id) {
+//   return products.find(({ id: productId }) => productId === id);
+// }
+
+// console.log(getExpensive([{ price: 10 }, { price: 50 }, { price: 30 }], 30));
+// [{ price: 50 }]
+
+// function getExpensive(products, expPrice) {
+//   return products.filter(({ price }) => price > expPrice);
+// }
