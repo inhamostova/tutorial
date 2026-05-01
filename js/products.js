@@ -469,3 +469,304 @@
 // function getExpensive(products, expPrice) {
 //   return products.filter(({ price }) => price > expPrice);
 // }
+// console.log(twoSum([2, 11, 15, 7], 9));
+// [0, 1]
+
+// function twoSum(arr, value) {
+//   const map = new Map();
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     for (let j = i + 1; j < arr.length; j += 1) {
+//       if (arr[i] + arr[j] === value) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// }
+
+// function twoSum(arr, value) {
+//   const map = new Map();
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     const target = value - arr[i];
+
+//     if (map.has(target)) {
+//       return [map.get(target), i];
+//     }
+//     map.set(arr[i], i);
+//   }
+// }
+
+// console.log(
+//   groupBy([
+//     { type: 'fruit', name: 'apple' },
+//     { type: 'veg', name: 'carrot' },
+//     { type: 'fruit', name: 'banana' },
+//   ])
+// );
+
+// function groupBy(arr) {
+//   return arr.reduce((acc, item) => {
+//     (acc[item.type] = acc[item.type] ?? []).push(item);
+//     return acc;
+//   }, {});
+// }
+
+// console.log(longestUniqueSubstring('abcabcdabbifgad')); // 3 ('abc')
+
+// function longestUniqueSubstring(str) {
+//   const set = new Set();
+//   let substr = '';
+
+//   for (let i = 0; i < str.length; i += 1) {
+//     if (!substr.includes(str[i])) {
+//       substr += str[i];
+//       continue;
+//     }
+//     set.add(substr);
+
+//     substr = '';
+//     i -= 1;
+//   }
+//   set.add(substr);
+//   let finalSubstr = '';
+//   for (const value of [...set]) {
+//     finalSubstr = value.length > finalSubstr.length ? value : finalSubstr;
+//   }
+//   return finalSubstr;
+// }
+
+// function longestUniqueSubstring(str) {
+//   const set = new Set();
+//   let left = 0;
+//   let max = 0;
+
+//   for (let right = 0; right < str.length; right++) {
+//     while (set.has(str[right])) {
+//       set.delete(str[left]);
+//       left++;
+//     }
+
+//     set.add(str[right]);
+//     max = Math.max(max, right - left + 1);
+//   }
+
+//   return max;
+// }
+
+// console.log(sum([1, 2, 3, 4])); // 10
+
+// function sum(arr) {
+//   return arr.reduce((acc, item) => (acc += item), 0);
+// }
+
+// console.log(average([2, 4, 6])); // 4
+
+// function average(arr) {
+//   let total = 0;
+//   for (const num of arr) {
+//     total += num;
+//   }
+//   return total / arr.length;
+// }
+
+// console.log(max([5, 1, 9, 3])); // 9
+
+// function max(arr) {
+//   let max = arr[0];
+
+//   for (let i = 1; i < arr.length; i += 1) {
+//     max = max < arr[i] ? arr[i] : max;
+//   }
+
+//   return max;
+// }
+
+// console.log(countChars('hello'));
+// { h:1, e:1, l:2, o:1 }
+
+// function countChars(str) {
+//   return str.split('').reduce((acc, char) => {
+//     acc[char] = (acc[char] ?? 0) + 1;
+//     return acc;
+//   }, {});
+// }
+
+// console.log(reverse('hello')); // 'olleh'
+
+// function reverse(str) {
+//   return str.split('').reverse().join('');
+// }
+
+// console.log(isPalindrome('abba')); // true
+// console.log(isPalindrome('abc')); // false
+
+// function isPalindrome(str) {
+//   const reverseStr = str.split('').reverse().join('').toLowerCase().trim();
+//   return str.toLowerCase().trim() === reverseStr;
+// }
+
+// console.log(findFirst(arr => arr > 10, [5, 8, 12, 3])); // 12
+// console.log(findFirst(arr => arr < 4, [5, 8, 12, 3])); // 3
+
+// function findFirst(callback, arr) {
+//   return arr.find(callback);
+// }
+
+// console.log(removeFalsy([0, false, 1, false, 0, 2, '', 3])); // [1,2,3]
+
+// function removeFalsy(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (!arr[i]) {
+//       arr.splice(i, 1);
+//       i -= 1;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(unique([1, 2, 2, 3])); // [1,2,3]
+
+// function unique(arr) {
+//   const set = new Set(arr);
+//   return [...set];
+// }
+
+// console.log(getTotal([{ price: 10 }, { price: 20 }])); // 30
+
+// function getTotal(arr) {
+//   return arr.reduce((acc, { price }) => (acc += price), 0);
+// }
+
+// console.log(
+//   pluck(
+//     [
+//       { name: 'a', age: 28 },
+//       { name: 'b', age: 100 },
+//     ],
+//     'name'
+//   )
+// );
+// ['a','b']
+
+// function pluck(arr, value) {
+//   return arr.map(item => {
+//     if (item.hasOwnProperty(value)) {
+//       return item[value];
+//     }
+//   });
+// }
+
+// console.log(isAnagram('anagram', 'nagaram')); // true
+// console.log(isAnagram('rat', 'car')); // false
+
+// function isAnagram(str1, str2) {
+//   const counter1 = {};
+//   const counter2 = {};
+//   const arr1 = normalizeStr(str1).split('');
+//   const arr2 = normalizeStr(str2).split('');
+
+//   for (let i = 0; i < arr1.length; i += 1) {
+//     counter1[arr1[i]] = (counter1[arr1[i]] ?? 0) + 1;
+//   }
+
+//   for (let i = 0; i < arr2.length; i += 1) {
+//     counter2[arr2[i]] = (counter2[arr2[i]] ?? 0) + 1;
+//   }
+
+//   for (let key in counter1) {
+//     if (!(key in counter2)) {
+//       return false;
+//     }
+//     if (counter1[key] !== counter2[key]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function normalizeStr(str) {
+//   return str.toLowerCase().trim();
+// }
+
+// function isAnagram(str1, str2) {
+//   const s1 = str1.toLowerCase().trim();
+//   const s2 = str2.toLowerCase().trim();
+
+//   if (s1.length !== s2.length) return false;
+
+//   const counter = {};
+
+//   for (const char of s1) {
+//     counter[char] = (counter[char] ?? 0) + 1;
+//   }
+
+//   for (const char of s2) {
+//     if (!counter[char]) return false;
+//     counter[char]--;
+//   }
+
+//   return true;
+// }
+
+// console.log(countDuplicates([1, 2, 2, 3, 3, 3]));
+// { 2: 2, 3: 3 }
+
+// function countDuplicates(arr) {
+//   const counter = {};
+
+//   for (const num of arr) {
+//     counter[num] = (counter[num] ?? 0) + 1;
+//   }
+
+//   for (const key in counter) {
+//     if (counter[key] <= 1) {
+//       delete counter[key];
+//     }
+//   }
+//   return counter;
+// }
+
+// console.log(longestWord('I love JavaScript so much'));
+// 'JavaScript'
+
+// function longestWord(str) {
+//   const arr = str.split(' ');
+
+//   if (!arr.length) return null;
+
+//   return arr.reduce((acc, word) => (word.length > acc.length ? word : acc));
+// }
+
+// console.log(pairWithSum([2, 7, 11, 15], 26)); // true
+
+// function pairWithSum(arr, target) {
+//   const set = new Set(arr);
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (set.has(target - arr[i])) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+console.log(longestUniqueSubstring('abcabcbb')); // 3
+
+function longestUniqueSubstring(str) {
+  const set = new Set();
+  str = str.toLowerCase().trim();
+  let left = 0;
+  let maxLength = 0;
+
+  for (let right = 0; right < str.length; right += 1) {
+    while (set.has(str[right])) {
+      set.delete(str[left]);
+      left += 1;
+    }
+    set.add(str[right]);
+    maxLength = Math.max(maxLength, right - left + 1);
+  }
+
+  return maxLength;
+}
