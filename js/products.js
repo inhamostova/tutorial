@@ -751,22 +751,157 @@
 //   return false;
 // }
 
-console.log(longestUniqueSubstring('abcabcbb')); // 3
+// console.log(longestUniqueSubstring('abcabcbb')); // 3
 
-function longestUniqueSubstring(str) {
-  const set = new Set();
-  str = str.toLowerCase().trim();
-  let left = 0;
-  let maxLength = 0;
+// function longestUniqueSubstring(str) {
+//   const set = new Set();
+//   str = str.toLowerCase().trim();
+//   let left = 0;
+//   let maxLength = 0;
 
-  for (let right = 0; right < str.length; right += 1) {
-    while (set.has(str[right])) {
-      set.delete(str[left]);
-      left += 1;
-    }
-    set.add(str[right]);
-    maxLength = Math.max(maxLength, right - left + 1);
+//   for (let right = 0; right < str.length; right += 1) {
+//     while (set.has(str[right])) {
+//       set.delete(str[left]);
+//       left += 1;
+//     }
+//     set.add(str[right]);
+//     maxLength = Math.max(maxLength, right - left + 1);
+//   }
+
+//   return maxLength;
+// }
+
+// console.log(maxSum([2, 1, 5, 1, 3, 2], 3)); // 9
+
+// function maxSum(arr, value) {
+//   let left = 0;
+//   let sum = 0;
+//   let maxSum = 0;
+
+//   for (let right = 0; right < arr.length; right += 1) {
+//     if (right >= value) {
+//       sum -= arr[left];
+//       left += 1;
+//     }
+//     sum += arr[right];
+//     maxSum = maxSum > sum ? maxSum : sum;
+//   }
+//   return maxSum;
+// }
+
+// console.log(mostFrequent([1, 3, 1, 3, 2, 3, 3, 1])); // 1
+// console.log(mostFrequent([]));
+// console.log(mostFrequent([5]));
+
+// function mostFrequent(arr) {
+//   let mostFrequent = arr[0];
+//   if (!arr.length) return null;
+//   const counter = arr.reduce((acc, item) => {
+//     acc[item] = (acc[item] ?? 0) + 1;
+//     return acc;
+//   }, {});
+
+//   for (const key in counter) {
+//     mostFrequent = counter[key] > counter[mostFrequent] ? key : mostFrequent;
+//   }
+//   return Number(mostFrequent);
+// }
+
+// console.log(containsDuplicateWithinK([1, 2, 3, 1], 3)); // true
+// console.log(containsDuplicateWithinK([1, 2, 3, 7, 4, 2, 5, 7], 3));
+// console.log(containsDuplicateWithinK([1, 2, 1, 3], 3));
+// console.log(containsDuplicateWithinK([1, 1, 7, 3], 2));
+
+// function containsDuplicateWithinK(arr, k) {
+//   if (arr.length <= k) return false;
+//   const set = new Set();
+//   let left = 0;
+
+//   for (let right = 0; right < arr.length; right += 1) {
+//     if (right - left === k) {
+//       if (set.has(arr[right])) {
+//         return true;
+//       }
+//       set.delete(arr[left]);
+//       left += 1;
+//     }
+//     if (set.has(arr[right])) return true;
+//     set.add(arr[right]);
+//   }
+//   return false;
+// }
+
+// function containsDuplicateWithinK(arr, k) {
+//   const set = new Set();
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (set.has(arr[i])) {
+//       return true;
+//     }
+
+//     set.add(arr[i]);
+
+//     if (set.size > k) {
+//       set.delete(arr[i - k]);
+//     }
+//   }
+
+//   return false;
+// }
+
+// const btn = document.querySelector('#btn');
+// const box = document.querySelector('.box');
+
+// btn.addEventListener('click', toggleClass);
+
+// function toggleClass() {
+//   box.classList.toggle('active');
+// }
+
+// const btn = document.querySelector('#btn');
+// const counterValue = document.querySelector('.counter');
+// let counter = 0;
+
+// btn.addEventListener('click', increaseValue);
+
+// function increaseValue() {
+//   counter += 1;
+//   counterValue.textContent = counter;
+// }
+
+// є input + button + ul
+// при кліку:
+// - взяти значення з input
+// - створити li
+// - додати в список
+// const btn = document.querySelector('#btn');
+// const input = document.querySelector('.input');
+// const list = document.querySelector('.list');
+
+// btn.addEventListener('click', onClick);
+
+// function onClick(evt) {
+//   const item = document.createElement('li');
+//   item.classList.add('item');
+//   item.textContent = input.value;
+//   list.append(item);
+//   input.value = '';
+// }
+
+// є список <ul>
+// кожен li має кнопку "delete"
+
+// при кліку на кнопку → видаляється li
+
+const list = document.querySelector('.list');
+
+list.addEventListener('click', onBtnClick);
+
+function onBtnClick(evt) {
+  if (!evt.target.classList.contains('btn-delete')) {
+    return;
   }
 
-  return maxLength;
+  const item = evt.target.closest('.item');
+  item.remove();
 }
