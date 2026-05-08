@@ -893,15 +893,90 @@
 
 // при кліку на кнопку → видаляється li
 
+// const list = document.querySelector('.list');
+
+// list.addEventListener('click', onBtnClick);
+
+// function onBtnClick(evt) {
+//   if (!evt.target.classList.contains('btn-delete')) {
+//     return;
+//   }
+
+//   const item = evt.target.closest('.item');
+//   item.remove();
+// }
+
 const list = document.querySelector('.list');
+const input = document.querySelector('.input');
+const btnAdd = document.querySelector('.btn-add');
 
-list.addEventListener('click', onBtnClick);
+btnAdd.addEventListener('click', onBtnAddClick);
+input.addEventListener('keydown', onEnter);
+list.addEventListener('click', onListClick);
 
-function onBtnClick(evt) {
-  if (!evt.target.classList.contains('btn-delete')) {
+function onListClick(evt) {
+  const btnDelete = evt.target.closest('.btn-delete');
+  if (btnDelete) {
+    btnDelete.closest('.item').remove();
     return;
   }
 
-  const item = evt.target.closest('.item');
-  item.remove();
+  const text = evt.target.closest('.item-text');
+  if (text) {
+    text.classList.toggle('done');
+  }
+}
+
+function onBtnAddClick() {
+  if (!input.value.trim()) {
+    alert('Please enter some value');
+    return;
+  }
+  list.append(createItem(input.value));
+  input.value = '';
+}
+
+function onEnter(evt) {
+  if (evt.code !== 'Enter') {
+    return;
+  }
+  onBtnAddClick();
+}
+
+function createItem(text) {
+  const item = document.createElement('li');
+  item.classList.add('item');
+
+  const btnDelete = document.createElement('button');
+  btnDelete.classList.add('btn-delete');
+  btnDelete.textContent = 'X';
+
+  const txt = document.createElement('p');
+  txt.classList.add('item-text');
+  txt.textContent = text;
+
+  item.append(txt, btnDelete);
+
+  return item;
+}
+
+console.log(fn([12, 3, 5, 6, 2, 15, 7], 2));
+//12 + 2 + 15 = 29
+//3 + 5 + 6 + 7 = 21
+// {1:29, 2:21}
+
+function fn(arr, kasas) {
+  const obj = {};
+
+  for (let i = 1; i <= kasas; i += 1) {
+    obj[i] = 0;
+  }
+
+  for (let i = 0; i < arr.length; i += 1) {
+    const values = Object.values(obj);
+    const minValue = Math.min(...values);
+    const currentKasa = values.indexOf(minValue) + 1;
+    obj[currentKasa] += arr[i];
+  }
+  return obj;
 }
