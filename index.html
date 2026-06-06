@@ -9,16 +9,41 @@
       rel="stylesheet"
     /> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <input class="input" type="text" />
-    <button class="btn-add">Add</button>
+    <!-- <ul>
+      <li>
+        <h2 class="title">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, libero.
+        </h2>
+      </li>
+      <li>
+        <h2 class="title1">Lorem.</h2>
+      </li>
+      <li>
+        <h2 class="title2">Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+      </li>
+    </ul> -->
+
+    <form class="js-searchForm">
+      <input type="text" name="searchQuery" />
+      <select name="searchKey">
+        <option value="car">Marka</option>
+        <option value="type">Model</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
 
     <ul class="list"></ul>
 
     <!-- <script src="./js/products.js" type="module"></script> -->
     <!-- <script src="./js/products.js" type="module"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
     <script src="./js/repeating.js" type="module"></script>
   </body>
 </html>

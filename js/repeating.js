@@ -168,15 +168,309 @@
 
 // Що виведе код?
 
-const user = {
-  name: 'Alex',
-  show() {
-    const inner = () => {
-      console.log(this.name);
-    };
+// const user = {
+//   name: 'Alex',
+//   show() {
+//     const inner = () => {
+//       console.log(this.name);
+//     };
 
-    inner();
+//     inner();
+//   },
+// };
+
+// user.show();
+
+// const title = document.querySelector('.title');
+// const title1 = document.querySelector('.title1');
+// const title2 = document.querySelector('.title2');
+// const maxLength = 10;
+// const totalLength = maxLength + 3;
+
+// title.addEventListener('click', onTitleClick);
+// title1.addEventListener('click', onTitleClick);
+// title2.addEventListener('click', onTitleClick);
+
+// function onTitleClick(evt) {
+//   const title = evt.currentTarget;
+//   const str = title.textContent.trim().slice(0, maxLength);
+//   const reminder = title.textContent.trim().slice(maxLength);
+
+//   if (title.textContent.length > totalLength) {
+//     title.textContent = str + '...';
+//     title.dataset.reminder = reminder;
+//   } else if (title.textContent.length < totalLength) {
+//     return;
+//   } else {
+//     title.textContent = str + title.dataset.reminder;
+//   }
+// }
+
+// Задача 1 — Class basics
+
+// Створи клас User.
+
+// Він повинен:
+
+// приймати name та age в конструкторі
+// мати метод getInfo()
+
+// Приклад:
+
+// class User {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   getInfo() {
+//     return `${this.name} is ${this.age} years old`;
+//   }
+// }
+
+// const user = new User('Inha', 25);
+// console.log(user);
+
+// console.log(user.getInfo()); // 'Inha is 25 years old'
+
+// Наступна задача — Class + method
+
+// Створи клас Car.
+
+// Властивості:
+
+// brand
+// price
+
+// Методи:
+
+// getPrice() — повертає ціну
+// changePrice(newPrice) — змінює ціну
+
+// Приклад:
+
+// class Car {
+//   constructor(brand, price) {
+//     this.brand = brand;
+//     this.price = price;
+//   }
+
+//   getPrice() {
+//     return this.price;
+//   }
+
+//   changePrice(newPrice) {
+//     if (newPrice <= 0) {
+//       return;
+//     }
+//     this.price = newPrice;
+//   }
+// }
+
+// const bmw = new Car('BMW', 50000);
+// console.log(bmw);
+
+// console.log(bmw.getPrice()); // 50000
+
+// bmw.changePrice(60000);
+// console.log(bmw.getPrice()); // 60000
+
+// bmw.changePrice(-100);
+// console.log(bmw.getPrice());
+
+// Наступна задача
+
+// Напиши функцію:
+
+// console.log(findFirstUnique([2, 3, 2, 4, 3, 5]));
+
+// console.log(findFirstUnique([2, 1, 3, 2, 4, 3, 5, 4, 4, 5]));
+
+// function findFirstUnique(arr) {
+//   let counter = {};
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     counter[arr[i]] = (counter[arr[i]] ?? 0) + 1;
+//   }
+//   console.log(counter);
+
+//   for (const num in arr) {
+//     if (counter[num] === 1) {
+//       return num;
+//     }
+//   }
+// }
+
+// яка повертає перший елемент, що зустрічається лише один раз.
+
+// Результат:
+
+// findFirstUnique([2, 3, 2, 4, 3, 5]) // 4
+
+// Бо:
+
+// 2 → двічі
+// 3 → двічі
+// 4 → один раз ← перший унікальний
+// 5 → теж один раз, але пізніше
+
+// Наступна задача
+
+// Напиши функцію:
+
+// console.log(mostFrequent([1, 2, 2, 3, 2, 4, 4]));
+
+// function mostFrequent(arr) {
+//   let counter = {};
+//   let maxCount = 0;
+//   let result;
+
+//   for (const num of arr) {
+//     counter[num] = (counter[num] ?? 0) + 1;
+//   }
+
+//   for (const key in counter) {
+//     if (counter[key] > maxCount) {
+//       maxCount = counter[key];
+//       result = key;
+//     }
+//   }
+//   return +result;
+// }
+// яка повертає елемент, який зустрічається найчастіше.
+
+// Результат:
+
+// 2
+
+// Наступна задача (трохи складніша 🔥)
+// groupBy
+
+// Зроби функцію:
+
+// console.log(
+//   groupBy([
+//     { type: 'fruit', name: 'apple' },
+//     { type: 'fruit', name: 'banana' },
+//     { type: 'vegetable', name: 'carrot' },
+//   ])
+// );
+
+// function groupBy(arr) {
+//   return arr.reduce((acc, { type, name }) => {
+//     if (!acc[type]) {
+//       acc[type] = [];
+//     }
+//     acc[type].push(name);
+//     return acc;
+//   }, {});
+// }
+
+// Результат:
+
+// {
+//   fruit: ['apple', 'banana'],
+//   vegetable: ['carrot']
+// }
+
+// 💡 Підказка:
+
+// об’єкт
+// перевірка чи існує ключ
+// push
+
+const cars = [
+  {
+    id: 1,
+    car: 'Honda',
+    type: 'Civic',
+    price: 12000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
   },
-};
+  {
+    id: 2,
+    car: 'Audi',
+    type: 'Q7',
+    price: 40000,
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  },
+  {
+    id: 33,
+    car: 'BMW',
+    type: '5 siries',
+    price: 9000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  },
+  {
+    id: 3,
+    car: 'Honda',
+    type: 'Accord',
+    price: 20000,
+    number: '+380000000000',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  },
+  {
+    id: 4,
+    car: 'Volvo',
+    type: 'XC60',
+    price: 7000,
+    img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  },
+];
 
-user.show();
+const list = document.querySelector('.list');
+const searchForm = document.querySelector('.js-searchForm');
+
+searchForm.addEventListener('submit', onSearch);
+list.addEventListener('click', onClick);
+
+list.insertAdjacentHTML('beforeend', createMarkup(cars));
+
+function createMarkup(arr) {
+  return arr
+    .map(
+      ({ id, car, type, price, img }) => `
+  <li data-id="${id}">
+  <img class="img-car" src="${img}" alt="${car}" width="300"/>
+  <h2>${car}</h2>
+</li>`
+    )
+    .join('');
+}
+
+function onSearch(evt) {
+  evt.preventDefault();
+
+  const { searchQuery, searchKey } = evt.currentTarget.elements;
+
+  const filteredCars = cars.filter(car =>
+    car[searchKey.value].toLowerCase().includes(searchQuery.value.trim().toLowerCase())
+  );
+
+  list.innerHTML = createMarkup(filteredCars);
+}
+
+function onClick(evt) {
+  if (!evt.target.classList.contains('img-car')) {
+    return;
+  }
+  const idx = Number(evt.target.closest('li').dataset.id);
+  const currentCar = findCarById(idx);
+  createModalMarkup(currentCar);
+}
+
+function findCarById(id) {
+  return cars.find(({ id: carId }) => carId === id);
+}
+
+function createModalMarkup(currentCar) {
+  const { img, car, type, price } = currentCar;
+  const instance = basicLightbox.create(`
+<div>
+  <img src="${img}" alt="${car}" width="600"/>
+  <h2>${car}</h2>
+  <p>${type}</p>
+  <p>${price}</p>
+</div>`);
+  instance.show();
+}
