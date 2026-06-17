@@ -474,3 +474,78 @@ function createModalMarkup(currentCar) {
 </div>`);
   instance.show();
 }
+
+// const products = [
+//   {
+//     id: 'sku1',
+//     qty: 1,
+//   },
+//   {
+//     id: 'sku2',
+//     qty: 2,
+//   },
+//   {
+//     id: 'sku3',
+//     qty: 3,
+//   },
+//   {
+//     id: 'sku1',
+//     qty: 6,
+//   },
+//   {
+//     id: 'sku1',
+//     qty: 8,
+//   },
+//   {
+//     id: 'sku2',
+//     qty: 19,
+//   },
+//   {
+//     id: 'sku4',
+//     qty: 1,
+//   },
+// ];
+
+// function mutateArr(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     for (let j = i + 1; j < arr.length; j += 1) {
+//       if (arr[i].id === arr[j].id) {
+//         arr[i].qty += arr[j].qty;
+//         arr.splice(j, 1);
+//         j -= 1;
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(mutateArr(products));
+
+console.log(findUniq(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba']));
+console.log(findUniq(['fghj', 'ghfj', 'abcd', 'jhgf', 'fghj', 'fgjh', 'ghjf']));
+
+// function findUniq(arr) {
+//   for (let i = 0; i < arr.length - 1; i += 1) {
+//     let str = arr[i];
+//     let strToCompare = arr[i + 1];
+//     for (let j = 0; j < str.length; j += 1) {
+//       if (!strToCompare.includes(str[j])) {
+//         return strToCompare;
+//       }
+//     }
+//   }
+// }
+
+function findUniq(arr) {
+  return arr.find((current, idx) =>
+    current
+      .split('')
+      .every(
+        item =>
+          arr.reduce((acc, compar, i) =>
+            idx !== i ? (compar.includes(item) ? false : true) : false
+          ),
+        false
+      )
+  );
+}
