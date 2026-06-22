@@ -189,24 +189,303 @@
 //   return false;
 // }
 
-console.log(maxSum([1, 2, 3, 4, 5], 2));
-console.log(maxSum([7, 1, 42, 2, 13, 3, 4, 22, 5], 2));
-console.log(maxSum([7, 1, 2, 13, 3, 4, 22, 5], 3));
+// console.log(maxSum([1, 2, 3, 4, 5], 2));
+// console.log(maxSum([7, 1, 42, 2, 13, 3, 4, 22, 5], 2));
+// console.log(maxSum([7, 1, 2, 13, 3, 4, 22, 5], 3));
 
-function maxSum(arr, k) {
-  let windowSum = 0;
-  let maxSum = 0;
+// function maxSum(arr, k) {
+//   let windowSum = 0;
+//   let maxSum = 0;
 
-  for (let i = 0; i < k; i += 1) {
-    windowSum += arr[i];
+//   for (let i = 0; i < k; i += 1) {
+//     windowSum += arr[i];
+//   }
+
+//   maxSum = windowSum;
+
+//   for (let i = k; i < arr.length; i += 1) {
+//     windowSum = windowSum - arr[i - k] + arr[i];
+//     maxSum = Math.max(windowSum, maxSum);
+//   }
+
+//   return maxSum;
+// }
+
+// console.log(maxSum([1, 2, 3, 4, 5], 2)); // 9
+// console.log(maxSum([7, 1, 42, 2, 13, 3, 4, 22, 5], 2));
+// console.log(maxSum([7, 1, 2, 13, 3, 4, 22, 5], 3));
+
+// console.log(maxSum([2, 1, 5, 1, 3, 2], 3));
+
+// function maxSum(arr, k) {
+//   let maxSum = 0;
+//   let total = 0;
+
+//   for (let i = 0; i < k; i += 1) {
+//     total += arr[i];
+//   }
+
+//   console.log(total);
+//   maxSum = total;
+
+//   for (let i = k; i < arr.length; i += 1) {
+//     total = total - arr[i - k] + arr[i];
+//     console.log(total);
+//     maxSum = Math.max(maxSum, total);
+//   }
+
+//   return maxSum;
+// }
+
+// console.log(findAverage([1, 2, 3, 4, 5], 2)); //4.5
+
+// function findAverage(arr, k) {
+//   let total = 0;
+//   let maxSum = 0;
+
+//   for (let i = 0; i < k; i += 1) {
+//     total += arr[i];
+//   }
+
+//   maxSum = total;
+
+//   for (let i = k; i < arr.length; i += 1) {
+//     total = total - arr[i - k] + arr[i];
+//     maxSum = Math.max(maxSum, total);
+//   }
+
+//   return maxSum / k;
+// }
+
+// function findAverage(arr, k) {
+//   let windowAverage = 0;
+//   let maxAverage = 0;
+//   let total = 0;
+
+//   for (let i = 0; i < k; i += 1) {
+//     total += arr[i];
+//     windowAverage = total / k;
+//   }
+
+//   maxAverage = windowAverage;
+
+//   for (let i = k; i < arr.length; i += 1) {
+//     total = total - arr[i - k] + arr[i];
+//     windowAverage = total / k;
+//     maxAverage = Math.max(maxAverage, windowAverage);
+//   }
+
+//   return maxAverage;
+// }
+
+// console.log(containsDuplicateWithinK([1, 2, 3, 1], 3)); //true
+// console.log(containsDuplicateWithinK([1, 2, 3, 4, 1], 3)); //false
+// console.log(containsDuplicateWithinK([1, 2, 5, 7, 3, 1, 43, 2, 1], 3));
+
+// function containsDuplicateWithinK(arr, k) {
+//   const set = new Set();
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (set.has(arr[i])) {
+//       return true;
+//     }
+//     set.add(arr[i]);
+//     if (set.size > k) {
+//       set.delete(arr[i - k]);
+//     }
+//   }
+
+//   return false;
+// }
+
+// console.log(longestUniqueSubstring('abcabcbb'));
+// console.log(longestUniqueSubstring('bbbbb'));
+// console.log(longestUniqueSubstring('baaqweqr'));
+
+// function longestUniqueSubstring(str) {
+//   let maxLength = 0;
+//   let left = 0;
+//   const set = new Set();
+
+//   for (let right = 0; right < str.length; right += 1) {
+//     while (set.has(str[right])) {
+//       set.delete(str[left]);
+//       left += 1;
+//     }
+//     set.add(str[right]);
+//     maxLength = Math.max(maxLength, set.size);
+//   }
+
+//   return maxLength;
+// }
+
+// console.log(maxSubarraySum([2, 3, 1, 2, 4, 3], 3));
+
+// function maxSubarraySum(arr, k) {
+//   let windowSum = 0;
+//   let maxSum = 0;
+
+//   for (let i = 0; i < k; i += 1) {
+//     windowSum += arr[i];
+//   }
+
+//   maxSum = windowSum;
+
+//   for (let i = k; i < arr.length; i += 1) {
+//     windowSum = windowSum - arr[i - k] + arr[i];
+//     maxSum = Math.max(maxSum, windowSum);
+//   }
+
+//   return maxSum;
+// }
+
+// console.log(characterReplacement('ABAB', 2));
+// console.log(characterReplacement('AABBA', 1));
+// console.log(characterReplacement('AABBAAACBA', 2));
+
+// function characterReplacement(str, k) {
+//   let left = 0;
+//   let maxFreq = 0;
+//   let maxLength = 0;
+
+//   const map = {};
+
+//   for (let right = 0; right < str.length; right += 1) {
+//     map[str[right]] = (map[str[right]] ?? 0) + 1;
+//     maxFreq = Math.max(...Object.values(map));
+//     while (right - left + 1 - maxFreq > k) {
+//       map[str[left]] -= 1;
+//       left += 1;
+//     }
+//     maxLength = Math.max(maxLength, right - left + 1);
+//   }
+
+//   return maxLength;
+// }
+
+// const app = document.querySelector('#app');
+
+// renderParagraph();
+
+// function renderParagraph() {
+//   const par = document.createElement('p');
+//   par.textContent = 'Hello DOM';
+//   app.append(par);
+// }
+
+// const fruits = ['Apple', 'Banana', 'Orange'];
+
+// const list = document.querySelector('#list');
+
+// renderList(fruits);
+
+// function renderList(fruits) {
+//   const arr = [];
+//   for (const fruit of fruits) {
+//     const item = document.createElement('li');
+//     item.textContent = `${fruit}`;
+//     arr.push(item);
+//   }
+//   list.append(...arr);
+// }
+
+// const btn = document.querySelector('#btn');
+// const counter = document.querySelector('#counter');
+
+// btn.addEventListener('click', onClick);
+
+// function onClick() {
+//   counter.textContent = Number(counter.textContent) + 1;
+// }
+
+// const btn = document.querySelector('#theme-btn');
+// const box = document.querySelector('#box');
+
+// btn.addEventListener('click', onClick);
+
+// function onClick() {
+//   box.classList.toggle('dark');
+// }
+
+// const list = document.querySelector('#list');
+
+// list.addEventListener('click', onClick);
+
+// function onClick(evt) {
+//   if (evt.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+//   const itemToRemove = evt.target.closest('li');
+//   itemToRemove.remove();
+// }
+
+const form = document.querySelector('#todo-form');
+const input = document.querySelector('#todo-input');
+const list = document.querySelector('#todo-list');
+
+const tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];
+
+renderTasks(tasks);
+
+form.addEventListener('submit', onSubmit);
+list.addEventListener('click', onListClick);
+
+function renderTasks(items) {
+  list.innerHTML = createTasksMarkup(items);
+}
+
+function saveTasksToLocalStorage(items) {
+  localStorage.setItem('tasks', JSON.stringify(items));
+}
+
+function onListClick(evt) {
+  const { target } = evt;
+
+  if (!target.classList.contains('delete-btn') && !target.classList.contains('task-text')) {
+    return;
+  }
+  const i = findIdx(tasks, target.closest('li').dataset.id);
+
+  if (target.classList.contains('delete-btn')) {
+    tasks.splice(i, 1);
   }
 
-  maxSum = windowSum;
-
-  for (let i = k; i < arr.length; i += 1) {
-    windowSum = windowSum - arr[i - k] + arr[i];
-    maxSum = Math.max(windowSum, maxSum);
+  if (target.classList.contains('task-text')) {
+    tasks[i].completed = !tasks[i].completed;
   }
 
-  return maxSum;
+  saveTasksToLocalStorage(tasks);
+  renderTasks(tasks);
+}
+
+function onSubmit(evt) {
+  evt.preventDefault();
+
+  const value = input.value.trim();
+
+  if (!value) return;
+
+  tasks.push({ text: value, completed: false, id: crypto.randomUUID() });
+
+  saveTasksToLocalStorage(tasks);
+  renderTasks(tasks);
+
+  input.value = '';
+
+  input.focus();
+}
+
+function createTasksMarkup(items) {
+  return items.map(createTaskMarkup).join('');
+}
+
+function createTaskMarkup({ text, completed, id }) {
+  return `<li data-id="${id}" class="${completed ? 'completed' : ''}">
+  <span class="task-text">${text}</span>
+  <button class="delete-btn">X</button>
+</li>`;
+}
+
+function findIdx(items, id) {
+  return items.findIndex(({ id: itemId }) => itemId === id);
 }
