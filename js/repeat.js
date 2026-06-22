@@ -444,20 +444,18 @@ function onListClick(evt) {
   if (!target.classList.contains('delete-btn') && !target.classList.contains('task-text')) {
     return;
   }
-  const i = Number(target.closest('li').dataset.id);
-  console.log(i);
+  const i = findIdx(tasks, target.closest('li').dataset.id);
 
   if (target.classList.contains('delete-btn')) {
     tasks.splice(i, 1);
-    saveTasksToLocalStorage(tasks);
-    renderTasks(tasks);
   }
 
   if (target.classList.contains('task-text')) {
     tasks[i].completed = !tasks[i].completed;
-    saveTasksToLocalStorage(tasks);
-    renderTasks(tasks);
   }
+
+  saveTasksToLocalStorage(tasks);
+  renderTasks(tasks);
 }
 
 function onSubmit(evt) {
@@ -467,7 +465,7 @@ function onSubmit(evt) {
 
   if (!value) return;
 
-  tasks.push({ text: value, completed: false });
+  tasks.push({ text: value, completed: false, id: crypto.randomUUID() });
 
   saveTasksToLocalStorage(tasks);
   renderTasks(tasks);
@@ -481,9 +479,13 @@ function createTasksMarkup(items) {
   return items.map(createTaskMarkup).join('');
 }
 
-function createTaskMarkup({ text, completed }, idx) {
-  return `<li data-id="${idx}" class="${completed ? 'completed' : ''}">
+function createTaskMarkup({ text, completed, id }) {
+  return `<li data-id="${id}" class="${completed ? 'completed' : ''}">
   <span class="task-text">${text}</span>
   <button class="delete-btn">X</button>
 </li>`;
+}
+
+function findIdx(items, id) {
+  return items.findIndex(({ id: itemId }) => itemId === id);
 }
