@@ -425,21 +425,38 @@ const list = document.querySelector('#todo-list');
 
 const tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];
 
-list.insertAdjacentHTML('beforeend', createTasksMarkup(tasks));
+renderTasks(tasks);
 
 form.addEventListener('submit', onSubmit);
 list.addEventListener('click', onListClick);
 
+function renderTasks(items) {
+  list.innerHTML = createTasksMarkup(items);
+}
+
+function saveTasksToLocalStorage(items) {
+  localStorage.setItem('tasks', JSON.stringify(items));
+}
+
 function onListClick(evt) {
   const { target } = evt;
 
+  if (!target.classList.contains('delete-btn') && !target.classList.contains('task-text')) {
+    return;
+  }
+  const i = Number(target.closest('li').dataset.id);
+  console.log(i);
+
   if (target.classList.contains('delete-btn')) {
-    const itemToRemove = target.closest('li');
-    itemToRemove.remove();
+    tasks.splice(i, 1);
+    saveTasksToLocalStorage(tasks);
+    renderTasks(tasks);
   }
 
   if (target.classList.contains('task-text')) {
-    target.closest('li').classList.toggle('completed');
+    tasks[i].completed = !tasks[i].completed;
+    saveTasksToLocalStorage(tasks);
+    renderTasks(tasks);
   }
 }
 
@@ -450,11 +467,10 @@ function onSubmit(evt) {
 
   if (!value) return;
 
-  tasks.push(value);
+  tasks.push({ text: value, completed: false });
 
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-
-  list.insertAdjacentHTML('beforeend', createTaskMarkup(value));
+  saveTasksToLocalStorage(tasks);
+  renderTasks(tasks);
 
   input.value = '';
 
@@ -465,9 +481,9 @@ function createTasksMarkup(items) {
   return items.map(createTaskMarkup).join('');
 }
 
-function createTaskMarkup(value) {
-  return `<li>
-  <span class="task-text">${value}</span>
+function createTaskMarkup({ text, completed }, idx) {
+  return `<li data-id="${idx}" class="${completed ? 'completed' : ''}">
+  <span class="task-text">${text}</span>
   <button class="delete-btn">X</button>
 </li>`;
 }
