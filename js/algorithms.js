@@ -16,24 +16,46 @@
 //   return result;
 // }
 
-console.log(productOfArrayExceptSelf([1, 2, 3, 4])); //[24, 12, 8, 6]
-console.log(productOfArrayExceptSelf([2, 5, 1])); //[5,2,10]
+// console.log(productOfArrayExceptSelf([1, 2, 3, 4])); //[24, 12, 8, 6]
+// console.log(productOfArrayExceptSelf([2, 5, 1])); //[5,2,10]
 
-function productOfArrayExceptSelf(arr) {
-  const result = [];
-  let product = 1;
+// function productOfArrayExceptSelf(arr) {
+//   const result = [];
+//   let product = 1;
 
-  for (let i = 0; i < arr.length; i += 1) {
-    result[i] = product;
-    product *= arr[i];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     result[i] = product;
+//     product *= arr[i];
+//   }
+
+//   product = 1;
+
+//   for (let i = arr.length - 1; i >= 0; i -= 1) {
+//     result[i] = result[i] * product;
+//     product *= arr[i];
+//   }
+
+//   return result;
+// }
+
+console.log(fn([12, 3, 5, 6, 2, 15, 7], 4)); //{1:29,2:21,}
+
+function fn(arr, k) {
+  const stats = {};
+  for (let i = 1; i <= k; i += 1) {
+    stats[i] = 0;
   }
 
-  product = 1;
-
-  for (let i = arr.length - 1; i >= 0; i -= 1) {
-    result[i] = result[i] * product;
-    product *= arr[i];
+  for (let j = 0; j < arr.length; j += 1) {
+    const values = Object.values(stats);
+    const min = Math.min(...values);
+    for (const key in stats) {
+      if (stats[key] === min) {
+        stats[key] += arr[j];
+        break;
+      }
+    }
   }
 
-  return result;
+  return stats;
 }
